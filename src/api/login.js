@@ -13,17 +13,17 @@ const getCode = async () => {
   return result
 }
 
-const forget = async (options) => {
+const forget = async option => {
   let result = ''
   try {
     result = await axios.post('/forget', {
-      ...options
+      ...option
     })
     if (result.status === 200) {
       return result.data
     }
-  } catch (error) {
-    console.log(error)
+  } catch (e) {
+    console.log(e)
   }
   return result
 }

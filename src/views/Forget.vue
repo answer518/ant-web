@@ -107,6 +107,7 @@
 
 <script>
 import { getCode, forget } from '@/api/login'
+
 export default {
   name: 'forget',
   data () {
@@ -144,4 +145,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// 公用样式可以放在App.vue中
 </style>

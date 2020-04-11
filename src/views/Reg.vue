@@ -13,74 +13,80 @@
             <div class="layui-form layui-form-pane">
               <form method="post">
                 <div class="layui-form-item">
-                  <label for="L_email" class="layui-form-label">邮箱</label>
-                  <div class="layui-input-inline">
-                    <input
-                      type="text"
-                      id="L_email"
-                      name="email"
-                      v-model="email"
-                      v-validate="{ required: true, email: true }"
-                      placeholder="请输入用户名"
-                      autocomplete="off"
-                      class="layui-input"
-                    />
+                  <div class="layui-row">
+                    <label for="L_email" class="layui-form-label">用户名</label>
+                    <div class="layui-input-inline">
+                      <input
+                        type="text"
+                        name="username"
+                        v-model="username"
+                        v-validate="'required|email'"
+                        placeholder="请输入用户名"
+                        autocomplete="off"
+                        class="layui-input"
+                      />
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">将会成为您唯一的登入名</div>
                   </div>
-                  <div v-if="errors.has('email')" class="layui-form-mid errors">
-                    <span>{{errors.first('email')}}</span>
+                  <div class="layui-row">
+                    <span style="color: #c00;">{{errors.first('username')}}</span>
                   </div>
-                  <div v-else class="layui-form-mid layui-word-aux">将会成为您唯一的登入名</div>
                 </div>
                 <div class="layui-form-item">
-                  <label for="L_nickname" class="layui-form-label">昵称</label>
+                  <label for="L_username" class="layui-form-label">昵称</label>
                   <div class="layui-input-inline">
                     <input
                       type="text"
                       name="name"
                       v-model="name"
-                      v-validate="{ required: true , min: 4}"
+                      v-validate="'required|min:4'"
                       placeholder="请输入昵称"
                       autocomplete="off"
                       class="layui-input"
                     />
                   </div>
-                  <div class="layui-form-mid errors">
-                    <span>{{errors.first('name')}}</span>
+                  <div class="layui-form-mid">
+                    <span style="color: #c00;">{{errors.first('name')}}</span>
                   </div>
                 </div>
                 <div class="layui-form-item">
-                  <label for="L_pass" class="layui-form-label">密码</label>
-                  <div class="layui-input-inline">
-                    <input
-                      type="password"
-                      name="password"
-                      v-model="password"
-                      ref="password"
-                      v-validate="{ required: true, min: 6, max: 16 }"
-                      autocomplete="off"
-                      class="layui-input"
-                    />
+                  <div class="layui-row">
+                    <label for="L_pass" class="layui-form-label">密码</label>
+                    <div class="layui-input-inline">
+                      <input
+                        type="password"
+                        name="password"
+                        v-model="password"
+                        ref="password"
+                        v-validate="'required|min:6|max:16'"
+                        placeholder="请输入密码"
+                        autocomplete="off"
+                        class="layui-input"
+                      />
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">6到16个字符</div>
                   </div>
-                  <div v-if="errors.has('password')" class="layui-form-mid errors">
-                    <span>{{errors.first('password')}}</span>
+                  <div class="layui-row">
+                    <span style="color: #c00;">{{errors.first('password')}}</span>
                   </div>
-                  <div v-else class="layui-form-mid layui-word-aux">6到16个字符</div>
                 </div>
                 <div class="layui-form-item">
-                  <label for="L_repass" class="layui-form-label">确认密码</label>
-                  <div class="layui-input-inline">
-                    <input
-                      type="password"
-                      name="repassword"
-                      v-model="repassword"
-                      v-validate="{ required: true, min: 6, max: 16, confirmed: password }"
-                      placeholder="请输入密码"
-                      autocomplete="off"
-                      class="layui-input"
-                    />
+                  <div class="layui-row">
+                    <label for="L_repass" class="layui-form-label">确认密码</label>
+                    <div class="layui-input-inline">
+                      <input
+                        type="password"
+                        name="repassword"
+                        v-model="repassword"
+                        v-validate="'required|min:6|max:16|confirmed:password'"
+                        placeholder="请输入密码"
+                        autocomplete="off"
+                        class="layui-input"
+                      />
+                    </div>
                   </div>
-                  <div v-if="errors.has('repassword')" class="layui-form-mid errors">
-                    <span>{{errors.first('repassword')}}</span>
+                  <div class="layui-row">
+                    <span style="color: #c00;">{{errors.first('repassword')}}</span>
                   </div>
                 </div>
                 <div class="layui-form-item">
@@ -91,7 +97,7 @@
                         type="text"
                         name="code"
                         v-model="code"
-                        v-validate="{ required: true, length: 4 }"
+                        v-validate="'required|length:4'"
                         placeholder="请输入验证码"
                         autocomplete="off"
                         class="layui-input"
@@ -106,7 +112,7 @@
                   </div>
                 </div>
                 <div class="layui-form-item">
-                  <button class="layui-btn">立即注册</button>
+                  <button class="layui-btn" lay-filter="*" lay-submit>立即注册</button>
                 </div>
                 <div class="layui-form-item fly-form-app">
                   <span>或者直接使用社交账号快捷注册</span>
@@ -138,7 +144,7 @@ export default {
   name: 'reg',
   data () {
     return {
-      email: '',
+      username: '',
       name: '',
       password: '',
       repassword: '',
@@ -151,7 +157,8 @@ export default {
   },
   methods: {
     _getCode () {
-      getCode().then(res => {
+      getCode().then((res) => {
+        console.log(res)
         if (res.code === 200) {
           this.svg = res.data
         }
@@ -160,13 +167,6 @@ export default {
   }
 }
 </script>
-
 <style lang="scss" scoped>
-.errors span {
-  color: #c00;
-}
-.svg {
-  position: relative;
-  top: -4px;
-}
+// 公用样式可以放在App.vue中
 </style>
