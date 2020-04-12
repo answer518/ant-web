@@ -190,7 +190,6 @@ export default {
       })
         .then(res => {
           if (res.code === 200) {
-            console.log(res.data)
             this.username = ''
             this.password = ''
             this.code = ''
