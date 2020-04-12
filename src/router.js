@@ -13,17 +13,24 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: Login,
     },
     {
       path: '/reg',
       name: 'reg',
-      component: Reg
+      component: Reg,
+      beforeEnter: (to, from, next) => {
+        if (from.name === 'login') {
+          next()
+        } else {
+          next('/login')
+        }
+      },
     },
     {
       path: '/forget',
       name: 'forget',
-      component: Forget
-    }
-  ]
+      component: Forget,
+    },
+  ],
 })
