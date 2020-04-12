@@ -1,17 +1,23 @@
 import axios from '@/utils/request'
 
-const getCode = () => {
-  // axios.request({
-  //  method: 'get',
-  //  url: '/getCaptcha'
-  // })
-  return axios.get('/getCaptcha')
+const getCode = sid => {
+  return axios.get('/public/getCaptcha', {
+    params: {
+      sid
+    }
+  })
 }
 
-const forget = (option) => {
+const forget = option => {
   return axios.post('/forget', {
     ...option
   })
 }
 
-export { getCode, forget }
+const login = loginInfo => {
+  return axios.post('/login/login', {
+    ...loginInfo
+  })
+}
+
+export { getCode, forget, login }

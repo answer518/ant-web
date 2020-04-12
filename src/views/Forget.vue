@@ -4,14 +4,18 @@
       <div class="layui-tab layui-tab-brief" lay-filter="user">
         <ul class="layui-tab-title">
           <li>
-            <router-link :to="{name: 'login'}">登入</router-link>
+            <router-link :to="{ name: 'login' }">登入</router-link>
           </li>
           <li class="layui-this">
             找回密码
             <!--重置密码-->
           </li>
         </ul>
-        <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
+        <div
+          class="layui-form layui-tab-content"
+          id="LAY_ucm"
+          style="padding: 20px 0;"
+        >
           <div class="layui-tab-item layui-show">
             <!-- 重置密码 -->
             <!--
@@ -68,12 +72,16 @@
                     />
                   </div>
                   <div class="layui-form-mid">
-                    <span style="color: #c00;">{{errors.first('username')}}</span>
+                    <span style="color: #c00;">{{
+                      errors.first('username')
+                    }}</span>
                   </div>
                 </div>
                 <div class="layui-form-item">
                   <div class="layui-row">
-                    <label for="L_vercode" class="layui-form-label">验证码</label>
+                    <label for="L_vercode" class="layui-form-label"
+                      >验证码</label
+                    >
                     <div class="layui-input-inline">
                       <input
                         type="text"
@@ -86,15 +94,27 @@
                       />
                     </div>
                     <div class>
-                      <span class="svg" style="color: #c00;" @click="_getCode()" v-html="svg"></span>
+                      <span
+                        class="svg"
+                        style="color: #c00;"
+                        @click="_getCode()"
+                        v-html="svg"
+                      ></span>
                     </div>
                   </div>
                   <div class="layui-row">
-                    <span style="color: #c00;">{{errors.first('code')}}</span>
+                    <span style="color: #c00;">{{ errors.first('code') }}</span>
                   </div>
                 </div>
                 <div class="layui-form-item">
-                  <button type="button" class="layui-btn" alert="1" @click="submit()">提交</button>
+                  <button
+                    type="button"
+                    class="layui-btn"
+                    alert="1"
+                    @click="submit()"
+                  >
+                    提交
+                  </button>
                 </div>
               </form>
             </div>
@@ -110,37 +130,37 @@ import { getCode, forget } from '@/api/login'
 
 export default {
   name: 'forget',
-  data () {
+  data() {
     return {
       username: '',
       code: '',
-      svg: ''
+      svg: '',
     }
   },
-  mounted () {
+  mounted() {
     this._getCode()
   },
   methods: {
-    _getCode () {
-      getCode().then((res) => {
+    _getCode() {
+      getCode().then(res => {
         console.log(res)
         if (res.code === 200) {
           this.svg = res.data
         }
       })
     },
-    submit () {
+    submit() {
       forget({
         username: this.username,
-        code: this.code
-      }).then((res) => {
+        code: this.code,
+      }).then(res => {
         console.log(res)
         if (res.code === 200) {
           alert('邮件发送成功')
         }
       })
-    }
-  }
+    },
+  },
 }
 </script>
 
