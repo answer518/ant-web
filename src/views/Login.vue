@@ -63,7 +63,7 @@
                   </div>
                   <div class="layui-form-item">
                     <validation-provider
-                      ref="codefiled"
+                      ref="codefield"
                       name="code"
                       rules="required|length:4"
                       v-slot="{ errors }"
@@ -139,7 +139,6 @@
 import { ValidationProvider, ValidationObserver } from 'vee-validate'
 import { getCode, login } from '@/api/login'
 import { v4 as uuidv4 } from 'uuid'
-
 export default {
   name: 'login',
   components: {
@@ -162,16 +161,13 @@ export default {
       sid = uuidv4()
       localStorage.setItem('sid', sid)
     }
-
     this.$store.commit('setSid', sid)
     this._getCode()
-    window.Vue = this
   },
   methods: {
     _getCode() {
       let sid = this.$store.state.sid
       getCode(sid).then(res => {
-        // console.log(res)
         if (res.code === 200) {
           this.svg = res.data
         }
@@ -180,6 +176,7 @@ export default {
     async submit() {
       const isValid = await this.$refs.observer.validate()
       if (!isValid) {
+        // ABORT!!
         return
       }
       login({
@@ -190,20 +187,26 @@ export default {
       })
         .then(res => {
           if (res.code === 200) {
+            // 存储用户的登录名
+            res.data.username = this.username
+            this.$store.commit('setUserInfo', res.data)
+            this.$store.commit('setIsLogin', true)
+            this.$store.commit('setToken', res.token)
             this.username = ''
             this.password = ''
             this.code = ''
             requestAnimationFrame(() => {
-              this.$refs.observer.reset()
+              this.$refs.observer && this.$refs.observer.reset()
             })
-          } else if (res.code === 401) {
-            this.$refs.codefiled.setErrors([res.msg])
+            this.$router.push({ name: 'index' })
+          } else if (res.code !== 200) {
+            this.$refs.codefield.setErrors([res.msg])
           }
         })
         .catch(err => {
           const data = err.response.data
           if (data.code === 500) {
-            this.$alert(data.msg)
+            this.$alert('用户名密码校验失败，请检查！')
           } else {
             this.$alert('服务器错误')
           }

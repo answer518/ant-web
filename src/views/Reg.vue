@@ -192,6 +192,7 @@
 <script>
 import { ValidationProvider, ValidationObserver } from 'vee-validate'
 import { getCode, reg } from '@/api/login'
+
 export default {
   name: 'reg',
   components: {
