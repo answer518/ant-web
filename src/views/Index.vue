@@ -1,6 +1,6 @@
 <template>
   <div>
-    <imooc-panel></imooc-panel>
+    <ant-panel></ant-panel>
     <router-view></router-view>
   </div>
 </template>
@@ -11,7 +11,7 @@ import Panel from '@/components/Panel'
 export default {
   name: 'home',
   components: {
-    'imooc-panel': Panel,
+    'ant-panel': Panel,
   },
 }
 </script>

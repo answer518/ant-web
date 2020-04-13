@@ -6,23 +6,23 @@ import store from '@/store'
  * 读取文章列表
  * @param {Object} options 读取文章列表接口参数
  */
-const getList = options => {
-  return axios.get('/public/list?' + qs.stringify(options))
+const getPostList = options => {
+  return axios.get('/public/getPostList?' + qs.stringify(options))
 }
 
 // 温馨提醒
 const getTips = () => {
-  return axios.get('/public/tips')
+  return axios.get('/public/getTips')
 }
 
 // 本周热议
 const getTop = () => {
-  return axios.get('/public/topWeek')
+  return axios.get('/public/getTopWeek')
 }
 
 // 友情链接
 const getLinks = () => {
-  return axios.get('/public/links')
+  return axios.get('/public/getLinks')
 }
 
 // 图片上传接口
@@ -49,7 +49,7 @@ const getDetail = tid => {
 const updatePost = data => axios.post('/content/update', { ...data })
 
 export {
-  getList,
+  getPostList,
   getTips,
   getTop,
   getLinks,
