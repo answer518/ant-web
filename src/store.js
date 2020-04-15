@@ -8,14 +8,27 @@ export default new Vuex.Store({
     sid: '',
     isLogin: false,
     token: '',
-    userInfo: {},
+    loginUser: {},
     isHide: false,
     ws: null,
-    num: 0
+    num: 0,
   },
   mutations: {
     setSid(state, value) {
       state.sid = value
+    },
+    setToken(state, value) {
+      state.token = value
+      localStorage.setItem('token', value)
+    },
+    setIsLogin(state, value) {
+      state.isLogin = value
+    },
+    // 保存当前登录用户
+    setLoginUser(state, value) {
+      if (value === '') return
+      state.loginUser = value
+      localStorage.setItem('loginUser', JSON.stringify(value))
     },
   },
   actions: {},
