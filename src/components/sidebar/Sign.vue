@@ -3,42 +3,23 @@
     <div class="fly-panel-title">
       签到
       <i class="fly-mid"></i>
-      <a
-        href="javascript:;"
-        class="fly-link"
-        id="LAY_signinHelp"
-        @click="showInfo()"
-        >说明</a
-      >
+      <a href="javascript:;" class="fly-link" id="LAY_signinHelp" @click="showInfo()">说明</a>
       <i class="fly-mid"></i>
-      <a
-        href="javascript:;"
-        class="fly-link"
-        id="LAY_signinTop"
-        @click="showTop()"
-      >
+      <a href="javascript:;" class="fly-link" id="LAY_signinTop" @click="showTop()">
         活跃榜
         <span class="layui-badge-dot"></span>
       </a>
       <span class="fly-signin-days" v-show="isSign || isLogin">
         已连续签到
-        <cite>{{ count }}</cite
-        >天
+        <cite>{{ count }}</cite>天
       </span>
     </div>
     <div class="fly-panel-main fly-signin-main">
       <template v-if="!isSign">
-        <button
-          class="layui-btn layui-btn-danger"
-          id="LAY_signin"
-          @click="sign()"
-        >
-          今日签到
-        </button>
+        <button class="layui-btn layui-btn-danger" id="LAY_signin" @click="sign()">今日签到</button>
         <span>
           可获得
-          <cite>{{ favs }}</cite
-          >飞吻
+          <cite>{{ favs }}</cite>飞吻
         </span>
       </template>
       <!-- 已签到状态 -->
@@ -46,8 +27,7 @@
         <button class="layui-btn layui-btn-disabled">{{ msg }}</button>
         <span>
           获得了
-          <cite>{{ favs }}</cite
-          >飞吻
+          <cite>{{ favs }}</cite>飞吻
         </span>
       </template>
     </div>
@@ -80,8 +60,8 @@ export default {
   mounted() {
     // 判断用户的上一次签到时间与签到状态
     // 如果用户上一次签到时间与当天的签到日期相差1天，允许用户进行签到
-    const isSign = this.$store.state.userInfo.isSign
-    const lastSign = this.$store.state.userInfo.lastSign
+    const isSign = this.$store.state.loginUser.isSign
+    const lastSign = this.$store.state.loginUser.lastSign
     const nowDate = moment().format('YYYY-MM-DD')
     const lastDate = moment(lastSign).format('YYYY-MM-DD')
     const diff = moment(nowDate).diff(moment(lastDate), 'day')
@@ -97,7 +77,7 @@ export default {
     }
   },
   watch: {
-    userInfo(newval, oldval) {
+    loginInfo(newval, oldval) {
       if (newval.isSign === true) {
         this.nextSign()
         this.isSign = true
@@ -107,8 +87,8 @@ export default {
     },
   },
   computed: {
-    userInfo() {
-      return this.$store.state.userInfo
+    loginInfo() {
+      return this.$store.state.loginUser
     },
     isLogin() {
       return this.$store.state.isLogin
@@ -132,9 +112,9 @@ export default {
       return result
     },
     count() {
-      if (this.$store.state.userInfo !== {}) {
-        if (typeof this.$store.state.userInfo.count !== 'undefined') {
-          return this.$store.state.userInfo.count
+      if (this.$store.state.loginUser !== {}) {
+        if (typeof this.$store.state.loginUser.count !== 'undefined') {
+          return this.$store.state.loginUser.count
         } else {
           return 0
         }
@@ -173,9 +153,9 @@ export default {
         if (seconds <= 0) {
           clearInterval(this.ctrl)
           this.isSign = false
-          let user = this.$store.state.userInfo
+          let user = this.$store.state.loginUser
           user.isSign = false
-          this.$store.commit('setUserInfo', user)
+          this.$store.commit('setLoginInfo', user)
         }
       }, 1000)
       // } else {
@@ -201,7 +181,7 @@ export default {
         return
       }
       userSign().then(res => {
-        let user = this.$store.state.userInfo
+        let user = this.$store.state.loginUser
         if (res.code === 200) {
           user.favs = res.favs
           user.count = res.count
@@ -213,7 +193,7 @@ export default {
         user.isSign = true
         user.lastSign = res.lastSign
         this.isSign = true
-        this.$store.commit('setUserInfo', user)
+        this.$store.commit('setLoginInfo', user)
       })
       this.nextSign()
     },
