@@ -2,7 +2,7 @@
   <div class="fly-header layui-bg-black">
     <div class="layui-container">
       <a class="fly-logo" href="/">
-        <img src="../assets/logo-2.png" alt="layui" />
+        <img src="../assets/img/logo-2.png" alt="layui" />
       </a>
       <ul class="layui-nav fly-nav layui-hide-xs">
         <li class="layui-nav-item layui-this">
@@ -85,7 +85,7 @@
               </dd>
               <hr style="margin: 5px 0;" />
               <dd>
-                <a href="/user/logout/" style="text-align: center;">退出</a>
+                <a href="javascript: void(0);" style="text-align: center;" @click="logout()">退出</a>
               </dd>
             </dl>
           </li>
@@ -129,7 +129,20 @@ export default {
       clearTimeout(this.hoverCtrl)
       this.hoverCtrl = setTimeout(() => {
         this.isHover = false
-      }, 200)
+      }, 500)
+    },
+    logout() {
+      this.$confirm(
+        '确定退出吗？',
+        () => {
+          localStorage.clear()
+          this.$store.commit('setToken', '')
+          this.$store.commit('setLoginInfo', {})
+          this.$store.commit('setIsLogin', false)
+          this.$router.push({ name: 'index' }, () => {})
+        },
+        () => {}
+      )
     },
   },
 }

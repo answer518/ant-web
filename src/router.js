@@ -24,6 +24,8 @@ const UserMsg = () =>
   import(/* webpackChunkName: 'user-msg' */ '@/components/user/Message.vue')
 const UserOthers = () =>
   import(/* webpackChunkName: 'othres' */ '@/components/user/Others.vue')
+const NotFound = () =>
+  import(/* webpackChunkName: 'othres' */ '@/views/404.vue')
 
 Vue.use(Router)
 
@@ -114,6 +116,11 @@ export default new Router({
           }
         }
       },
+    },
+    {
+      path: '*',
+      name: '404',
+      component: NotFound,
     },
   ],
 })
