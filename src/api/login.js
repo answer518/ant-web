@@ -11,7 +11,7 @@ const getCode = sid => {
 
 // 忘记密码
 const forget = option => {
-  return axios.post('/forget', {
+  return axios.post('/login/forget', {
     ...option,
   })
 }
