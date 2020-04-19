@@ -29,19 +29,19 @@ export default {
         {
           name: '用户中心',
           icon: 'layui-icon-friends',
-          link: 'profile',
+          link: 'user-profile',
           activeClass: 'layui-this',
         },
         {
           name: '基本设置',
           icon: 'layui-icon-set',
-          link: 'info',
+          link: 'user-settings',
         },
-        {
-          name: '我的帖子',
-          icon: 'layui-icon-form',
-          link: 'mypost',
-        },
+        // {
+        //   name: '我的帖子',
+        //   icon: 'layui-icon-form',
+        //   link: 'mypost',
+        // },
         {
           name: '我的消息',
           icon: 'layui-icon-reply-fill',

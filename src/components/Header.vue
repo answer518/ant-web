@@ -137,7 +137,7 @@ export default {
         () => {
           localStorage.clear()
           this.$store.commit('setToken', '')
-          this.$store.commit('setLoginInfo', {})
+          this.$store.commit('setLoginUser', {})
           this.$store.commit('setIsLogin', false)
           this.$router.push({ name: 'index' }, () => {})
         },
