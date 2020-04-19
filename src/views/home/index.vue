@@ -36,11 +36,11 @@ export default {
           icon: 'layui-icon-set',
           link: 'info',
         },
-        // {
-        //   name: '我的帖子',
-        //   icon: 'layui-icon-form',
-        //   link: 'mypost',
-        // },
+        {
+          name: '我的帖子',
+          icon: 'layui-icon-form',
+          link: 'mypost',
+        },
         {
           name: '我的消息',
           icon: 'layui-icon-reply-fill',

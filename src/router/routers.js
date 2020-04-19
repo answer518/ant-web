@@ -1,6 +1,6 @@
 import user from './modules/user'
 import login from './modules/login'
-// import content from './modules/content'
+import content from './modules/content'
 
 const Index = () => import(/* webpackChunkName: 'login' */ '@/views/Index.vue')
 const Home = () =>
@@ -30,7 +30,7 @@ export default {
     },
     ...login,
     ...user,
-    // ...content,
+    ...content,
     {
       path: '/404',
       name: '404',

@@ -6,8 +6,8 @@ const UserSettings = () =>
   import(
     /* webpackChunkName: 'user-settings' */ '@/views/home/user/settings/index.vue'
   )
-// const Posts = () =>
-//   import(/* webpackChunkName: 'user-post' */ '@/components/user/Posts.vue')
+const Posts = () =>
+  import(/* webpackChunkName: 'user-post' */ '@/views/home/post/Index.vue')
 const Msg = () =>
   import(/* webpackChunkName: 'user-msg' */ '@/views/home/user/Message.vue')
 const Others = () =>
@@ -26,12 +26,12 @@ const Accounts = () =>
   import(
     /* webpackChunkName: 'accounts' */ '@/views/home/user/settings/AccountsBind.vue'
   )
-// const MyPost = () =>
-//   import(/* webpackChunkName: 'mypost' */ '@/components/user/common/MyPost.vue')
-// const MyCollection = () =>
-//   import(
-//     /* webpackChunkName: 'mycollection' */ '@/components/user/common/MyCollection.vue'
-//   )
+const MyPost = () =>
+  import(/* webpackChunkName: 'mypost' */ '@/views/home/post/MyPost.vue')
+const MyCollection = () =>
+  import(
+    /* webpackChunkName: 'mycollection' */ '@/views/home/post/MyCollection.vue'
+  )
 // const User = () => import(/* webpackChunkName: 'home' */ '@/views/User.vue')
 
 export default [
@@ -73,22 +73,22 @@ export default [
           },
         ],
       },
-      // {
-      //   path: 'posts',
-      //   component: Posts,
-      //   children: [
-      //     {
-      //       path: '',
-      //       name: 'mypost',
-      //       component: MyPost,
-      //     },
-      //     {
-      //       path: 'mycollection',
-      //       name: 'mycollection',
-      //       component: MyCollection,
-      //     },
-      //   ],
-      // },
+      {
+        path: 'posts',
+        component: Posts,
+        children: [
+          {
+            path: '',
+            name: 'mypost',
+            component: MyPost,
+          },
+          {
+            path: 'mycollection',
+            name: 'mycollection',
+            component: MyCollection,
+          },
+        ],
+      },
       {
         path: 'msg',
         name: 'user-message',
