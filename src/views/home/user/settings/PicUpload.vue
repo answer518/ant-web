@@ -22,17 +22,16 @@
 </template>
 
 <script>
-import { uploadImg } from '@/api/content'
 import config from '@/config'
-import { updateUserInfo } from '@/api/user'
+import { updateUserInfo, uploadPic } from '@/api/user'
 export default {
   name: 'pic-upload',
   data() {
     return {
       // 判断 userInfo & pic 是否存在
       pic:
-        this.$store.state.userInfo && this.$store.state.userInfo.pic
-          ? this.$store.state.userInfo.pic
+        this.$store.state.loginUser && this.$store.state.loginUser.pic
+          ? this.$store.state.loginUser.pic
           : '/img/bear-200-200.jpg',
       formData: '',
     }
@@ -46,7 +45,7 @@ export default {
         this.formData = formData
       }
       // 上传图片的之后 -> uploadImg
-      uploadImg(formData).then(res => {
+      uploadPic(formData).then(res => {
         if (res.code === 200) {
           const baseUrl =
             process.env.NODE_ENV === 'production'
@@ -57,9 +56,9 @@ export default {
           updateUserInfo({ pic: this.pic }).then(res => {
             if (res.code === 200) {
               // 修改全局的 store 内的用户基础信息
-              let user = this.$store.state.userInfo
+              let user = this.$store.state.loginUser
               user.pic = this.pic
-              this.$store.commit('setUserInfo', user)
+              this.$store.commit('setLoginUser', user)
               this.$alert('图片上传成功')
             }
           })

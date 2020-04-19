@@ -7,6 +7,9 @@ const userSign = () => axios.get('/user/fav')
 // 更新用户基本资料
 const updateUserInfo = data => axios.post('/user/basic', data)
 
+// 图片上传接口
+const uploadPic = formData => axios.post('/user/uploadPic', formData)
+
 // 确认修改用户名
 const updateUsername = data =>
   axios.get('/public/resetEmail?' + qs.stringify(data))
@@ -50,6 +53,7 @@ const setMsg = data => axios.get('/user/setmsg?' + qs.stringify(data))
 export {
   userSign,
   updateUserInfo,
+  uploadPic,
   updateUsername,
   changePasswd,
   addCollect,
