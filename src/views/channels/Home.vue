@@ -35,6 +35,9 @@ export default {
     'content-list': List,
     'content-top': Top,
   },
+  mounted() {
+    window.Vue = this
+  },
 }
 </script>
 
