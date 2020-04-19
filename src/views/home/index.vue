@@ -1,7 +1,6 @@
 <template>
   <div class="layui-container fly-marginTop fly-user-main">
     <ul class="layui-nav layui-nav-tree" lay-filter="test">
-      <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
       <li class="layui-nav-item" v-for="(item,index) in lists" :key="'center' + index">
         <router-link :to="{name: item.link, params: {uid: uid}}" :active-class="item.activeClass">
           <i class="layui-icon" :class="item.icon"></i>
@@ -16,7 +15,7 @@
 <script>
 // import { mapGetters } from 'vuex'
 export default {
-  name: 'profile',
+  name: 'home',
   data() {
     return {
       uid: '',
@@ -24,18 +23,18 @@ export default {
         {
           name: '我的主页',
           icon: 'layui-icon-home',
-          link: 'home',
+          link: 'welcome',
+          // activeClass: 'layui-this',
         },
-        {
-          name: '用户中心',
-          icon: 'layui-icon-friends',
-          link: 'user-profile',
-          activeClass: 'layui-this',
-        },
+        // {
+        //   name: '用户中心',
+        //   icon: 'layui-icon-friends',
+        //   link: 'welcome1',
+        // },
         {
           name: '基本设置',
           icon: 'layui-icon-set',
-          link: 'user-settings',
+          link: 'info',
         },
         // {
         //   name: '我的帖子',

@@ -139,7 +139,7 @@ export default {
           this.$store.commit('setToken', '')
           this.$store.commit('setLoginUser', {})
           this.$store.commit('setIsLogin', false)
-          this.$router.push({ name: 'index' }, () => {})
+          this.$router.push({ name: 'home' }, () => {})
         },
         () => {}
       )

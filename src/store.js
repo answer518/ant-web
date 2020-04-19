@@ -28,6 +28,7 @@ export default new Vuex.Store({
     setLoginUser(state, value) {
       if (value === '') return
       state.loginUser = value
+      // console.log(value)
       localStorage.setItem('loginUser', JSON.stringify(value))
     },
   },

@@ -23,7 +23,7 @@
         <validation-provider name="name" rules="required" v-slot="{errors}">
           <label for="L_username" class="layui-form-label">昵称</label>
           <div class="layui-input-inline">
-            <input type="text" name="name" class="layui-input" v-model="name" />
+            <input type="text" name="name" class="layui-input" v-model="nickname" />
           </div>
           <div class="layui-form-mid">
             <span style="color: #c00;">{{errors[0]}}</span>
@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="layui-form-item">
-        <button class="layui-btn" @click="submit()">确认修改</button>
+        <button class="layui-btn" @click="validate().then(submit)">确认修改</button>
       </div>
     </validation-observer>
   </div>
@@ -81,7 +81,7 @@ export default {
   data() {
     return {
       username: '',
-      name: '',
+      nickname: '',
       location: '',
       gender: '',
       regmark: '',
@@ -90,13 +90,13 @@ export default {
   mounted() {
     let {
       username,
-      name,
+      nickname,
       location,
       gender,
       regmark,
-    } = this.$store.state.userInfo
+    } = this.$store.state.loginUser
     this.username = username || ''
-    this.name = name || ''
+    this.nickname = nickname || ''
     this.location = location || ''
     this.gender = gender || ''
     this.regmark = regmark || ''
@@ -110,17 +110,17 @@ export default {
       }
       updateUserInfo({
         username: this.username,
-        name: this.name,
+        nickname: this.nickname,
         location: this.location,
         gender: this.gender,
         regmark: this.regmark,
       }).then(res => {
         if (res.code === 200) {
-          this.$store.commit('setUserInfo', {
-            ...this.$store.state.userInfo,
+          this.$store.commit('setLoginUser', {
+            ...this.$store.state.loginUser,
             ...{
               username: this.username,
-              name: this.name,
+              nickname: this.nickname,
               location: this.location,
               gender: this.gender,
               regmark: this.regmark,

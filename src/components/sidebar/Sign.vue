@@ -155,7 +155,7 @@ export default {
           this.isSign = false
           let user = this.$store.state.loginUser
           user.isSign = false
-          this.$store.commit('setLoginInfo', user)
+          this.$store.commit('setLoginUser', user)
         }
       }, 1000)
       // } else {
@@ -193,7 +193,7 @@ export default {
         user.isSign = true
         user.lastSign = res.lastSign
         this.isSign = true
-        this.$store.commit('setLoginInfo', user)
+        this.$store.commit('setLoginUser', user)
       })
       this.nextSign()
     },

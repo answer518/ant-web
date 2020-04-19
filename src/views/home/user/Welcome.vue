@@ -47,7 +47,7 @@
 import { getInfo } from '@/api/user'
 import Sign from '@/components/sidebar/Sign.vue'
 export default {
-  name: 'user-profile',
+  name: 'welcome',
   components: {
     Sign,
   },
@@ -123,13 +123,13 @@ export default {
     },
   },
   mounted() {
-    this.getLoginUser()
+    // this.getLoginUser()
   },
   methods: {
     getLoginUser() {
       getInfo({ uid: this.loginUser._id }).then(res => {
         if (res.code === 200) {
-          this.$store.commit('setLoginInfo', res.data)
+          this.$store.commit('setLoginUser', res.data)
         }
       })
     },
