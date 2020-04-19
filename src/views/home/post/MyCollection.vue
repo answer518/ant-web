@@ -38,7 +38,8 @@
 
 <script>
 import { getCollect } from '@/api/user'
-import Pagination from './pagination'
+import Pagination from '@/components/pagination'
+
 export default {
   name: 'my-collection',
   components: {

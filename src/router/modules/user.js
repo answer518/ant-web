@@ -32,7 +32,8 @@ const MyCollection = () =>
   import(
     /* webpackChunkName: 'mycollection' */ '@/views/home/post/MyCollection.vue'
   )
-// const User = () => import(/* webpackChunkName: 'home' */ '@/views/User.vue')
+const User = () =>
+  import(/* webpackChunkName: 'home' */ '@/views/home/user/Index.vue')
 
 export default [
   {
@@ -47,8 +48,8 @@ export default [
         component: UserWelcome,
       },
       {
-        path: 'user-settings',
-        name: 'user-settings',
+        path: 'settings',
+        // name: 'user-settings',
         component: UserSettings,
         children: [
           {
@@ -91,20 +92,20 @@ export default [
       },
       {
         path: 'msg',
-        name: 'user-message',
+        name: 'msg',
         component: Msg,
       },
       {
         path: 'others',
-        name: 'user-others',
+        name: 'others',
         component: Others,
       },
     ],
   },
-  // {
-  //   path: '/user/:uid',
-  //   name: 'home',
-  //   props: true,
-  //   component: User,
-  // },
+  {
+    path: '/user/:uid',
+    name: 'home',
+    props: true,
+    component: User,
+  },
 ]

@@ -23,14 +23,14 @@ export default {
         {
           name: '我的主页',
           icon: 'layui-icon-home',
-          link: 'welcome',
+          link: 'home',
           // activeClass: 'layui-this',
         },
-        // {
-        //   name: '用户中心',
-        //   icon: 'layui-icon-friends',
-        //   link: 'welcome1',
-        // },
+        {
+          name: '用户中心',
+          icon: 'layui-icon-friends',
+          link: 'welcome',
+        },
         {
           name: '基本设置',
           icon: 'layui-icon-set',
@@ -44,12 +44,12 @@ export default {
         {
           name: '我的消息',
           icon: 'layui-icon-reply-fill',
-          link: 'user-message',
+          link: 'msg',
         },
         {
           name: '其他设置',
           icon: 'layui-icon-component',
-          link: 'user-others',
+          link: 'others',
         },
       ],
     }

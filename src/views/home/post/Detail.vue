@@ -45,10 +45,10 @@
 
             <!-- method1: vuex -> userInfo -> roles -> includes admin -->
             <!-- method2: 组件级权限控制 richtext -->
-            <div v-hasRole="'admin'">
+            <div test-v-hasRole="'admin'">
               <div class="fly-admin-box" data-id="123">
                 <span
-                  v-hasPermission="['get','delete']"
+                  test-v-hasPermission="['get','delete']"
                   class="layui-btn layui-btn-xs jie-admin"
                   type="del"
                 >删除</span>
@@ -92,7 +92,7 @@
           <!-- 收藏、作者信息 -->
           <div class="detail-about">
             <a class="fly-avatar" href="../user/home.html">
-              <img :src="page.uid?page.uid.pic: '/img/bear-200-200.jpg'" />
+              <img :src="page.uid ? page.uid.pic : ''" />
             </a>
             <div class="fly-detail-user">
               <a href="../user/home.html" class="fly-link">
@@ -134,7 +134,7 @@
             <li class="jieda-daan" v-for="(item,index) in comments" :key="'commments' + index">
               <div class="detail-about detail-about-reply">
                 <a class="fly-avatar" href>
-                  <img :src="item.cuid ? item.cuid.pic : '/img/bear-200-200.jpg'" alt=" " />
+                  <img :src="item.cuid ? item.cuid.pic : '/img/avator.jpeg'" alt=" " />
                 </a>
                 <div class="fly-detail-user">
                   <router-link
@@ -518,7 +518,7 @@ export default {
       return escapeHtml(this.page.content)
     },
     user() {
-      return this.$store.state.userInfo
+      return this.$store.state.loginUser
     },
   },
 }
