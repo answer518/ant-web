@@ -104,7 +104,7 @@ export default [
   },
   {
     path: '/user/:uid',
-    name: 'home',
+    name: 'homepage',
     props: true,
     component: User,
   },

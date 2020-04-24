@@ -76,7 +76,7 @@ export default {
         },
         {
           name: '发表新贴',
-          route: '',
+          route: 'add',
           icon: 'layui-icon-add-circle',
         },
         {

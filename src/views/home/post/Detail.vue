@@ -271,7 +271,7 @@ import Links from '@/components/sidebar/Links'
 import Panel from '@/components/Panel'
 import Editor from './editor/Index'
 import CodeMix from '@/mixin/code'
-import Pagination from './pagination/index'
+import Pagination from '@/components/pagination/index'
 import { escapeHtml } from '@/utils/escapeHtml'
 import { scrollToElem } from '@/utils/common'
 
@@ -356,7 +356,7 @@ export default {
         return
       }
       // 用户禁言状态判断
-      const user = this.$store.state.userInfo
+      const user = this.$store.state.loginUser
       if (user.status !== '0') {
         this.$pop('shake', '用户已经禁言，请联系管理员')
         return
