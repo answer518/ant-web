@@ -172,7 +172,7 @@ export default {
               this.$refs.observer && this.$refs.observer.reset()
             })
             // 跳转到个人中心
-            this.$router.push({ name: 'welcome' })
+            this.$router.push({ name: 'center' })
           } else if (res.code !== 200) {
             this.$refs.codefield.setErrors([res.msg])
           }

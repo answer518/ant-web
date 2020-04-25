@@ -1,8 +1,8 @@
-const Home = () =>
-  import(/* webpackChunkName: 'home' */ '@/views/home/index.vue')
-const UserWelcome = () =>
-  import(/* webpackChunkName: 'user-welcome' */ '@/views/home/user/Welcome.vue')
-const UserSettings = () =>
+const Center = () =>
+  import(/* webpackChunkName: 'center' */ '@/views/home/index.vue')
+const UserCenter = () =>
+  import(/* webpackChunkName: 'user-center' */ '@/views/home/user/Welcome.vue')
+const Settings = () =>
   import(
     /* webpackChunkName: 'user-settings' */ '@/views/home/user/settings/index.vue'
   )
@@ -32,28 +32,27 @@ const MyCollection = () =>
   import(
     /* webpackChunkName: 'mycollection' */ '@/views/home/post/MyCollection.vue'
   )
-const User = () =>
-  import(/* webpackChunkName: 'home' */ '@/views/home/user/Index.vue')
+// const User = () =>
+//   import(/* webpackChunkName: 'home' */ '@/views/home/user/Index.vue')
 
 export default [
   {
-    path: '/home',
-    component: Home,
+    path: '/center',
+    component: Center,
     meta: { requiresAuth: true },
     linkActiveClass: 'layui-this',
     children: [
       {
-        path: '/',
-        name: 'welcome',
-        component: UserWelcome,
+        path: '',
+        name: 'center',
+        component: UserCenter,
       },
       {
-        path: 'settings',
-        // name: 'settings',
-        component: UserSettings,
+        path: 'set',
+        component: Settings,
         children: [
           {
-            path: '/',
+            path: '',
             name: 'info',
             component: MyInfo,
           },
@@ -102,10 +101,10 @@ export default [
       },
     ],
   },
-  {
-    path: '/user/:uid',
-    name: 'homepage',
-    props: true,
-    component: User,
-  },
+  // {
+  //   path: '/user/:uid',
+  //   name: 'home',
+  //   props: true,
+  //   component: User,
+  // },
 ]

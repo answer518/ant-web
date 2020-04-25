@@ -32,5 +32,8 @@ export default new Vuex.Store({
       localStorage.setItem('loginUser', JSON.stringify(value))
     },
   },
+  getters: {
+    uid: state => (state.loginUser ? state.loginUser._id : ''),
+  },
   actions: {},
 })

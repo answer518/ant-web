@@ -13,33 +13,33 @@
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
-  name: 'home',
+  name: 'center',
   data() {
     return {
-      uid: '',
       lists: [
         {
           name: '我的主页',
           icon: 'layui-icon-home',
           link: 'home',
-          // activeClass: 'layui-this',
         },
         {
           name: '用户中心',
           icon: 'layui-icon-friends',
-          link: 'welcome',
+          link: 'center',
         },
         {
           name: '基本设置',
           icon: 'layui-icon-set',
           link: 'info',
+          activeClass: 'layui-this',
         },
         {
           name: '我的帖子',
           icon: 'layui-icon-form',
           link: 'mypost',
+          activeClass: 'layui-this',
         },
         {
           name: '我的消息',
@@ -55,7 +55,7 @@ export default {
     }
   },
   computed: {
-    // ...mapGetters(['uid']),
+    ...mapGetters(['uid']),
   },
 }
 </script>
