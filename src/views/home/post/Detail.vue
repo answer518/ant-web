@@ -248,7 +248,6 @@
       </div>
       <div class="layui-col-md4">
         <imooc-hotlist></imooc-hotlist>
-        <imooc-ads></imooc-ads>
         <imooc-links></imooc-links>
       </div>
     </div>
@@ -266,7 +265,6 @@ import {
 } from '@/api/comments'
 import { addCollect } from '@/api/user'
 import HotList from '@/components/sidebar/HotList'
-import Ads from '@/components/sidebar/Ads'
 import Links from '@/components/sidebar/Links'
 import Panel from '@/components/Panel'
 import Editor from './editor/Index'
@@ -281,7 +279,6 @@ export default {
   props: ['tid'],
   components: {
     'imooc-hotlist': HotList,
-    'imooc-ads': Ads,
     'imooc-links': Links,
     'imooc-panel': Panel,
     'imooc-edit': Editor,

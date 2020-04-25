@@ -43,17 +43,17 @@ export default [
     linkActiveClass: 'layui-this',
     children: [
       {
-        path: '',
+        path: '/',
         name: 'welcome',
         component: UserWelcome,
       },
       {
         path: 'settings',
-        // name: 'user-settings',
+        // name: 'settings',
         component: UserSettings,
         children: [
           {
-            path: '',
+            path: '/',
             name: 'info',
             component: MyInfo,
           },
