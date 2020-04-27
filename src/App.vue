@@ -1,18 +1,21 @@
 <template>
   <div id="app">
-    <imooc-header></imooc-header>
+    <mayi-header></mayi-header>
+    <mayi-search></mayi-search>
     <router-view></router-view>
-    <imooc-footer></imooc-footer>
+    <mayi-footer></mayi-footer>
   </div>
 </template>
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
+import Search from '@/components/Panel.vue'
 export default {
   name: 'app',
   components: {
-    'imooc-header': Header,
-    'imooc-footer': Footer,
+    'mayi-header': Header,
+    'mayi-search': Search,
+    'mayi-footer': Footer,
   },
 }
 </script>

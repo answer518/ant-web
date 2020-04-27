@@ -1,20 +1,20 @@
 <template>
-  <div class="fly-panel fly-signin">
-    <div class="fly-panel-title">
+  <div class="mayi-panel mayi-signin">
+    <div class="mayi-panel-title">
       签到
-      <i class="fly-mid"></i>
-      <a href="javascript:;" class="fly-link" id="LAY_signinHelp" @click="showInfo()">说明</a>
-      <i class="fly-mid"></i>
-      <a href="javascript:;" class="fly-link" id="LAY_signinTop" @click="showTop()">
+      <i class="mayi-mid"></i>
+      <a href="javascript:;" class="mayi-link" id="LAY_signinHelp" @click="showInfo()">说明</a>
+      <i class="mayi-mid"></i>
+      <a href="javascript:;" class="mayi-link" id="LAY_signinTop" @click="showTop()">
         活跃榜
         <span class="layui-badge-dot"></span>
       </a>
-      <span class="fly-signin-days" v-show="isSign || isLogin">
+      <span class="mayi-signin-days" v-show="isSign || isLogin">
         已连续签到
         <cite>{{ count }}</cite>天
       </span>
     </div>
-    <div class="fly-panel-main fly-signin-main">
+    <div class="mayi-panel-main mayi-signin-main">
       <template v-if="!isSign">
         <button class="layui-btn layui-btn-danger" id="LAY_signin" @click="sign()">今日签到</button>
         <span>

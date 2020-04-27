@@ -264,8 +264,6 @@ import {
   setHands,
 } from '@/api/comments'
 import { addCollect } from '@/api/user'
-import HotList from '@/components/sidebar/HotList'
-import Links from '@/components/sidebar/Links'
 import Panel from '@/components/Panel'
 import Editor from './editor/Index'
 import CodeMix from '@/mixin/code'
@@ -278,8 +276,6 @@ export default {
   mixins: [CodeMix],
   props: ['tid'],
   components: {
-    'imooc-hotlist': HotList,
-    'imooc-links': Links,
     'imooc-panel': Panel,
     'imooc-edit': Editor,
     'imooc-page': Pagination,

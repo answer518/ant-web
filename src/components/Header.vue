@@ -1,54 +1,26 @@
 <template>
-  <div class="fly-header layui-bg-black">
-    <div class="layui-container">
-      <a class="fly-logo" href="/">
-        <img src="../assets/img/logo-2.png" alt="layui" />
-      </a>
-      <ul class="layui-nav fly-nav layui-hide-xs">
+  <div class="layui-row header">
+    <div class="layui-header">
+      <ul class="layui-nav layui-layout-left">
         <li class="layui-nav-item layui-this">
-          <a href="/">
-            <i class="iconfont icon-jiaoliu"></i>交流
-          </a>
+          <a href="/">首页</a>
         </li>
         <li class="layui-nav-item">
-          <a href="case/case.html">
-            <i class="iconfont icon-iconmingxinganli"></i>案例
-          </a>
+          <a href="/" target="_blank">公司</a>
         </li>
         <li class="layui-nav-item">
-          <a href="http://www.layui.com/" target="_blank">
-            <i class="iconfont icon-ui"></i>框架
-          </a>
+          <a href="/" target="_blank">个人</a>
         </li>
       </ul>
 
-      <ul class="layui-nav fly-nav-user">
+      <ul class="layui-nav layui-layout-right">
         <!-- 未登入的状态 -->
         <template v-if="!isShow">
-          <li class="layui-nav-item">
-            <router-link class="iconfont icon-touxiang layui-hide-xs" to="/user123123"></router-link>
-          </li>
           <li class="layui-nav-item">
             <router-link :to="{name: 'login'}">登入</router-link>
           </li>
           <li class="layui-nav-item">
             <router-link :to="{name: 'reg'}">注册</router-link>
-          </li>
-          <li class="layui-nav-item layui-hide-xs">
-            <a
-              href
-              onclick="layer.msg('正在通过QQ登入', {icon:16, shade: 0.1, time:0})"
-              title="QQ登入"
-              class="iconfont icon-qq"
-            ></a>
-          </li>
-          <li class="layui-nav-item layui-hide-xs">
-            <a
-              href
-              onclick="layer.msg('正在通过微博登入', {icon:16, shade: 0.1, time:0})"
-              title="微博登入"
-              class="iconfont icon-weibo"
-            ></a>
           </li>
         </template>
 
@@ -56,11 +28,10 @@
         <template v-else>
           <!-- 调整了Hover的区域 -->
           <li class="layui-nav-item" @mouseover="show()" @mouseleave="hide()">
-            <router-link class="fly-nav-avatar" :to="{name: 'home'}">
+            <router-link class="mayi-nav-avatar" :to="{name: 'home'}">
               <cite class="layui-hide-xs">{{userInfo.name}}</cite>
-              <!-- <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：layui 作者"></i> -->
               <i
-                class="layui-badge fly-badge-vip layui-hide-xs"
+                class="layui-badge mayi-badge-vip layui-hide-xs"
                 v-show="userInfo.isVip !== '0'"
               >VIP{{userInfo.isVip}}</i>
               <img :src="userInfo.pic" />
@@ -90,7 +61,7 @@
               </dd>
             </dl>
           </li>
-          <div class="fly-nav-msg" v-show="num.message && num.message !== 0">{{num.message}}</div>
+          <div class="mayi-nav-msg" v-show="num.message && num.message !== 0">{{num.message}}</div>
           <transition name="fade">
             <div class="layui-layer-tips" v-show="hasMsg">
               <div class="layui-layer-content">
@@ -182,16 +153,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.fly-logo {
-  left: -15px;
-  top: -10px;
-  margin-left: 15px;
+.header {
+  width: 100%;
+  background-color: #2cdaaf;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  > div {
+    width: 990px;
+    min-width: 990px;
+    margin: auto;
+  }
 }
-.layui-layer-tips {
-  position: absolute;
-  white-space: nowrap;
-  right: 0;
-  top: 60px;
-  z-index: 2000;
+
+.layui-nav {
+  background-color: #2cdaaf;
+  font-weight: bold;
+
+  .layui-nav-item a {
+    font-size: 16px;
+    color: #fff;
+  }
+}
+
+.layui-layout-left {
+  left: 0;
+}
+
+.layui-header {
+  z-index: 1000;
+  height: 60px;
 }
 </style>

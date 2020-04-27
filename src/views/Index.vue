@@ -1,18 +1,13 @@
 <template>
-  <div>
-    <ant-panel></ant-panel>
+  <div class="main">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Panel from '@/components/Panel'
-
 export default {
   name: 'home',
-  components: {
-    'ant-panel': Panel,
-  },
+  components: {},
 }
 </script>
 
