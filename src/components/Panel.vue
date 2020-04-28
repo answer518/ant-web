@@ -5,9 +5,9 @@
         <img src="https://www.douyiyun.com/static/images/logo.png" alt="蚂蚁网" />
       </div>
       <div class="search-kind">
-        <span class="active">查资质</span>
-        <span class>查人员</span>
-        <span class>查到期</span>
+        <span :class="{'active': active === 0}" @click="choose(0)">查资质</span>
+        <span :class="{'active': active === 1}" @click="choose(1)">查人员</span>
+        <span :class="{'active': active === 2}" @click="choose(2)">查到期</span>
       </div>
       <div class="search-input">
         <form action method="get" id="indexsearchform">
@@ -34,40 +34,13 @@ export default {
   name: 'panel',
   data() {
     return {
-      lists: [
-        {
-          name: '提问',
-          path: '/index/ask',
-          isNew: false,
-        },
-        {
-          name: '分享',
-          path: '/index/share',
-          isNew: true,
-        },
-        {
-          name: '讨论',
-          path: '/index/discuss',
-          isNew: false,
-        },
-        {
-          name: '建议',
-          path: '/index/advise',
-          isNew: false,
-        },
-        {
-          name: '公告',
-          path: '/index/notice',
-          isNew: false,
-        },
-        {
-          name: '动态',
-          path: '/index/logs',
-          isNew: false,
-        },
-      ],
-      isLogin: this.$store.state.isLogin,
+      active: 0,
     }
+  },
+  methods: {
+    choose(val) {
+      this.active = val
+    },
   },
 }
 </script>

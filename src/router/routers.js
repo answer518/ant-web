@@ -2,12 +2,14 @@ import user from './modules/user'
 import login from './modules/login'
 import content from './modules/content'
 
-const Index = () => import(/* webpackChunkName: 'login' */ '@/views/Index.vue')
+const Index = () => import(/* webpackChunkName: 'index' */ '@/views/Index.vue')
 const Home = () =>
   import(/* webpackChunkName: 'home' */ '@/views/channels/Home.vue')
 
-const NotFound = () =>
-  import(/* webpackChunkName: 'not-found' */ '@/views/404.vue')
+const Search = () =>
+  import(/* webpackChunkName: 'search' */ '@/views/channels/Search.vue')
+
+const NotFound = () => import(/* webpackChunkName: '404' */ '@/views/404.vue')
 
 export default {
   linkExactActiveClass: 'layui-this',
@@ -21,12 +23,12 @@ export default {
           name: 'home',
           component: Home,
         },
-        // {
-        //   path: '/index/:catalog',
-        //   name: 'catalog',
-        //   component: Template1
-        // }
       ],
+    },
+    {
+      path: '/search/:catalog',
+      name: 'catalog',
+      component: Search,
     },
     ...login,
     ...user,

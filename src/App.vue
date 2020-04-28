@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <mayi-header></mayi-header>
-    <mayi-search></mayi-search>
     <router-view></router-view>
     <mayi-footer></mayi-footer>
   </div>
@@ -9,12 +8,10 @@
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
-import Search from '@/components/Panel.vue'
 export default {
   name: 'app',
   components: {
     'mayi-header': Header,
-    'mayi-search': Search,
     'mayi-footer': Footer,
   },
 }

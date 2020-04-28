@@ -2,14 +2,14 @@
   <div class="layui-row header">
     <div class="layui-header">
       <ul class="layui-nav layui-layout-left">
-        <li class="layui-nav-item layui-this">
-          <a href="/">首页</a>
+        <li class="layui-nav-item">
+          <router-link :to="{name: 'home'}">首页</router-link>
         </li>
         <li class="layui-nav-item">
-          <a href="/" target="_blank">公司</a>
+          <router-link :to="{name: 'catalog', params: {catalog: 'company'}}">公司</router-link>
         </li>
         <li class="layui-nav-item">
-          <a href="/" target="_blank">个人</a>
+          <router-link :to="{name: 'catalog', params: {catalog: 'personal'}}">个人</router-link>
         </li>
       </ul>
 
@@ -175,6 +175,10 @@ export default {
   .layui-nav-item a {
     font-size: 16px;
     color: #fff;
+  }
+
+  .layui-this:after {
+    background-color: #fff;
   }
 }
 
