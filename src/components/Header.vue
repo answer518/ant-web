@@ -162,8 +162,8 @@ export default {
   z-index: 100;
 
   > div {
-    width: 990px;
-    min-width: 990px;
+    width: 1200px;
+    min-width: 1200px;
     margin: auto;
   }
 }

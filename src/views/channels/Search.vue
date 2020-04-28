@@ -236,7 +236,18 @@
       <div class="layui-col-md9">
         <content-list></content-list>
       </div>
-      <div class="layui-col-md3">22222</div>
+      <div class="layui-col-md3">
+        <div class="imgs">
+          <ul>
+            <li>
+              <img src="https://www.douyiyun.com/zzs/static/images/ad/ad1.png" />
+            </li>
+            <li>
+              <img src="https://www.douyiyun.com/zzs/static/images/ad/ad4.png" />
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -253,14 +264,14 @@ export default {
 
 <style lang="scss" scoped>
 .box {
-  width: 990px;
+  width: 1200px;
   margin: 20px auto 0;
 }
 .search-container {
   background-color: #fff;
   margin-top: 5px;
   box-sizing: border-box;
-  padding: 0 14px;
+  padding: 0 24px;
   border-radius: 12px;
 }
 
@@ -410,6 +421,15 @@ export default {
       border: none;
       cursor: pointer;
     }
+  }
+}
+
+.imgs {
+  float: right;
+
+  ul li {
+    list-style: none;
+    margin-bottom: 10px;
   }
 }
 </style>

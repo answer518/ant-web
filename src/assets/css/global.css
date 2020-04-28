@@ -233,6 +233,7 @@ pre {
 
 .layui-container {
   padding: 20px 0 0;
+  overflow: hidden;
 }
 .mayi-main {
   width: 1079px;

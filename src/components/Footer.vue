@@ -37,8 +37,8 @@
         </div>
       </div>
       <div class="layui-row">
-        <div class="layui-col-md8">
-          <div class="footer-list">
+        <div class="layui-col-md12">
+          <div class="footer-list" style="text-align: center;">
             Copyright © 2020 蚂蚁网
             <a href="#" rel="nofollow" target="_blank">贵ICP备19015290号</a>
           </div>
@@ -56,7 +56,7 @@ export default {
 
 <style lang="scss" scoped>
 .footer-content {
-  width: 990px;
+  width: 1200px;
   box-sizing: border-box;
   padding: 30px 0;
   margin: 0 auto;
@@ -72,6 +72,7 @@ export default {
 .footer-list {
   font-size: 14px;
   padding-top: 14px;
+  text-align: center;
 
   & > div {
     padding-top: 8px;
