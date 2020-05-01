@@ -1,5 +1,5 @@
 <template>
-  <div class="layui-container fly-marginTop">
+  <div class="layui-container logininfo">
     <div class="fly-panel fly-panel-user" pad20>
       <div class="layui-tab layui-tab-brief" lay-filter="user">
         <ul class="layui-tab-title">
@@ -83,6 +83,7 @@
                       <router-link :to="{ name: 'forget' }">忘记密码？</router-link>
                     </span>
                   </div>
+                  <!--
                   <div class="layui-form-item fly-form-app">
                     <span>或者使用社交账号登入</span>
                     <a
@@ -98,6 +99,7 @@
                       title="微博登入"
                     ></a>
                   </div>
+                  -->
                 </form>
               </div>
             </div>
@@ -192,4 +194,14 @@ export default {
 
 <style lang="scss" scoped>
 // 公用样式可以放在App.vue中
+.logininfo {
+  width: 800px;
+  min-width: 800px;
+  height: 600px;
+  background-color: #f8f8f8;
+  margin: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
 </style>

@@ -1,46 +1,50 @@
 const Center = () =>
-  import(/* webpackChunkName: 'center' */ '@/views/home/index.vue')
+  import(/* webpackChunkName: 'center' */ '@/views/center/index.vue')
 const UserCenter = () =>
-  import(/* webpackChunkName: 'user-center' */ '@/views/home/user/Welcome.vue')
+  import(
+    /* webpackChunkName: 'user-center' */ '@/views/center/user/Welcome.vue'
+  )
 const Settings = () =>
   import(
-    /* webpackChunkName: 'user-settings' */ '@/views/home/user/settings/index.vue'
+    /* webpackChunkName: 'user-settings' */ '@/views/center/user/settings/index.vue'
   )
 const Posts = () =>
-  import(/* webpackChunkName: 'user-post' */ '@/views/home/post/Index.vue')
+  import(/* webpackChunkName: 'user-post' */ '@/views/center/post/Index.vue')
 const Msg = () =>
-  import(/* webpackChunkName: 'user-msg' */ '@/views/home/user/Message.vue')
+  import(/* webpackChunkName: 'user-msg' */ '@/views/center/user/Message.vue')
 const Others = () =>
-  import(/* webpackChunkName: 'others' */ '@/views/home/user/Others.vue')
+  import(/* webpackChunkName: 'others' */ '@/views/center/user/Others.vue')
 const MyInfo = () =>
-  import(/* webpackChunkName: 'info' */ '@/views/home/user/settings/MyInfo.vue')
+  import(
+    /* webpackChunkName: 'info' */ '@/views/center/user/settings/MyInfo.vue'
+  )
 const PicUpload = () =>
   import(
-    /* webpackChunkName: 'uploadpic' */ '@/views/home/user/settings/PicUpload.vue'
+    /* webpackChunkName: 'uploadpic' */ '@/views/center/user/settings/PicUpload.vue'
   )
 const Passwd = () =>
   import(
-    /* webpackChunkName: 'password' */ '@/views/home/user/settings/Passwd.vue'
+    /* webpackChunkName: 'password' */ '@/views/center/user/settings/Passwd.vue'
   )
 const Accounts = () =>
   import(
-    /* webpackChunkName: 'accounts' */ '@/views/home/user/settings/AccountsBind.vue'
+    /* webpackChunkName: 'accounts' */ '@/views/center/user/settings/AccountsBind.vue'
   )
 const MyPost = () =>
-  import(/* webpackChunkName: 'mypost' */ '@/views/home/post/MyPost.vue')
+  import(/* webpackChunkName: 'mypost' */ '@/views/center/post/MyPost.vue')
 const MyCollection = () =>
   import(
-    /* webpackChunkName: 'mycollection' */ '@/views/home/post/MyCollection.vue'
+    /* webpackChunkName: 'mycollection' */ '@/views/center/post/MyCollection.vue'
   )
 // const User = () =>
-//   import(/* webpackChunkName: 'home' */ '@/views/home/user/Index.vue')
+//   import(/* webpackChunkName: 'home' */ '@/views/center/user/Index.vue')
 
 export default [
   {
     path: '/center',
     component: Center,
     meta: { requiresAuth: true },
-    linkActiveClass: 'layui-this',
+    linkActiveClass: 'layui-current',
     children: [
       {
         path: '',

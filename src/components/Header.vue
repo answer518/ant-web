@@ -27,37 +27,44 @@
         <!-- 登入后的状态 -->
         <template v-else>
           <!-- 调整了Hover的区域 -->
-          <li class="layui-nav-item" @mouseover="show()" @mouseleave="hide()">
+          <li class="layui-nav-item" @mouseenter="show" @mouseleave="hide">
             <router-link class="mayi-nav-avatar" :to="{name: 'home'}">
-              <cite class="layui-hide-xs">{{userInfo.name}}</cite>
-              <i
-                class="layui-badge mayi-badge-vip layui-hide-xs"
-                v-show="userInfo.isVip !== '0'"
-              >VIP{{userInfo.isVip}}</i>
               <img :src="userInfo.pic" />
+              <span class="layui-nav-more"></span>
             </router-link>
             <dl
               class="layui-nav-child layui-anim layui-anim-upbit"
               :class="{'layui-show': isHover}"
             >
               <dd>
+                <router-link :to="{name: 'center'}">
+                  <div>
+                    个人中心
+                    <br />
+                    <span>职位、需求、简历、VIP</span>
+                  </div>
+                </router-link>
+              </dd>
+              <dd>
                 <router-link :to="{name: 'info'}">
-                  <i class="layui-icon">&#xe620;</i>基本设置
+                  <div>
+                    基本信息
+                    <br />
+                    <span>基本信息、头像</span>
+                  </div>
                 </router-link>
               </dd>
               <dd>
-                <router-link :to="{name: 'msg'}">
-                  <i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息
+                <router-link :to="{name: 'others'}">
+                  <div>
+                    身份安全
+                    <br />
+                    <span>认证公司、修改密码</span>
+                  </div>
                 </router-link>
               </dd>
               <dd>
-                <router-link :to="{name: 'home', params: {uid: userInfo._id}}">
-                  <i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页
-                </router-link>
-              </dd>
-              <hr style="margin: 5px 0;" />
-              <dd>
-                <a href="javascript: void(0)" style="text-align: center;" @click="logout()">退出</a>
+                <a href="javascript:void(0);" @click="logout()">退出登录</a>
               </dd>
             </dl>
           </li>
@@ -130,9 +137,6 @@ export default {
     },
   },
   computed: {
-    // num () {
-    //  return this.$store.state.num
-    // }
     ...mapState({
       num: state => state.num,
     }),
@@ -172,13 +176,33 @@ export default {
   background-color: #2cdaaf;
   font-weight: bold;
 
-  .layui-nav-item a {
-    font-size: 16px;
-    color: #fff;
+  .layui-nav-item {
+    a {
+      font-size: 16px;
+      color: #fff;
+    }
+    .layui-nav-child {
+      right: 0;
+      left: auto;
+      border: none;
+
+      a {
+        color: #333333 !important;
+
+        > div {
+          border-bottom: 1px solid #f0f0f0;
+        }
+        span {
+          color: #999999;
+          margin-top: -12px;
+          display: inherit;
+        }
+      }
+    }
   }
 
-  .layui-this:after {
-    background-color: #fff;
+  .layui-layout-right .layui-nav-item a {
+    padding: 0 15px;
   }
 }
 

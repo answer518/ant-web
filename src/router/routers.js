@@ -12,6 +12,7 @@ const Search = () =>
 const NotFound = () => import(/* webpackChunkName: '404' */ '@/views/404.vue')
 
 export default {
+  mode: 'history',
   linkExactActiveClass: 'layui-this',
   routes: [
     {

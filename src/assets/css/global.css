@@ -957,12 +957,15 @@ body .layui-edit-face .layui-layer-content {
 }
 .mayi-signin-main {
   position: relative;
-  height: 38px;
+  /* height: 38px; */
   padding: 24px 15px;
   text-align: center;
 }
-.mayi-signin-main span {
-  padding-left: 10px;
+.mayi-signin-main p {
+  text-align: center;
+  font-size: 14px;
+  color: #999999;
+  padding-bottom: 10px;
 }
 
 /* 榜单 */
@@ -1339,7 +1342,9 @@ body .layui-edit-face .layui-layer-content {
 /* 用户中心 */
 body .mayi-user-main {
   position: relative;
-  min-height: 600px;
+  width: 1200px;
+  margin: 18px auto 0;
+  min-width: 1200px;
 }
 .mayi-user-main > .layui-nav {
   position: absolute;

@@ -1,54 +1,53 @@
 <template>
-  <div class="job-list-box">
-    <div class="job-list-content">
-      <a target="_blank" href>
-        <div class="boss_details">
-          <div class="logo">
-            <img src="https://www.douyijob.com/upload/img/user/B11173.jpg?1587723313730" alt="个人头像" />
-          </div>
-          <div class="name_title">
-            <h3>孟经理</h3>
-          </div>
-          <div class="boss_position">
-            <p>经理</p>
-          </div>
-        </div>
-      </a>
-      <div class="job_details">
-        <div class="job_title">
-          <a href="/zzs/coinfo/191868.html" target="_blank">
-            <div>
-              <div>
-                <div class="layui-elip">
-                  <span>震惊！客户急出房二市二资质，居然给出这种价格。</span>
-                </div>
-              </div>
-              <i>40W-42W</i>
+  <div class="job-list-warpper">
+    <div v-for="(item, index) in lists" :key="index" class="job-list-box">
+      <div class="job-list-content">
+        <a target="_blank" href="#">
+          <div class="boss_details">
+            <div class="logo">
+              <img :src="item.pic" alt="个人头像" />
             </div>
-          </a>
-        </div>
-        <div class="newData">2020-04-26</div>
-        <div class="job_certificate">
-          <span class="certificate">资质·转让</span>
+            <div class="name_title">
+              <h3>{{item.name}}</h3>
+            </div>
+            <div class="boss_position">
+              <p>{{item.title}}</p>
+            </div>
+          </div>
+        </a>
+        <div class="job_details">
+          <div class="job_title">
+            <a href="/zzs/coinfo/191868.html" target="_blank">
+              <div>
+                <div>
+                  <div class="layui-elip">
+                    <span>{{item.job_title}}</span>
+                  </div>
+                </div>
+                <i>{{item.job_price}}</i>
+              </div>
+            </a>
+          </div>
+          <div class="newData">{{item.publishDate}}</div>
+          <div class="job_certificate">
+            <span class="certificate">{{item.certificate}}</span>
 
-          <span class="level">市政公用工程施工总承包-二级</span>
-        </div>
-        <div class="job_qualification">
-          <p>全国公司业务：资质整合、分立 资质升级、资质代办、中高端**猎聘、北京华建英才人力资源顾问有限公司成立于贰零壹壹年，总部位于首都北京，北京华聚远航企业管理咨询有限公司是旗下子公司、目前在全国范围内有34家分公司，营销网络覆盖华东、华南、华中、华北、西北、西南等，建立了以北京为核心。</p>
-        </div>
-        <div class="job_address">
-          <span>南京市</span>
-
-          <i>|</i>
-          <span>无债务</span>
-
-          <i>|</i>
-          <span>速度快</span>
+            <span class="level">{{item.level}}</span>
+          </div>
+          <div class="job_qualification">
+            <p>{{item.job_qualification}}</p>
+          </div>
+          <div class="job_address">
+            <template v-for="(job, job_index) in item.job_address">
+              <span :key="`job_address_span_${job_index}`">{{job}}</span>
+              <i :key="`job_address_i_${job_index}`">|</i>
+            </template>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="job-list-connect">
-      <div class="connect-btn">立即沟通</div>
+      <div class="job-list-connect">
+        <div class="connect-btn">立即沟通</div>
+      </div>
     </div>
   </div>
 </template>

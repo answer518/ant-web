@@ -1,9 +1,9 @@
 <template>
-  <div class="fly-panel fly-panel-user" pad20>
+  <div class="mayi-panel mayi-panel-user" pad20>
     <div class="layui-tab layui-tab-brief" lay-filter="user" id="LAY_msg" style="margin-top: 15px;">
       <button class="layui-btn layui-btn-danger" id="LAY_delallmsg" @click="clearAll()">清空全部消息</button>
       <div id="LAY_minemsg" style="margin-top: 10px;">
-        <!--<div class="fly-none">您暂时没有最新消息</div>-->
+        <!--<div class="mayinone">您暂时没有最新消息</div>-->
         <ul class="mine-msg">
           <li v-for="(item,index) in lists" :key="'comments' + index">
             <blockquote class="layui-elem-quote">
@@ -19,7 +19,7 @@
               <span>{{ item.created | moment}}</span>
               <a
                 href="javascript:;"
-                class="layui-btn layui-btn-small layui-btn-danger fly-delete"
+                class="layui-btn layui-btn-small layui-btn-danger mayidelete"
                 @click="clear(item)"
               >删除</a>
             </p>

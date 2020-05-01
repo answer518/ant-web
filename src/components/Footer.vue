@@ -2,7 +2,7 @@
   <div class="mayi-footer">
     <div class="footer-content">
       <div class="layui-row">
-        <div class="layui-col-md2">
+        <div class="layui-col-md4">
           <div class="footer-title">关于我们</div>
           <div class="footer-list">
             <div>
@@ -16,7 +16,7 @@
             </div>
           </div>
         </div>
-        <div class="layui-col-md3">
+        <div class="layui-col-md4">
           <div class="footer-title">使用与帮助</div>
           <div class="footer-list">
             <div>
@@ -61,6 +61,11 @@ export default {
   padding: 30px 0;
   margin: 0 auto;
   text-align: left;
+
+  > div {
+    width: 70%;
+    margin: 0 auto;
+  }
 }
 
 .footer-title {
@@ -72,7 +77,6 @@ export default {
 .footer-list {
   font-size: 14px;
   padding-top: 14px;
-  text-align: center;
 
   & > div {
     padding-top: 8px;

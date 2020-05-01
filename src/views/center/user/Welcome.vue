@@ -5,7 +5,7 @@
       <div class="layui-col-md6">
         <div class="panel border">
           <div class="title">我的会员信息</div>
-          <div class="content fly-signin">
+          <div class="content mayisignin">
             <p>
               积分经验值：
               <cite>{{loginUser.favs}}</cite>

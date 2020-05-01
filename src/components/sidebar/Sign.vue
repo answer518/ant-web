@@ -1,35 +1,35 @@
 <template>
   <div class="mayi-panel mayi-signin">
     <div class="mayi-panel-title">
-      签到
+      每日签到
       <i class="mayi-mid"></i>
-      <a href="javascript:;" class="mayi-link" id="LAY_signinHelp" @click="showInfo()">说明</a>
+      <a href="javascript:;" class="mayi-link" @click="showInfo()">说明</a>
       <i class="mayi-mid"></i>
-      <a href="javascript:;" class="mayi-link" id="LAY_signinTop" @click="showTop()">
+      <a href="javascript:;" class="mayi-link" @click="showTop()">
         活跃榜
         <span class="layui-badge-dot"></span>
       </a>
-      <span class="mayi-signin-days" v-show="isSign || isLogin">
-        已连续签到
-        <cite>{{ count }}</cite>天
-      </span>
     </div>
     <div class="mayi-panel-main mayi-signin-main">
       <template v-if="!isSign">
-        <button class="layui-btn layui-btn-danger" id="LAY_signin" @click="sign()">今日签到</button>
-        <span>
-          可获得
+        <p>
+          签到加
           <cite>{{ favs }}</cite>飞吻
-        </span>
+        </p>
+        <button class="layui-btn layui-btn-danger" id="LAY_signin" @click="sign()">今日签到</button>
       </template>
       <!-- 已签到状态 -->
       <template v-else>
-        <button class="layui-btn layui-btn-disabled">{{ msg }}</button>
-        <span>
-          获得了
+        <p>
+          签到加
           <cite>{{ favs }}</cite>飞吻
-        </span>
+        </p>
+        <button class="layui-btn layui-btn-disabled">{{ msg }}</button>
       </template>
+      <!-- <p class="mayi-signin-days1" v-show="isSign || isLogin">
+        已连续签到
+        <cite>{{ count }}</cite>天
+      </p>-->
     </div>
     <sign-info :isShow="isShow" @closeModal="close()"></sign-info>
     <sign-list :isShow="showList" @closeModal="close()"></sign-list>
