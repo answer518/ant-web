@@ -1,5 +1,5 @@
 <template>
-  <div class="flex mayi-panel mayi-panel-user" pad20>正在开发中...</div>
+  <div class="flex ant-panel ant-panel-user" pad20>正在开发中...</div>
 </template>
 
 <script>

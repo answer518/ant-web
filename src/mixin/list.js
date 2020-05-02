@@ -17,10 +17,10 @@ export default {
     }
   },
   mounted() {
-    let catalog = this.$route.params['catalog']
-    if (typeof catalog !== 'undefined' && catalog !== '') {
-      this.catalog = catalog
-    }
+    // let catalog = this.$route.params['catalog']
+    // if (typeof catalog !== 'undefined' && catalog !== '') {
+    //   this.catalog = catalog
+    // }
     this._getPostLists()
   },
   methods: {
@@ -35,7 +35,7 @@ export default {
       if (this.isEnd) return
       this.isRepeat = true
       let options = {
-        catalog: this.catalog,
+        // catalog: this.catalog,
         isTop: this.isTop,
         page: this.page,
         limit: this.limit,

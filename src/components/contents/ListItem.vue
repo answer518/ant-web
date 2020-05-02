@@ -5,43 +5,43 @@
         <a target="_blank" href="#">
           <div class="boss_details">
             <div class="logo">
-              <img :src="item.pic" alt="个人头像" />
+              <img :src="item.uid.pic" alt="个人头像" />
             </div>
             <div class="name_title">
-              <h3>{{item.name}}</h3>
+              <h3>{{ item.uid.name }}</h3>
             </div>
             <div class="boss_position">
-              <p>{{item.title}}</p>
+              <p>{{ item.uid.position }}</p>
             </div>
           </div>
         </a>
         <div class="job_details">
           <div class="job_title">
-            <a href="/zzs/coinfo/191868.html" target="_blank">
+            <router-link :to="{ name: 'detail', param: { tid: item._id } }">
               <div>
                 <div>
                   <div class="layui-elip">
-                    <span>{{item.job_title}}</span>
+                    <span>{{ item.title }}</span>
                   </div>
                 </div>
-                <i>{{item.job_price}}</i>
+                <i>{{ item.price }}</i>
               </div>
-            </a>
+            </router-link>
           </div>
-          <div class="newData">{{item.publishDate}}</div>
+          <div class="newData">{{ item.created | moment }}</div>
           <div class="job_certificate">
-            <span class="certificate">{{item.certificate}}</span>
-
-            <span class="level">{{item.level}}</span>
+            <span class="certificate"
+              >资质{{ item.catalog === '1' ? '转让' : '' }}</span
+            >
+            <span class="level">{{ item.qualification }}</span>
           </div>
           <div class="job_qualification">
-            <p>{{item.job_qualification}}</p>
+            <p>{{ item.content }}</p>
           </div>
           <div class="job_address">
-            <template v-for="(job, job_index) in item.job_address">
-              <span :key="`job_address_span_${job_index}`">{{job}}</span>
-              <i :key="`job_address_i_${job_index}`">|</i>
-            </template>
+            <span>{{ item.uid.location }}</span>
+            <i>|</i>
+            <span>速度快</span>
           </div>
         </div>
       </div>

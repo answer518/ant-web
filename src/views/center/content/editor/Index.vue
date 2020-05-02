@@ -2,7 +2,7 @@
   <div class="edit-wrap">
     <div class="layui-form-item layui-form-text">
       <div class="layui-input-block">
-        <div class="layui-unselect fly-edit" ref="icons">
+        <div class="layui-unselect ant-edit" ref="icons">
           <!-- 表情 -->
           <span @click="choose(0)">
             <i class="iconfont icon-yxj-expression"></i>
@@ -24,7 +24,7 @@
         </div>
         <textarea
           id="edit"
-          class="layui-textarea fly-editor"
+          class="layui-textarea ant-editor"
           name="content"
           ref="textEdit"
           v-model="content"

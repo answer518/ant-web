@@ -1,6 +1,6 @@
 <template>
   <div class="layui-container logininfo">
-    <div class="fly-panel fly-panel-user" pad20>
+    <div class="ant-panel ant-panel-user" pad20>
       <div class="layui-tab layui-tab-brief" lay-filter="user">
         <ul class="layui-tab-title">
           <li class="layui-this">登入</li>
@@ -8,14 +8,22 @@
             <router-link :to="{ name: 'reg' }">注册</router-link>
           </li>
         </ul>
-        <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
+        <div
+          class="layui-form layui-tab-content"
+          id="LAY_ucm"
+          style="padding: 20px 0;"
+        >
           <validation-observer ref="observer" v-slot="{ validate }">
             <div class="layui-tab-item layui-show">
               <div class="layui-form layui-form-pane">
                 <form method="post">
                   <div class="layui-form-item">
                     <label for="L_email" class="layui-form-label">用户名</label>
-                    <validation-provider name="email" rules="required|email" v-slot="{ errors }">
+                    <validation-provider
+                      name="email"
+                      rules="required|email"
+                      v-slot="{ errors }"
+                    >
                       <div class="layui-input-inline">
                         <input
                           type="text"
@@ -33,7 +41,11 @@
                   </div>
                   <div class="layui-form-item">
                     <label for="L_pass" class="layui-form-label">密码</label>
-                    <validation-provider name="password" rules="required|min:6" v-slot="{ errors }">
+                    <validation-provider
+                      name="password"
+                      rules="required|min:6"
+                      v-slot="{ errors }"
+                    >
                       <div class="layui-input-inline">
                         <input
                           type="password"
@@ -57,7 +69,9 @@
                       v-slot="{ errors }"
                     >
                       <div class="layui-row">
-                        <label for="L_vercode" class="layui-form-label">验证码</label>
+                        <label for="L_vercode" class="layui-form-label"
+                          >验证码</label
+                        >
                         <div class="layui-input-inline">
                           <input
                             type="text"
@@ -69,7 +83,12 @@
                           />
                         </div>
                         <div class>
-                          <span class="svg" style="color: #c00;" @click="_getCode()" v-html="svg"></span>
+                          <span
+                            class="svg"
+                            style="color: #c00;"
+                            @click="_getCode()"
+                            v-html="svg"
+                          ></span>
                         </div>
                       </div>
                       <div class="layui-form-mid">
@@ -78,9 +97,17 @@
                     </validation-provider>
                   </div>
                   <div class="layui-form-item">
-                    <button type="button" class="layui-btn" @click="validate().then(submit)">立即登录</button>
+                    <button
+                      type="button"
+                      class="layui-btn"
+                      @click="validate().then(submit)"
+                    >
+                      立即登录
+                    </button>
                     <span style="padding-left: 20px;">
-                      <router-link :to="{ name: 'forget' }">忘记密码？</router-link>
+                      <router-link :to="{ name: 'forget' }"
+                        >忘记密码？</router-link
+                      >
                     </span>
                   </div>
                   <!--
@@ -194,14 +221,4 @@ export default {
 
 <style lang="scss" scoped>
 // 公用样式可以放在App.vue中
-.logininfo {
-  width: 800px;
-  min-width: 800px;
-  height: 600px;
-  background-color: #f8f8f8;
-  margin: auto;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-}
 </style>

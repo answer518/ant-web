@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <mayi-header></mayi-header>
+    <ant-header></ant-header>
     <router-view></router-view>
-    <mayi-footer></mayi-footer>
+    <ant-footer></ant-footer>
   </div>
 </template>
 <script>
@@ -11,8 +11,8 @@ import Footer from '@/components/Footer.vue'
 export default {
   name: 'app',
   components: {
-    'mayi-header': Header,
-    'mayi-footer': Footer,
+    'ant-header': Header,
+    'ant-footer': Footer,
   },
 }
 </script>

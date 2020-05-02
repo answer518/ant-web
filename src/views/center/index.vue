@@ -1,5 +1,5 @@
 <template>
-  <div class="mayi-user-main">
+  <div class="ant-user-main">
     <div class="left-content">
       <div class="content">
         <hunter-info></hunter-info>
@@ -7,14 +7,16 @@
       </div>
       <div class="content needmanage">
         <div class="needhead">
-          <div class="needtitle">职位管理</div>
-          <a href="/user/comp/job.html">
+          <div class="needtitle">需求列表</div>
+          <router-link :to="{ name: 'add' }">
             <div class="addneed">
-              <i class="layui-icon layui-icon-add-1"></i>免费发布职位
+              <i class="layui-icon layui-icon-add-1"></i>免费发布需求
             </div>
-          </a>
+          </router-link>
         </div>
-        <div class="needlist"></div>
+        <div class="needlist">
+          <my-post />
+        </div>
       </div>
     </div>
     <div class="right-content">
@@ -31,6 +33,7 @@
 import Sign from '@/components/sidebar/Sign'
 import HunterInfo from '@/components/contents/HunterInfo'
 import CollectList from '@/components/contents/CollectList'
+import MyPost from './content/MyPost'
 import { mapGetters } from 'vuex'
 export default {
   name: 'center',
@@ -38,6 +41,7 @@ export default {
     'sidebar-sign': Sign,
     'hunter-info': HunterInfo,
     'collect-info': CollectList,
+    'my-post': MyPost,
   },
   data() {
     return {}

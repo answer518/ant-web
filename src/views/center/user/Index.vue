@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mayi-home mayi-panel" style="background-image: url();">
+    <div class="ant-home ant-panel" style="background-image: url();">
       <img :src="userInfo.pic ? userInfo.pic : '/img/bear-200-200.jpg'" />
       <!-- <i class="iconfont icon-renzheng" title="Imooc社区认证"></i> -->
       <h1>
@@ -8,7 +8,7 @@
         <i class="iconfont icon-nan"></i>
         <!-- <i class="iconfont icon-nv"></i>  -->
         <i
-          class="layui-badge mayi-badge-vip"
+          class="layui-badge ant-badge-vip"
         >{{userInfo.isVip === '0' ? '非VIP': 'VIP' + userInfo.isVip}}</i>
         <!--
     <span style="color:#c00;">（管理员）</span>
@@ -19,7 +19,7 @@
 
       <!-- <p style="padding: 10px 0; color: #5FB878;">认证信息：layui 作者</p> -->
 
-      <p class="mayi-home-info">
+      <p class="ant-home-info">
         <i class="iconfont icon-kiss" title="飞吻"></i>
         <span style="color: #FF7200;">{{userInfo.favs}} 积分</span>
         <i class="iconfont icon-shijian"></i>
@@ -28,31 +28,27 @@
         <span>{{userInfo.location}}</span>
       </p>
 
-      <p class="mayi-home-sign">{{userInfo.regmark}}</p>
+      <p class="ant-home-sign">{{userInfo.regmark}}</p>
 
-      <div class="mayi-sns" data-user>
+      <div class="ant-sns" data-user>
         <a
           href="javascript:;"
-          class="layui-btn layui-btn-primary mayi-imActive"
+          class="layui-btn layui-btn-primary ant-imActive"
           data-type="addFriend"
         >加为好友</a>
-        <a
-          href="javascript:;"
-          class="layui-btn layui-btn-normal mayi-imActive"
-          data-type="chat"
-        >发起会话</a>
+        <a href="javascript:;" class="layui-btn layui-btn-normal ant-imActive" data-type="chat">发起会话</a>
       </div>
     </div>
 
     <div class="layui-container">
       <div class="layui-row layui-col-space15">
-        <div class="layui-col-md6 mayi-home-jie">
-          <div class="mayi-panel">
-            <h3 class="mayi-panel-title">{{userInfo.name}} 最近的提问</h3>
+        <div class="layui-col-md6 ant-home-jie">
+          <div class="ant-panel">
+            <h3 class="ant-panel-title">{{userInfo.name}} 最近的提问</h3>
             <ul class="jie-row">
               <li v-for="(item,index) in postList" :key="'postlist' + index">
                 <div
-                  class="mayi-list-badge"
+                  class="ant-list-badge"
                   v-show="item.tags.length > 0 && item.tags[0].name !== ''"
                 >
                   <span
@@ -71,7 +67,7 @@
               </li>
               <div
                 v-show="postList.length === 0"
-                class="mayi-none"
+                class="ant-none"
                 style="min-height: 50px; padding:30px 0; height:auto;"
               >
                 <i style="font-size:14px;">没有发表任何求解</i>
@@ -80,9 +76,9 @@
           </div>
         </div>
 
-        <div class="layui-col-md6 mayi-home-da">
-          <div class="mayi-panel">
-            <h3 class="mayi-panel-title">{{userInfo.name}} 最近的回答</h3>
+        <div class="layui-col-md6 ant-home-da">
+          <div class="ant-panel">
+            <h3 class="ant-panel-title">{{userInfo.name}} 最近的回答</h3>
             <ul class="home-jieda">
               <li v-for="(item,index) in commentList" :key="'comments' + index">
                 <p>
@@ -96,7 +92,7 @@
               </li>
               <div
                 v-show="commentList.length === 0"
-                class="mayi-none"
+                class="ant-none"
                 style="min-height: 50px; padding:30px 0; height:auto;"
               >
                 <span>没有回答任何问题</span>

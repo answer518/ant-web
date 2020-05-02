@@ -23,19 +23,20 @@ const Accounts = () =>
     /* webpackChunkName: 'accounts' */ '@/views/center/baseinfo/AccountsBind.vue'
   )
 
-const Posts = () =>
-  import(/* webpackChunkName: 'user-post' */ '@/views/center/post/Index.vue')
 const Msg = () =>
   import(/* webpackChunkName: 'user-msg' */ '@/views/center/user/Message.vue')
 const Others = () =>
   import(/* webpackChunkName: 'others' */ '@/views/center/user/Others.vue')
 
-const MyPost = () =>
-  import(/* webpackChunkName: 'mypost' */ '@/views/center/post/MyPost.vue')
-const MyCollection = () =>
-  import(
-    /* webpackChunkName: 'mycollection' */ '@/views/center/post/MyCollection.vue'
-  )
+// const Posts = () =>
+//   import(/* webpackChunkName: 'user-post' */ '@/views/center/content/Index.vue')
+// const MyPost = () =>
+//   import(/* webpackChunkName: 'mypost' */ '@/views/center/content/MyPost.vue')
+// const MyCollection = () =>
+//   import(
+//     /* webpackChunkName: 'mycollection' */ '@/views/center/content/MyCollection.vue'
+//   )
+
 // const User = () =>
 //   import(/* webpackChunkName: 'home' */ '@/views/center/user/Index.vue')
 
@@ -51,22 +52,22 @@ export default [
         name: 'center',
         component: UserCenter,
       },
-      {
-        path: 'posts',
-        component: Posts,
-        children: [
-          {
-            path: '',
-            name: 'mypost',
-            component: MyPost,
-          },
-          {
-            path: 'mycollection',
-            name: 'mycollection',
-            component: MyCollection,
-          },
-        ],
-      },
+      // {
+      //   path: 'posts',
+      //   component: Posts,
+      //   children: [
+      //     {
+      //       path: '',
+      //       name: 'mypost',
+      //       component: MyPost,
+      //     },
+      //     {
+      //       path: 'mycollection',
+      //       name: 'mycollection',
+      //       component: MyCollection,
+      //     },
+      //   ],
+      // },
       {
         path: 'msg',
         name: 'msg',

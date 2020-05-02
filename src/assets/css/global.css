@@ -236,7 +236,7 @@ pre {
   padding: 20px 0 0;
   overflow: hidden;
 }
-.mayi-main {
+.ant-main {
   width: 1079px;
   min-height: 600px;
   margin: 0 auto 15px;
@@ -247,36 +247,41 @@ pre {
   border-radius: 2px;
 }
 
-.mayi-link {
+.btn-save {
+  background-color: #2cdaaf;
+  width: 160px;
+}
+
+.ant-link {
   color: #01aaed;
 }
-.mayi-link:hover {
+.ant-link:hover {
   color: #5fb878;
 }
-.mayi-grey {
+.ant-grey {
   color: #999;
 }
 
-.mayi-msg,
-.mayi-error {
+.ant-msg,
+.ant-error {
   padding: 10px 15px;
   line-height: 24px;
 }
-.mayi-msg {
+.ant-msg {
   background-color: #f8f8f8;
   color: #666;
 }
-.mayi-msg a {
+.ant-msg a {
   color: #4f99cf;
 }
-.mayi-editbox {
+.ant-editbox {
   position: relative;
 }
 
-.mayi-marginTop {
+.ant-marginTop {
   margin-top: 15px;
 }
-.mayi-mid {
+.ant-mid {
   display: inline-block;
   height: 10px;
   width: 1px;
@@ -284,14 +289,14 @@ pre {
   vertical-align: middle;
   background-color: #e2e2e2;
 }
-.mayi-right {
+.ant-right {
   position: absolute;
   right: 15px;
   top: 0;
 }
 
 /* 过度 */
-.mayi-loading {
+.ant-loading {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -301,12 +306,12 @@ pre {
 }
 
 /* 头像 */
-.mayi-avatar {
+.ant-avatar {
   position: absolute;
   left: 15px;
   top: 15px;
 }
-.mayi-avatar img {
+.ant-avatar img {
   display: block;
   width: 45px;
   height: 45px;
@@ -315,7 +320,7 @@ pre {
 }
 
 /* 徽章 */
-.mayi-badge-vip {
+.ant-badge-vip {
   height: 16px;
   line-height: 16px;
   padding: 0 3px;
@@ -323,7 +328,7 @@ pre {
   color: #fff;
   border-radius: 2px;
 }
-.mayi-badge-accept {
+.ant-badge-accept {
   height: 18px;
   line-height: 18px;
   padding: 0 5px !important;
@@ -332,7 +337,7 @@ pre {
 }
 
 /* 赞助商 */
-.mayi-zanzhu {
+.ant-zanzhu {
   display: block;
   position: relative;
   height: 60px;
@@ -345,10 +350,10 @@ pre {
   background-color: #009688;
   color: #fff;
 }
-.mayi-zanzhu:first-child {
+.ant-zanzhu:first-child {
   margin-top: 0;
 }
-.mayi-zanzhu:hover {
+.ant-zanzhu:hover {
   opacity: 0.9;
   color: #fff;
 }
@@ -375,7 +380,7 @@ pre {
 }
 
 /* 头部 */
-.mayi-header {
+.ant-header {
   position: fixed;
   left: 0;
   top: 0;
@@ -386,52 +391,52 @@ pre {
   border-right: 1px solid #404553;
   border-radius: 0;
 }
-/* .mayi-logo{position: absolute; left: 15px; top: 11px;} */
-.mayi-nav {
+/* .ant-logo{position: absolute; left: 15px; top: 11px;} */
+.ant-nav {
   margin-left: 200px;
 }
-.mayi-nav a i {
+.ant-nav a i {
   position: absolute;
   left: 25px;
   top: 0;
   padding-right: 10px;
   font-size: 26px;
 }
-.mayi-nav a .icon-shouye,
+.ant-nav a .icon-shouye,
 .nav a .icon-shezhi {
   top: 2px;
 }
 
-.mayi-nav-user {
+.ant-nav-user {
   position: absolute;
   top: 0;
   right: 0;
 }
-.mayi-nav-user .iconfont {
+.ant-nav-user .iconfont {
   position: relative;
 }
-.mayi-nav-avatar img {
+.ant-nav-avatar img {
   width: 36px;
   height: 36px;
   margin-left: 10px;
   border-radius: 100%;
 }
-.mayi-nav-avatar .icon-renzheng {
+.ant-nav-avatar .icon-renzheng {
   font-size: 16px;
   top: 1px;
 }
-.mayi-nav-avatar .mayi-badge-vip {
+.ant-nav-avatar .ant-badge-vip {
   position: relative;
   margin-left: 10px;
 }
-.mayi-nav-user .layui-nav-child a i {
+.ant-nav-user .layui-nav-child a i {
   position: relative;
   top: 2px;
   margin-right: 10px;
   font-size: 26px;
 }
 
-.mayi-nav-msg {
+.ant-nav-msg {
   position: absolute;
   top: 50%;
   left: -25px;
@@ -443,46 +448,50 @@ pre {
   color: #fff;
   border-radius: 2px;
 }
-.mayi-nav-msg:hover {
+.ant-nav-msg:hover {
   color: #fff;
 }
 
-.mayi-header .layui-nav {
+.ant-header .layui-nav {
   padding: 0;
   background: none;
 }
-.mayi-header .mayi-nav a {
+.ant-header .ant-nav a {
   padding: 0 25px 0 60px;
 }
-.mayi-header .mayi-nav-user li a {
+.ant-header .ant-nav-user li a {
   padding: 0 10px;
 }
-.mayi-header .mayi-nav-user li .mayi-nav-avatar {
+.ant-header .ant-nav-user li .ant-nav-avatar {
   padding-right: 0;
 }
-.mayi-header .mayi-nav-user a.iconfont {
+.ant-header .ant-nav-user a.iconfont {
   color: #a9b7b7;
 }
-.mayi-header > .layui-nav-item a {
+.ant-header > .layui-nav-item a {
   color: rgba(255, 255, 255, 0.5);
 }
-.mayi-header .layui-this a {
+.ant-header .layui-this a {
   color: #fff;
 }
-.mayi-header .layui-nav .layui-this:after,
-.mayi-header .layui-nav .layui-nav-bar,
-.mayi-header .mayi-nav-user .layui-nav-more {
+.ant-header .layui-nav .layui-this:after,
+.ant-header .layui-nav .layui-nav-bar,
+.ant-header .ant-nav-user .layui-nav-more {
   display: none !important;
 }
-.mayi-header .mayi-nav-user .layui-nav-child {
+.ant-header .ant-nav-user .layui-nav-child {
   left: auto;
   right: 0;
   width: 120px;
   min-width: 0;
 }
 
+.layui-nav .layui-this:after {
+  background-color: #fff;
+}
+
 /* 底部 */
-.mayi-footer {
+.ant-footer {
   margin: 50px 0 0;
   padding: 20px 0 30px;
   line-height: 30px;
@@ -490,48 +499,48 @@ pre {
   color: #737573;
   border-top: 1px solid #e2e2e2;
 }
-.mayi-footer a {
+.ant-footer a {
   font-weight: 300;
   color: #333;
 }
-.mayi-footer a:hover {
+.ant-footer a:hover {
   color: #777;
 }
-.mayi-union {
+.ant-union {
   margin-top: 10px;
   color: #999;
 }
-.mayi-union > * {
+.ant-union > * {
   display: inline-block;
   vertical-align: middle;
 }
-.mayi-union a[upyun] img {
+.ant-union a[upyun] img {
   width: 80px;
 }
-.mayi-union span {
+.ant-union span {
   position: relative;
   top: 3px;
 }
-.mayi-union span a {
+.ant-union span a {
   padding: 0;
   display: inline;
   color: #999;
 }
-.mayi-union span a:hover {
+.ant-union span a:hover {
   text-decoration: underline;
 }
 
 /* 面板 */
-.mayi-panel {
+.ant-panel {
   margin-bottom: 15px;
   border-radius: 12px;
   background-color: #fff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
-.mayi-panel[pad20] {
+.ant-panel[pad20] {
   padding: 20px;
 }
-.mayi-panel-title {
+.ant-panel-title {
   position: relative;
   height: 50px;
   line-height: 50px;
@@ -541,24 +550,24 @@ pre {
   border-radius: 2px 2px 0 0;
   font-size: 14px;
 }
-.mayi-panel-main {
+.ant-panel-main {
   padding: 10px 15px;
 }
 
 /* 专栏 */
-.mayi-column {
+.ant-column {
   height: 50px;
   line-height: 50px;
 }
-.mayi-column ul li {
+.ant-column ul li {
   position: relative;
   display: inline-block;
   height: 50px;
 }
-.mayi-column ul li a {
+.ant-column ul li a {
   padding: 0 20px;
 }
-.mayi-column ul li.layui-this:after {
+.ant-column ul li.layui-this:after {
   position: absolute;
   bottom: 13px;
   left: 8px;
@@ -568,21 +577,21 @@ pre {
   border: 1px solid #5fb878;
   border-radius: 2px;
 }
-.mayi-column ul li.layui-this a {
+.ant-column ul li.layui-this a {
   color: #5fb878;
 }
-.mayi-column ul li .mayi-mid {
+.ant-column ul li .ant-mid {
   margin: 0 20px;
 }
-.mayi-column-right {
+.ant-column-right {
   position: absolute;
   right: 0;
   top: 0;
 }
-.mayi-column-right .layui-btn {
+.ant-column-right .layui-btn {
   vertical-align: initial;
 }
-.mayi-column .layui-badge-dot {
+.ant-column .layui-badge-dot {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -590,7 +599,7 @@ pre {
 }
 
 /* 搜索 */
-.mayi-search {
+.ant-search {
   display: inline-block;
   vertical-align: top;
   width: 50px;
@@ -600,13 +609,13 @@ pre {
   cursor: pointer;
   font-size: 20px;
 }
-.mayi-search .layui-icon {
+.ant-search .layui-icon {
   font-size: 20px;
 }
-.mayi-search:hover {
+.ant-search:hover {
   color: #5fb878;
 }
-.mayi-layer-search input {
+.ant-layer-search input {
   height: 75px;
   line-height: 75px;
   width: 500px;
@@ -616,52 +625,64 @@ pre {
   background: none;
 }
 
+/** 登录框 */
+.logininfo {
+  width: 800px;
+  min-width: 800px;
+  height: 600px;
+  background-color: #f8f8f8;
+  margin: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
 /* 筛选 */
-.mayi-filter a {
+.ant-filter a {
   padding: 0 8px;
   color: #666;
 }
-.mayi-filter a.layui-this {
+.ant-filter a.layui-this {
   color: #5fb878;
 }
-.mayi-filter .mayi-mid {
+.ant-filter .ant-mid {
   margin: 0 8px;
 }
-.mayi-filter-right {
+.ant-filter-right {
   position: absolute;
   right: 10px;
   top: 0;
 }
 
 /* Tab */
-.mayi-tab {
+.ant-tab {
   position: relative;
   padding-top: 3px;
 }
-.mayi-tab .layui-tab {
+.ant-tab .layui-tab {
   margin: 0;
 }
-.mayi-tab .layui-tab-title {
+.ant-tab .layui-tab-title {
   border-bottom: 1px dotted #e2e2e2;
 }
 
-.mayi-tab-border {
+.ant-tab-border {
   position: relative;
   margin-bottom: 15px;
 }
-.mayi-tab-border span,
-.mayi-tab-border span a {
+.ant-tab-border span,
+.ant-tab-border span a {
   display: inline-block;
   *display: inline;
   *zoom: 1;
   vertical-align: top;
 }
-.mayi-tab-border span {
+.ant-tab-border span {
   border: 1px solid #ddd;
   border-right: none;
   font-size: 0;
 }
-.mayi-tab-border span a {
+.ant-tab-border span a {
   position: relative;
   height: 36px;
   line-height: 36px;
@@ -670,10 +691,10 @@ pre {
   font-size: 14px;
   background-color: #fff;
 }
-.mayi-tab-border .tab-this {
+.ant-tab-border .tab-this {
   color: #000;
 }
-.mayi-tab-border .tab-this:after {
+.ant-tab-border .tab-this:after {
   content: '';
   position: absolute;
   bottom: -1px;
@@ -712,7 +733,7 @@ pre {
 }
 
 /* 简易编辑器 */
-.mayi-edit {
+.ant-edit {
   position: relative;
   display: block;
   top: 1px;
@@ -722,50 +743,50 @@ pre {
   border-radius: 2px 2px 0 0;
   background-color: #fbfbfb;
 }
-.mayi-edit span {
+.ant-edit span {
   cursor: pointer;
   padding: 0 10px;
   line-height: 38px;
   color: #009e94;
 }
-.mayi-edit span i {
+.ant-edit span i {
   position: relative;
   padding-right: 6px;
   font-size: 18px;
 }
-.mayi-edit span:hover {
+.ant-edit span:hover {
   color: #5db276;
 }
 
 /* 列表 */
-.mayi-list li {
+.ant-list li {
   position: relative;
   height: 45px;
   line-height: 22px;
   padding: 15px 15px 15px 75px;
   border-bottom: 1px dotted #e2e2e2;
 }
-.mayi-list li:last-child {
+.ant-list li:last-child {
   border-bottom: none;
 }
-.mayi-list li h2,
-.mayi-list li h2 a,
-.mayi-list-info {
+.ant-list li h2,
+.ant-list li h2 a,
+.ant-list-info {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.mayi-list li h2 {
+.ant-list li h2 {
   height: 26px;
   font-size: 0;
 }
-.mayi-list li h2 a {
+.ant-list li h2 a {
   display: inline-block;
   max-width: 80%;
   padding-right: 10px;
   font-size: 16px;
 }
-.mayi-list li h2 .layui-badge {
+.ant-list li h2 .layui-badge {
   top: -2px;
   height: 16px;
   line-height: 16px;
@@ -777,60 +798,60 @@ pre {
   color: #5fb878;
 }
 
-.mayi-list-info {
+.ant-list-info {
   position: relative;
   font-size: 13px;
   color: #999;
 }
-.mayi-list-info > * {
+.ant-list-info > * {
   padding-right: 15px;
 }
-.mayi-list-info a[link] {
+.ant-list-info a[link] {
   color: #999;
 }
-.mayi-list-info a[link]:hover {
+.ant-list-info a[link]:hover {
   color: #5fb878;
 }
-.mayi-list-info .icon-renzheng {
+.ant-list-info .icon-renzheng {
   position: relative;
   top: 1px;
   margin-right: 3px;
 }
-.mayi-list-info .mayi-badge-vip {
+.ant-list-info .ant-badge-vip {
   position: relative;
   margin-left: 2px;
 }
-.mayi-list-kiss {
+.ant-list-kiss {
   color: #ff5722;
 }
-.mayi-list-nums {
+.ant-list-nums {
   position: absolute;
   right: 0;
   top: 0;
   padding-right: 0 !important;
 }
-.mayi-list-nums i {
+.ant-list-nums i {
   position: relative;
   padding: 0 3px 0 15px;
 }
 
-.mayi-list-badge {
+.ant-list-badge {
   position: absolute;
   right: 15px;
   top: 15px;
   font-size: 0;
 }
-.mayi-list-badge .layui-badge {
+.ant-list-badge .layui-badge {
   margin-left: 5px;
   border-radius: 2px;
   font-size: 12px;
 }
 
 /* 单行列表 */
-.mayi-list-one .mayi-panel-title {
+.ant-list-one .ant-panel-title {
   margin-bottom: 5px;
 }
-.mayi-list-one dd {
+.ant-list-one dd {
   margin: 0 15px;
   line-height: 26px;
   white-space: nowrap;
@@ -839,15 +860,15 @@ pre {
   *list-style-type: decimal inside;
   color: #009e94;
 }
-.mayi-list-one dd a,
-.mayi-list-one dd span {
+.ant-list-one dd a,
+.ant-list-one dd span {
   display: inline-block;
   *display: inline;
   *zoom: 1;
   vertical-align: top;
   font-style: normal;
 }
-.mayi-list-one dd a {
+.ant-list-one dd a {
   max-width: 85%;
   margin-right: 5px;
   overflow: hidden;
@@ -855,11 +876,11 @@ pre {
   white-space: nowrap;
   font-size: 14px;
 }
-.mayi-list-one dd span {
+.ant-list-one dd span {
   font-size: 12px;
   color: #ccc;
 }
-.mayi-list-one dd:last-child {
+.ant-list-one dd:last-child {
   padding-bottom: 5px;
 }
 
@@ -903,66 +924,66 @@ body .layui-edit-face .layui-layer-content {
 }
 
 /* 签到 */
-.mayi-signin cite {
+.ant-signin cite {
   padding: 0 5px;
   color: #ff5722;
   font-style: normal;
 }
-.mayi-signin .layui-badge-dot {
+.ant-signin .layui-badge-dot {
   top: -7px;
   margin-left: 0px;
 }
-.mayi-signin-list {
+.ant-signin-list {
   padding: 0;
   line-height: 30px;
 }
-.mayi-signin-list .layui-tab-item {
+.ant-signin-list .layui-tab-item {
   padding: 10px;
   height: 320px;
   overflow-x: hidden;
   overflow-y: auto;
 }
-.mayi-signin-list li {
+.ant-signin-list li {
   margin-top: 5px;
   padding-bottom: 5px;
   border-bottom: 1px dotted #e2e2e2;
   white-space: nowrap;
 }
-.mayi-signin-list li:first-child {
+.ant-signin-list li:first-child {
   margin-top: 0;
 }
-.mayi-signin-list li:last-child {
+.ant-signin-list li:last-child {
   border: none 0;
 }
-.mayi-signin-list img {
+.ant-signin-list img {
   width: 30px;
   height: 30px;
   margin-right: 10px;
   border-radius: 2px;
 }
-.mayi-signin-list span {
+.ant-signin-list span {
   padding-left: 10px;
 }
-.mayi-signin-list span i {
+.ant-signin-list span i {
   color: #ff5722;
 }
-.mayi-signin-list .mayi-none {
+.ant-signin-list .ant-none {
   padding-top: 20px;
   min-height: 0;
 }
-.mayi-signin-days {
+.ant-signin-days {
   position: absolute;
   right: 15px;
   padding-left: 10px;
   color: #999;
 }
-.mayi-signin-main {
+.ant-signin-main {
   position: relative;
   /* height: 38px; */
   padding: 24px 15px;
   text-align: center;
 }
-.mayi-signin-main p {
+.ant-signin-main p {
   text-align: center;
   font-size: 14px;
   color: #999999;
@@ -970,17 +991,17 @@ body .layui-edit-face .layui-layer-content {
 }
 
 /* 榜单 */
-.mayi-rank {
+.ant-rank {
   padding-bottom: 10px;
 }
-.mayi-rank dl {
+.ant-rank dl {
   position: relative;
   overflow: hidden;
   margin-left: 20px;
   text-align: center;
   font-size: 0;
 }
-.mayi-rank dd {
+.ant-rank dd {
   position: relative;
   width: 65px;
   height: 85px;
@@ -991,12 +1012,12 @@ body .layui-edit-face .layui-layer-content {
   vertical-align: top;
   font-size: 12px;
 }
-.mayi-rank dd a img {
+.ant-rank dd a img {
   width: 65px;
   height: 65px;
   border-radius: 2px;
 }
-.mayi-rank dd a cite {
+.ant-rank dd a cite {
   position: absolute;
   bottom: 20px;
   left: 0;
@@ -1010,10 +1031,10 @@ body .layui-edit-face .layui-layer-content {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.mayi-rank dd a:hover cite {
+.ant-rank dd a:hover cite {
   display: block;
 }
-.mayi-rank dd a i {
+.ant-rank dd a i {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1026,7 +1047,7 @@ body .layui-edit-face .layui-layer-content {
 }
 
 /* 静态列表 */
-.mayi-list-static li {
+.ant-list-static li {
   line-height: 26px;
   list-style-position: inside;
   list-style-type: disc;
@@ -1034,10 +1055,10 @@ body .layui-edit-face .layui-layer-content {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.mayi-list-static li a {
+.ant-list-static li a {
   color: #01aaed;
 }
-.mayi-list-static li a:hover {
+.ant-list-static li a:hover {
   opacity: 0.8;
 }
 
@@ -1065,10 +1086,10 @@ body .layui-edit-face .layui-layer-content {
   color: #fff;
   font-size: 12px;
 }
-.jie-row li .mayi-stick {
+.jie-row li .ant-stick {
   background-color: #393d49;
 }
-.jie-row li .mayi-jing {
+.jie-row li .ant-jing {
   background-color: #cc0000;
 }
 .jie-row li .jie-status {
@@ -1103,8 +1124,6 @@ body .layui-edit-face .layui-layer-content {
   right: 0;
   top: 0;
 }
-.jie-row li .jie-user {
-}
 .jie-row li .jie-title {
   max-width: 70%;
   overflow: hidden;
@@ -1126,30 +1145,30 @@ body .layui-edit-face .layui-layer-content {
   font-size: 24px;
   line-height: 36px;
 }
-.mayi-detail-info {
+.ant-detail-info {
   position: relative;
   margin: 10px 0 15px;
 }
-.mayi-detail-info .layui-btn {
+.ant-detail-info .layui-btn {
   height: 20px;
   line-height: 20px;
   vertical-align: top;
   border-radius: 0;
 }
-.mayi-detail-info .layui-btn + .layui-btn {
+.ant-detail-info .layui-btn + .layui-btn {
   margin-left: 0;
 }
-.mayi-admin-box {
+.ant-admin-box {
   position: relative;
   display: inline-block;
   vertical-align: top;
   margin-left: 20px;
 }
-.mayi-detail-info .mayi-list-nums {
+.ant-detail-info .ant-list-nums {
   top: -3px;
   font-size: 16px;
 }
-.mayi-detail-info .mayi-list-nums i {
+.ant-detail-info .ant-list-nums i {
   padding: 0 3px 0 15px;
   font-size: 22px;
   color: #999;
@@ -1167,7 +1186,7 @@ body .layui-edit-face .layui-layer-content {
 .detail-about .jie-status-ok {
   color: #fff;
 }
-.detail-about .mayi-jing {
+.detail-about .ant-jing {
   padding: 0 6px;
   background-color: #c00;
   color: #fff;
@@ -1177,15 +1196,15 @@ body .layui-edit-face .layui-layer-content {
   top: 5px;
   line-height: 20px;
 }
-.mayi-detail-user {
+.ant-detail-user {
   white-space: nowrap;
   overflow: hidden;
 }
-.mayi-detail-user a {
+.ant-detail-user a {
   padding-right: 10px;
   font-size: 14px;
 }
-.mayi-detail-user .icon-renzheng {
+.ant-detail-user .icon-renzheng {
   top: 1px;
 }
 
@@ -1273,7 +1292,7 @@ body .layui-edit-face .layui-layer-content {
 .jieda li:last-child {
   border-bottom: none;
 }
-.jieda .mayi-none {
+.jieda .ant-none {
   height: 50px;
   min-height: 0;
 }
@@ -1293,7 +1312,7 @@ body .layui-edit-face .layui-layer-content {
   left: 0;
   bottom: 0;
 }
-.detail-about-reply .mayi-avatar {
+.detail-about-reply .ant-avatar {
   left: 0;
   top: 0;
 }
@@ -1341,18 +1360,18 @@ body .layui-edit-face .layui-layer-content {
 }
 
 /* 用户中心 */
-body .mayi-user-main {
+body .ant-user-main {
   position: relative;
   width: 1200px;
   margin: 18px auto 0;
   min-width: 1200px;
 }
-.mayi-user-main .left-content {
+.ant-user-main .left-content {
   width: 100%;
   box-sizing: border-box;
   padding-right: 276px;
 }
-.mayi-user-main .right-content {
+.ant-user-main .right-content {
   width: 260px;
   margin-left: 16px;
   position: absolute;
@@ -1360,13 +1379,13 @@ body .mayi-user-main {
   top: 0;
 }
 
-.mayi-user-main .right-content img {
+.ant-user-main .right-content img {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 10px;
 }
 
-.mayi-user-main > .layui-nav {
+.ant-user-main > .layui-nav {
   position: absolute;
   left: 0;
   top: 0;
@@ -1374,34 +1393,34 @@ body .mayi-user-main {
   height: 100%;
   padding: 10px 0;
 }
-.mayi-user-main > .layui-nav .layui-icon {
+.ant-user-main > .layui-nav .layui-icon {
   position: relative;
   top: 2px;
   font-size: 20px;
   margin-right: 10px;
 }
-.mayi-user-main > .mayi-panel {
+.ant-user-main > .ant-panel {
   min-height: 575px;
   margin: 0 0 10px 215px;
 }
-.mayi-user-main .mayi-none {
+.ant-user-main .ant-none {
   min-height: 0;
 }
-.mayi-panel-user[pad20] {
+.ant-panel-user[pad20] {
   padding-top: 5px;
 }
 
-.mayi-form-app {
+.ant-form-app {
   margin-top: 30px;
 }
-.mayi-form-app .iconfont {
+.ant-form-app .iconfont {
   font-size: 26px;
   padding: 0 5px;
 }
-.mayi-form-app .icon-qq {
+.ant-form-app .icon-qq {
   color: #7ca9c9;
 }
-.mayi-form-app .icon-weibo {
+.ant-form-app .icon-weibo {
   color: #e6162d;
 }
 
@@ -1428,37 +1447,37 @@ body .mayi-user-main {
 }
 
 /* 个人主页 */
-.mayi-home {
+.ant-home {
   position: relative;
   padding: 30px 0 30px;
   text-align: center;
 }
-.mayi-home img {
+.ant-home img {
   width: 120px;
   height: 120px;
   border-radius: 100%;
 }
-.mayi-home h1 {
+.ant-home h1 {
   font-size: 26px;
   line-height: 30px;
   margin-top: 10px;
 }
-.mayi-home h1 span {
+.ant-home h1 span {
   font-size: 14px;
   color: #999;
 }
-.mayi-home h1 .icon-nan {
+.ant-home h1 .icon-nan {
   color: #4ebbf9;
 }
-.mayi-home h1 .icon-nv {
+.ant-home h1 .icon-nv {
   color: #f581b1;
 }
-.mayi-home-sign {
+.ant-home-sign {
   padding: 0 10px;
   color: #999;
   margin-top: 10px;
 }
-.mayi-home .icon-renzheng {
+.ant-home .icon-renzheng {
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -1471,20 +1490,20 @@ body .mayi-user-main {
   font-size: 12px;
 }
 
-.mayi-home-info i {
+.ant-home-info i {
   padding-right: 5px;
   padding-left: 10px;
   color: #666;
 }
-.mayi-home-info span {
+.ant-home-info span {
   color: #999;
 }
-.mayi-sns {
+.ant-sns {
   margin-top: 10px;
 }
 
-.mayi-home-jie .jie-row,
-.mayi-home-da .home-jieda {
+.ant-home-jie .jie-row,
+.ant-home-da .home-jieda {
   min-height: 500px;
   padding: 5px 20px;
 }
@@ -1549,7 +1568,7 @@ body .mayi-user-main {
   top: 0;
   color: #999;
 }
-.mine-msg li .mayi-delete {
+.mine-msg li .ant-delete {
   position: relative;
   top: -3px;
 }
@@ -1633,59 +1652,59 @@ body .mayi-user-main {
 /* 广告 */
 
 /* 404或提示 */
-.mayi-none {
+.ant-none {
   min-height: 600px;
   text-align: center;
   padding-top: 50px;
   color: #999;
 }
-.mayi-none .iconfont {
+.ant-none .iconfont {
   line-height: 300px;
   font-size: 300px;
   color: #393d49;
 }
-.mayi-none .icon-tishilian {
+.ant-none .icon-tishilian {
   display: inline-block;
   margin: 30px 0 20px;
 }
-.mayi-none p {
+.ant-none p {
   margin-top: 50px;
   padding: 0 15px;
   font-size: 20px;
   color: #999;
   font-weight: 300;
 }
-.mayi-list-one .mayi-none {
+.ant-list-one .ant-none {
   min-height: 70px;
 }
 
 @media screen and (max-width: 768px) {
-  .mayi-main {
+  .ant-main {
     width: 100%;
   }
 
   /* 顶边距 */
-  .mayi-marginTop {
+  .ant-marginTop {
     margin-top: 0;
   }
 
   /* 头部 */
-  .mayi-header .mayi-nav-user li .mayi-nav-avatar {
+  .ant-header .ant-nav-user li .ant-nav-avatar {
     padding-right: 15px;
   }
-  .mayi-header .mayi-nav-user {
+  .ant-header .ant-nav-user {
     margin-right: 5px;
   }
 
   /* 专栏 */
-  .mayi-column {
+  .ant-column {
     height: auto;
   }
-  .mayi-column ul {
+  .ant-column ul {
     padding: 10px;
     font-size: 0;
   }
-  .mayi-column ul li {
+  .ant-column ul li {
     float: left;
     width: 33.33%;
     height: 36px;
@@ -1695,15 +1714,15 @@ body .mayi-user-main {
     text-align: center;
     box-sizing: border-box;
   }
-  .mayi-column-right {
+  .ant-column-right {
     right: 10px;
   }
-  .mayi-column ul li.layui-this:after {
+  .ant-column ul li.layui-this:after {
     display: none;
   }
 
   /* 页脚 */
-  .mayi-footer {
+  .ant-footer {
     margin-top: 0;
     border-top: none;
   }
@@ -1720,32 +1739,32 @@ body .mayi-user-main {
   }
 
   /* 列表 */
-  .mayi-list li h2 a {
+  .ant-list li h2 a {
     max-width: 72%;
   }
 
   /* Detail 页 */
-  .mayi-admin-box {
+  .ant-admin-box {
     display: block;
     margin: 0;
     margin-top: 10px;
   }
-  .mayi-detail-info .mayi-list-nums {
+  .ant-detail-info .ant-list-nums {
     top: -2px;
   }
-  .mayi-edit span {
+  .ant-edit span {
     padding: 0 6px;
   }
 
-  body .mayi-user-main {
+  body .ant-user-main {
     width: auto;
   }
-  .mayi-user-main > .layui-nav {
+  .ant-user-main > .layui-nav {
     left: -300px;
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
   }
-  .mayi-user-main > .mayi-panel-user {
+  .ant-user-main > .ant-panel-user {
     width: auto;
     margin-left: 0;
     transition: all 0.3s;
@@ -1768,7 +1787,7 @@ body .mayi-user-main {
   .site-mobile .site-tree-mobile {
     display: none !important;
   }
-  .site-mobile .mayi-user-main > .layui-nav {
+  .site-mobile .ant-user-main > .layui-nav {
     left: 0;
   }
   .site-mobile .site-mobile-shade {

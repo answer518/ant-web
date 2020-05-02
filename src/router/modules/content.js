@@ -1,9 +1,9 @@
 const Add = () =>
-  import(/* webpackChunkName: 'add' */ '@/views/center/post/Add.vue')
+  import(/* webpackChunkName: 'add' */ '@/views/center/content/Add.vue')
 const Edit = () =>
-  import(/* webpackChunkName: 'edit' */ '@/views/center/post/Edit.vue')
+  import(/* webpackChunkName: 'edit' */ '@/views/center/content/Edit.vue')
 const Detail = () =>
-  import(/* webpackChunkName: 'detail' */ '@/views/center/post/Detail.vue')
+  import(/* webpackChunkName: 'detail' */ '@/views/center/content/Detail.vue')
 
 export default [
   {

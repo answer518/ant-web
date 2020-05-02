@@ -1,6 +1,6 @@
 <template>
-  <div class="layui-container fly-marginTop">
-    <div class="fly-panel fly-panel-user" pad20>
+  <div class="layui-container logininfo">
+    <div class="ant-panel ant-panel-user" pad20>
       <div class="layui-tab layui-tab-brief" lay-filter="user">
         <ul class="layui-tab-title">
           <li>
@@ -46,7 +46,7 @@
                       </div>
                     </validation-provider>
                   </div>
-                  <div class="layui-form-item">
+                  <!-- <div class="layui-form-item">
                     <label for="L_username" class="layui-form-label"
                       >昵称</label
                     >
@@ -69,7 +69,7 @@
                         <span style="color: #c00;">{{ errors[0] }}</span>
                       </div>
                     </validation-provider>
-                  </div>
+                  </div> -->
                   <div class="layui-form-item">
                     <validation-provider
                       name="password"
@@ -164,7 +164,7 @@
                       立即注册
                     </button>
                   </div>
-                  <div class="layui-form-item fly-form-app">
+                  <!-- <div class="layui-form-item fly-form-app">
                     <span>或者直接使用社交账号快捷注册</span>
                     <a
                       href
@@ -178,7 +178,7 @@
                       class="iconfont icon-weibo"
                       title="微博登入"
                     ></a>
-                  </div>
+                  </div> -->
                 </form>
               </div>
             </div>
@@ -202,7 +202,7 @@ export default {
   data() {
     return {
       username: '',
-      nickname: '',
+      // nickname: '',
       password: '',
       repassword: '',
       code: '',
@@ -230,7 +230,7 @@ export default {
       reg({
         username: this.username,
         password: this.password,
-        nickname: this.nickname,
+        // nickname: this.nickname,
         code: this.code,
         sid: this.$store.state.sid,
       }).then(res => {
@@ -238,7 +238,7 @@ export default {
           this.username = ''
           this.password = ''
           this.repassword = ''
-          this.nickname = ''
+          // this.nickname = ''
           this.code = ''
           requestAnimationFrame(() => {
             this.$refs.observer.reset()

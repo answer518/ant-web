@@ -6,27 +6,18 @@
           <tr class="layui-table-header">
             <th>
               <div class="layui-table-cell pl0">
-                <span>帖子标题</span>
+                <span>标题</span>
               </div>
             </th>
             <th>
               <div class="layui-table-cell">
-                <span>状态</span>
+                <span>帖子内容</span>
               </div>
             </th>
-            <th>
-              <div class="layui-table-cell">
-                <span>结帖</span>
-              </div>
-            </th>
+
             <th>
               <div class="layui-table-cell">
                 <span>发表时间</span>
-              </div>
-            </th>
-            <th>
-              <div class="layui-table-cell">
-                <span>数据</span>
               </div>
             </th>
             <th class="min-cell">
@@ -37,30 +28,38 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="text-center" v-for="(item,index) in list" :key="'mypost' + index">
+          <tr
+            class="text-center"
+            v-for="(item, index) in list"
+            :key="'mypost' + index"
+          >
             <td class="text-left">
-              <router-link
-                class="link"
-                :to="{name: 'detail', params: {tid: item._id}}"
-              >{{item.title}}</router-link>
+              <a class="link" :href="`/detail/${item._id}`" target="_blank">{{
+                item.title
+              }}</a>
             </td>
-            <td>{{item.status === '0' ? '打开': '关闭'}}</td>
-            <td :class="{'success': item.isEnd !=='0'}">{{item.isEnd === '0'? '未结': '已结贴'}}</td>
-            <td>{{item.created | moment}}</td>
-            <td>{{item.reads}}阅/{{item.answer}}答</td>
+            <td class="text-left">{{ item.content.substr(0, 80) }}</td>
+            <td>{{ item.created | moment }}</td>
             <td>
               <div
                 class="layui-btn layui-btn-xs"
-                :class="{'layui-btn-disabled': item.isEnd === '1'}"
+                :class="{ 'layui-btn-disabled': item.isEnd === '1' }"
                 @click="editPost(item)"
-              >编辑</div>
-              <div class="layui-btn layui-btn-xs layui-btn-danger" @click="deletePost(item)">删除</div>
+              >
+                编辑
+              </div>
+              <div
+                class="layui-btn layui-btn-xs layui-btn-danger"
+                @click="deletePost(item)"
+              >
+                删除
+              </div>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-    <imooc-page
+    <pagination
       v-show="total > 1"
       :total="total"
       :current="current"
@@ -68,7 +67,7 @@
       :hasTotal="true"
       :hasSelect="true"
       @changeCurrent="handleChange"
-    ></imooc-page>
+    ></pagination>
   </div>
 </template>
 
@@ -79,7 +78,7 @@ import Pagination from '@/components/pagination'
 export default {
   name: 'my-post',
   components: {
-    'imooc-page': Pagination,
+    pagination: Pagination,
   },
   data() {
     return {

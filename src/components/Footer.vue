@@ -1,5 +1,5 @@
 <template>
-  <div class="mayi-footer">
+  <div class="ant-footer">
     <div class="footer-content">
       <div class="layui-row">
         <div class="layui-col-md4">

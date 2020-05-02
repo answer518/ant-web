@@ -25,7 +25,7 @@
         <template v-else>
           <!-- 调整了Hover的区域 -->
           <li class="layui-nav-item" @mouseenter="show" @mouseleave="hide">
-            <a href="javascript:;" class="mayi-nav-avatar">
+            <a href="javascript:;" class="ant-nav-avatar">
               <img :src="userInfo.pic" />
               <span class="layui-nav-more"></span>
             </a>
@@ -65,7 +65,7 @@
               </dd>
             </dl>
           </li>
-          <div class="mayi-nav-msg" v-show="num.message && num.message !== 0">{{num.message}}</div>
+          <div class="ant-nav-msg" v-show="num.message && num.message !== 0">{{num.message}}</div>
           <transition name="fade">
             <div class="layui-layer-tips" v-show="hasMsg">
               <div class="layui-layer-content">

@@ -148,7 +148,7 @@ export default {
   margin: auto;
   padding-top: 20px;
 
-  > div:first-child {
+  > div {
     padding-right: 20px;
   }
 }

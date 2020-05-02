@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <mayi-search></mayi-search>
+    <ant-search></ant-search>
     <router-view></router-view>
   </div>
 </template>
@@ -11,7 +11,7 @@ import Search from '@/components/Panel.vue'
 export default {
   name: 'home',
   components: {
-    'mayi-search': Search,
+    'ant-search': Search,
   },
 }
 </script>

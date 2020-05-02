@@ -1,5 +1,5 @@
 <template>
-  <div class="mayi-user-main">
+  <div class="ant-user-main">
     <div class="left-content">
       <div class="left-nav-menu">
         <div class="left-nav-item">
@@ -91,10 +91,5 @@ export default {
   box-sizing: border-box;
   padding: 50px;
   min-height: 600px;
-}
-
-.btn-save {
-  background-color: #2cdaaf;
-  width: 160px;
 }
 </style>

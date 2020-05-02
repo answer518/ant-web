@@ -1,5 +1,5 @@
 <template>
-  <div class="mayi-panel">
+  <div class="ant-panel">
     <div class="inner">
       <h3 class="list-title">全国企业资质</h3>
       <div class="list-details" lay-filter="psall">

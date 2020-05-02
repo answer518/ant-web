@@ -1,16 +1,16 @@
 <template>
-  <div class="mayi-panel mayi-signin">
-    <div class="mayi-panel-title">
+  <div class="ant-panel ant-signin">
+    <div class="ant-panel-title">
       每日签到
-      <i class="mayi-mid"></i>
-      <a href="javascript:;" class="mayi-link" @click="showInfo()">说明</a>
-      <i class="mayi-mid"></i>
-      <a href="javascript:;" class="mayi-link" @click="showTop()">
+      <i class="ant-mid"></i>
+      <a href="javascript:;" class="ant-link" @click="showInfo()">说明</a>
+      <i class="ant-mid"></i>
+      <a href="javascript:;" class="ant-link" @click="showTop()">
         活跃榜
         <span class="layui-badge-dot"></span>
       </a>
     </div>
-    <div class="mayi-panel-main mayi-signin-main">
+    <div class="ant-panel-main ant-signin-main">
       <template v-if="!isSign">
         <p>
           签到加
@@ -26,7 +26,7 @@
         </p>
         <button class="layui-btn layui-btn-disabled">{{ msg }}</button>
       </template>
-      <!-- <p class="mayi-signin-days1" v-show="isSign || isLogin">
+      <!-- <p class="ant-signin-days1" v-show="isSign || isLogin">
         已连续签到
         <cite>{{ count }}</cite>天
       </p>-->
