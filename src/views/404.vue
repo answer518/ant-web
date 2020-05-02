@@ -2,7 +2,7 @@
   <div class="layui-container flex">
     <img src="../assets/img/icon-404.png" width="100px" alt />
     <p>找不到页面了</p>
-    <router-link class="layui-btn" to="/">回到首页</router-link>
+    <router-link class="layui-btn btn-save" to="/">回到首页</router-link>
   </div>
 </template>
 

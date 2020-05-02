@@ -4,32 +4,32 @@ const UserCenter = () =>
   import(
     /* webpackChunkName: 'user-center' */ '@/views/center/user/Welcome.vue'
   )
-const Settings = () =>
+const UserBaseInfo = () =>
   import(
-    /* webpackChunkName: 'user-settings' */ '@/views/center/user/settings/index.vue'
+    /* webpackChunkName: 'user-baseinfo' */ '@/views/center/baseinfo/index.vue'
   )
+const MyInfo = () =>
+  import(/* webpackChunkName: 'info' */ '@/views/center/baseinfo/MyInfo.vue')
+const PicUpload = () =>
+  import(
+    /* webpackChunkName: 'uploadpic' */ '@/views/center/baseinfo/PicUpload.vue'
+  )
+const Passwd = () =>
+  import(
+    /* webpackChunkName: 'password' */ '@/views/center/baseinfo/Passwd.vue'
+  )
+const Accounts = () =>
+  import(
+    /* webpackChunkName: 'accounts' */ '@/views/center/baseinfo/AccountsBind.vue'
+  )
+
 const Posts = () =>
   import(/* webpackChunkName: 'user-post' */ '@/views/center/post/Index.vue')
 const Msg = () =>
   import(/* webpackChunkName: 'user-msg' */ '@/views/center/user/Message.vue')
 const Others = () =>
   import(/* webpackChunkName: 'others' */ '@/views/center/user/Others.vue')
-const MyInfo = () =>
-  import(
-    /* webpackChunkName: 'info' */ '@/views/center/user/settings/MyInfo.vue'
-  )
-const PicUpload = () =>
-  import(
-    /* webpackChunkName: 'uploadpic' */ '@/views/center/user/settings/PicUpload.vue'
-  )
-const Passwd = () =>
-  import(
-    /* webpackChunkName: 'password' */ '@/views/center/user/settings/Passwd.vue'
-  )
-const Accounts = () =>
-  import(
-    /* webpackChunkName: 'accounts' */ '@/views/center/user/settings/AccountsBind.vue'
-  )
+
 const MyPost = () =>
   import(/* webpackChunkName: 'mypost' */ '@/views/center/post/MyPost.vue')
 const MyCollection = () =>
@@ -50,32 +50,6 @@ export default [
         path: '',
         name: 'center',
         component: UserCenter,
-      },
-      {
-        path: 'set',
-        component: Settings,
-        children: [
-          {
-            path: '',
-            name: 'info',
-            component: MyInfo,
-          },
-          {
-            path: 'pic',
-            name: 'pic',
-            component: PicUpload,
-          },
-          {
-            path: 'passwd',
-            name: 'passwd',
-            component: Passwd,
-          },
-          {
-            path: 'account',
-            name: 'account',
-            component: Accounts,
-          },
-        ],
       },
       {
         path: 'posts',
@@ -102,6 +76,33 @@ export default [
         path: 'others',
         name: 'others',
         component: Others,
+      },
+    ],
+  },
+  {
+    path: '/baseinfo',
+    name: 'baseinfo',
+    component: UserBaseInfo,
+    children: [
+      {
+        path: '/my',
+        name: 'my',
+        component: MyInfo,
+      },
+      {
+        path: 'pic',
+        name: 'pic',
+        component: PicUpload,
+      },
+      {
+        path: 'passwd',
+        name: 'passwd',
+        component: Passwd,
+      },
+      {
+        path: 'account',
+        name: 'account',
+        component: Accounts,
       },
     ],
   },

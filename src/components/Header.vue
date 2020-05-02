@@ -17,10 +17,7 @@
         <!-- 未登入的状态 -->
         <template v-if="!isShow">
           <li class="layui-nav-item">
-            <router-link :to="{name: 'login'}">登入</router-link>
-          </li>
-          <li class="layui-nav-item">
-            <router-link :to="{name: 'reg'}">注册</router-link>
+            <router-link :to="{name: 'login'}">登入/注册</router-link>
           </li>
         </template>
 
@@ -28,10 +25,10 @@
         <template v-else>
           <!-- 调整了Hover的区域 -->
           <li class="layui-nav-item" @mouseenter="show" @mouseleave="hide">
-            <router-link class="mayi-nav-avatar" :to="{name: 'home'}">
+            <a href="javascript:;" class="mayi-nav-avatar">
               <img :src="userInfo.pic" />
               <span class="layui-nav-more"></span>
-            </router-link>
+            </a>
             <dl
               class="layui-nav-child layui-anim layui-anim-upbit"
               :class="{'layui-show': isHover}"
@@ -46,7 +43,7 @@
                 </router-link>
               </dd>
               <dd>
-                <router-link :to="{name: 'info'}">
+                <router-link :to="{name: 'my'}">
                   <div>
                     基本信息
                     <br />
@@ -172,6 +169,11 @@ export default {
   }
 }
 
+.layui-header {
+  z-index: 1000;
+  height: 60px;
+}
+
 .layui-nav {
   background-color: #2cdaaf;
   font-weight: bold;
@@ -198,6 +200,10 @@ export default {
           display: inherit;
         }
       }
+
+      .layui-this::after {
+        height: 0;
+      }
     }
   }
 
@@ -208,10 +214,5 @@ export default {
 
 .layui-layout-left {
   left: 0;
-}
-
-.layui-header {
-  z-index: 1000;
-  height: 60px;
 }
 </style>

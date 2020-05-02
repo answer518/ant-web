@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'assets/css/layui.css';
+// @import 'assets/css/layui.css';
 @import 'assets/css/global.css';
 
 // 公用样式

@@ -21,7 +21,7 @@
       </div>
       <div class="layui-form-item">
         <validation-provider name="name" rules="required" v-slot="{errors}">
-          <label for="L_username" class="layui-form-label">昵称</label>
+          <label for="L_username" class="layui-form-label">称呼</label>
           <div class="layui-input-inline">
             <input type="text" name="name" class="layui-input" v-model="nickname" />
           </div>
@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="layui-form-item">
-        <button class="layui-btn" @click="validate().then(submit)">确认修改</button>
+        <button class="layui-btn btn-save" @click="validate().then(submit)">确认修改</button>
       </div>
     </validation-observer>
   </div>

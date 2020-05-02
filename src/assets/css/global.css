@@ -232,6 +232,7 @@ pre {
 }
 
 .layui-container {
+  width: 1200px;
   padding: 20px 0 0;
   overflow: hidden;
 }
@@ -1346,6 +1347,25 @@ body .mayi-user-main {
   margin: 18px auto 0;
   min-width: 1200px;
 }
+.mayi-user-main .left-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding-right: 276px;
+}
+.mayi-user-main .right-content {
+  width: 260px;
+  margin-left: 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.mayi-user-main .right-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
 .mayi-user-main > .layui-nav {
   position: absolute;
   left: 0;
@@ -1549,6 +1569,7 @@ body .mayi-user-main {
   left: 50%;
   top: 35px;
   margin: 0 0 0 -56px;
+  background-color: #2cdaaf;
 }
 .avatar-add img {
   position: absolute;
@@ -1602,157 +1623,7 @@ body .mayi-user-main {
 }
 
 /* 案例 */
-.mayi-case-header {
-  position: relative;
-  height: 260px;
-  text-align: center;
-  background: #393d49;
-}
-.mayi-case-year {
-  position: absolute;
-  top: 30px;
-  width: 100%;
-  line-height: 50px;
-  font-size: 50px;
-  text-align: center;
-  color: #fff;
-  font-weight: 300;
-}
-.mayi-case-banner {
-  position: absolute;
-  left: 50%;
-  top: 100px;
-  width: 670px;
-  margin-left: -335px;
-}
-.mayi-case-btn {
-  position: absolute;
-  bottom: 30px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-}
-.mayi-case-btn a {
-  color: #fff;
-}
-.mayi-case-btn .layui-btn-primary {
-  background: none;
-  color: #fff;
-}
-.mayi-case-btn .layui-btn-primary:hover {
-  border-color: #5fb878;
-}
 
-.mayi-case-tab {
-  margin-top: 20px;
-  text-align: center;
-}
-.mayi-case-tab span,
-.mayi-case-tab span a {
-  border-color: #009688;
-}
-.mayi-case-tab .tab-this {
-  background-color: #009688;
-  color: #fff;
-}
-
-.mayi-case-list {
-  margin-top: 15px;
-  font-size: 0;
-}
-.mayi-case-list li,
-.layer-ext-ul li {
-  display: inline-block;
-  vertical-align: middle;
-  *display: inline;
-  *zoom: 1;
-  font-size: 14px;
-  background-color: #fff;
-}
-.mayi-case-list {
-  width: 110%;
-}
-.mayi-case-list li {
-  width: 239px;
-  margin: 0 15px 15px 0;
-  padding: 10px;
-}
-.mayi-case-list li:hover {
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-}
-.mayi-case-img {
-  position: relative;
-  display: block;
-}
-.mayi-case-img img {
-  width: 239px;
-  height: 150px;
-}
-.mayi-case-img .layui-btn {
-  display: none;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  margin-left: -29px;
-}
-.mayi-case-img:hover .layui-btn {
-  display: inline-block;
-}
-.mayi-case-list li h2 {
-  padding: 10px 0 5px;
-  line-height: 22px;
-  font-size: 18px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-align: center;
-}
-.mayi-case-desc {
-  height: 60px;
-  line-height: 20px;
-  font-size: 12px;
-  color: #666;
-  overflow: hidden;
-}
-.mayi-case-info {
-  position: relative;
-  margin: 10px 0 0;
-  padding: 10px 65px 0 45px;
-  border-top: 1px dotted #eee;
-}
-.mayi-case-info p {
-  height: 24px;
-  line-height: 24px;
-}
-.mayi-case-user {
-  position: absolute;
-  left: 0;
-  top: 15px;
-  width: 35px;
-  height: 35px;
-}
-.mayi-case-user img {
-  width: 35px;
-  height: 35px;
-  border-radius: 100%;
-}
-.mayi-case-info .layui-btn {
-  position: absolute;
-  right: 0;
-  top: 15px;
-  padding: 0 15px;
-}
-.layer-ext-ul {
-  margin: 10px;
-  max-height: 500px;
-}
-.layer-ext-ul img {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-}
-.layer-ext-ul li {
-  margin: 8px;
-}
 .layer-ext-case .layui-layer-title {
   border: none;
   background-color: #009688;
@@ -1760,37 +1631,6 @@ body .mayi-user-main {
 }
 
 /* 广告 */
-.mayi-ad {
-  position: relative;
-  background-color: #f2f2f2;
-  overflow: hidden;
-}
-.mayi-ad:before {
-  content: '广告位';
-  position: absolute;
-  z-index: 0;
-  top: 50%;
-  left: 50%;
-  left: 50%;
-  margin: -10px 0 0 -25px;
-  color: #aaa;
-  font-size: 18px;
-  font-weight: 300;
-}
-.mayi-ad div {
-  position: relative;
-  z-index: 1;
-}
-
-/* 友链 */
-.mayi-link dd {
-  display: inline-block;
-  vertical-align: top;
-}
-.mayi-link a {
-  line-height: 24px;
-  padding-right: 15px;
-}
 
 /* 404或提示 */
 .mayi-none {
@@ -1895,25 +1735,6 @@ body .mayi-user-main {
   }
   .mayi-edit span {
     padding: 0 6px;
-  }
-
-  /* 案例 */
-  .mayi-case-list,
-  .mayi-case-list li {
-    width: 100%;
-    -webkit-box-sizing: border-box !important;
-    -moz-box-sizing: border-box !important;
-    box-sizing: border-box !important;
-  }
-  .mayi-case-img {
-    text-align: center;
-  }
-  .mayi-case-img img {
-    max-width: 100%;
-  }
-  .mayi-case-banner {
-    width: 300px;
-    margin-left: -150px;
   }
 
   body .mayi-user-main {
