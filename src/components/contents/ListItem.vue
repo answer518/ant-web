@@ -17,7 +17,7 @@
         </a>
         <div class="job_details">
           <div class="job_title">
-            <router-link :to="{ name: 'detail', param: { tid: item._id } }">
+            <router-link :to="{ name: 'detail', params: { tid: item._id } }">
               <div>
                 <div>
                   <div class="layui-elip">
@@ -30,9 +30,7 @@
           </div>
           <div class="newData">{{ item.created | moment }}</div>
           <div class="job_certificate">
-            <span class="certificate"
-              >资质{{ item.catalog === '1' ? '转让' : '' }}</span
-            >
+            <span class="certificate">资质{{ item.catalog === '1' ? '转让' : '' }}</span>
             <span class="level">{{ item.qualification }}</span>
           </div>
           <div class="job_qualification">

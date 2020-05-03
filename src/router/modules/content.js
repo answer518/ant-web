@@ -2,8 +2,6 @@ const Add = () =>
   import(/* webpackChunkName: 'add' */ '@/views/center/content/Add.vue')
 const Edit = () =>
   import(/* webpackChunkName: 'edit' */ '@/views/center/content/Edit.vue')
-const Detail = () =>
-  import(/* webpackChunkName: 'detail' */ '@/views/center/content/Detail.vue')
 
 export default [
   {
@@ -40,16 +38,6 @@ export default [
           next('/')
         }
       }
-    },
-  },
-  {
-    path: '/detail/:tid',
-    name: 'detail',
-    props: true,
-    component: Detail,
-    meta: {
-      // 通过后台接口动态添加到路由 addRoutes
-      types: ['get', 'add', 'delete'],
     },
   },
 ]

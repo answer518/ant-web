@@ -12,6 +12,7 @@ export default new Vuex.Store({
     isHide: false,
     ws: null,
     num: 0,
+    searchInfo: {},
   },
   mutations: {
     setSid(state, value) {
@@ -31,9 +32,13 @@ export default new Vuex.Store({
       // console.log(value)
       localStorage.setItem('loginUser', JSON.stringify(value))
     },
+    setSearchInfo(state, value) {
+      state.searchInfo = value
+    },
   },
   getters: {
     uid: state => (state.loginUser ? state.loginUser._id : ''),
+    searchInfo: state => state.searchInfo,
   },
   actions: {},
 })

@@ -1,57 +1,63 @@
 <template>
   <div class="ant-panel" style="margin-bottom: 0;">
     <list-item :lists="lists" :isEnd="isEnd" @nextpage="nextPage()"></list-item>
+    <Pagination
+      v-show="total > 1"
+      :total="total"
+      :current="current"
+      :align="'center'"
+      :hasTotal="true"
+      :hasSelect="true"
+      @changeCurrent="handleChange"
+    ></Pagination>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import { getPostList } from '@/api/content'
 import ListItem from './ListItem'
-import listMix from '@/mixin/list'
+import Pagination from '@/components/pagination'
+
 export default {
   name: 'list',
-  mixins: [listMix],
   data() {
     return {
       sort: 'created',
-      page: 0,
-      limit: 20,
       catalog: '',
       isEnd: false,
       isRepeat: false,
-      current: '',
-      lists: [
-        // {
-        //   name: '孟经理',
-        //   title: '经理',
-        //   publishDate: '2020-04-26',
-        //   certificate: '资质·转让',
-        //   level: '市政公用工程施工总承包-二级',
-        //   job_title: '震惊！客户急出房二市二资质，居然给出这种价格。',
-        //   job_price: '40W-42W',
-        //   job_qualification:
-        //     '全国公司业务：资质整合、分立 资质升级、资质代办、中高端**猎聘、北京华建英才人力资源顾问有限公司成立于贰零壹壹年，总部位于首都北京，北京华聚远航企业管理咨询有限公司是旗下子公司、目前在全国范围内有34家分公司，营销网络覆盖华东、华南、华中、华北、西北、西南等，建立了以北京为核心。',
-        //   job_address: ['南京市', '无债务', '速度快'],
-        //   pic:
-        //     'https://www.douyijob.com/upload/img/user/B11173.jpg?1587723313730',
-        // },
-      ],
+      lists: [],
+      total: 0,
+      current: 0,
+      page: 0,
+      limit: 10,
     }
+  },
+  computed: {
+    ...mapState({
+      searchInfo: state => state.searchInfo,
+    }),
   },
   components: {
     ListItem,
+    Pagination,
   },
   watch: {
     current(newval, oldval) {
       // 去兼听current标签是否有变化，如果有变化，则需要重新进行查询
-      // this.init()
+      this.init()
     },
     $route(newval, oldval) {
       // let catalog = this.$route.params['catalog']
       // if (typeof catalog !== 'undefined' && catalog !== '') {
       //   this.catalog = catalog
       // }
-      // this.init()
+      this.init()
     },
+  },
+  mounted() {
+    this._getPostList()
   },
   methods: {
     search(val) {
@@ -89,6 +95,23 @@ export default {
           this.tag = ''
           this.current = ''
       }
+    },
+    handleChange(val) {
+      this.current = val
+      this._getPostList()
+    },
+    _getPostList() {
+      getPostList({
+        ...this.searchInfo,
+        page: this.current,
+        limit: this.limit,
+      }).then(res => {
+        if (res.code === 200) {
+          const { list, total } = res.data
+          this.lists = list
+          this.total = total
+        }
+      })
     },
   },
 }

@@ -7,10 +7,10 @@
           <div
             v-for="(item, index) in cityList"
             :key="`city-list-${item.id}`"
-            :class="{'active': currentCity === index}"
+            :class="{ active: currentCity === index }"
           >
             <a href="javascript:;" @click="chooseCity(index)">
-              <span>{{item.label}}</span>
+              <span>{{ item.label }}</span>
             </a>
           </div>
         </div>
@@ -24,10 +24,10 @@
             v-for="(item, index) in qualifyList"
             :key="`qualify_list_${index}`"
             class="isall"
-            :class="{'active': currentQualify === index}"
+            :class="{ active: currentQualify === index }"
             :data-type="index"
             @click="chooseQualify(index)"
-          >{{item}}</div>
+          >{{ item }}</div>
         </div>
       </div>
     </div>
@@ -96,6 +96,9 @@ export default {
     },
     chooseQualify(index) {
       this.currentQualify = index
+      this.$store.commit('setSearchInfo', {
+        catalog: index,
+      })
     },
   },
 }

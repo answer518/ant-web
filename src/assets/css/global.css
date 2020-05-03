@@ -20,6 +20,12 @@ html {
 i {
   font-style: normal;
 }
+h3 {
+  font-size: 16px;
+  font-family: 'Microsoft YaHei';
+  color: #333333;
+  font-weight: bold;
+}
 
 /* 图标 */
 
@@ -1228,9 +1234,6 @@ body .layui-edit-face .layui-layer-content {
   font-size: 16px;
   color: #333;
   word-wrap: break-word;
-}
-.detail-body p {
-  margin-bottom: 15px;
 }
 .detail-body a {
   color: #4f99cf;
