@@ -12,7 +12,7 @@ body {
   overflow-x: hidden;
 }
 html body {
-  margin-top: 61px;
+  margin: 0;
 }
 html {
   background-color: #f2f2f2;
@@ -239,7 +239,7 @@ pre {
 
 .layui-container {
   width: 1200px;
-  padding: 20px 0 0;
+  padding: 80px 0 0;
   /* overflow: hidden; */
 }
 .ant-main {
@@ -1366,7 +1366,7 @@ body .layui-edit-face .layui-layer-content {
 body .ant-user-main {
   position: relative;
   width: 1200px;
-  margin: 18px auto 0;
+  margin: 80px auto 0;
   min-width: 1200px;
 }
 .ant-user-main .left-content {

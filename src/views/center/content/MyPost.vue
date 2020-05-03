@@ -36,61 +36,13 @@
         <div class="layui-row needdesc">
           <div class="layui-col-md12 layui-elip">{{item.content}}</div>
         </div>
-        <div class="layui-row usekind">
+        <div class="layui-row">
           <div class="layui-col-md12">
-            <span>北京市</span>
-            <span>速度快</span>
+            <span class="layui-btn layui-btn-xs" @click="editPost(item)">编辑</span>
+            <span class="layui-btn layui-btn-xs layui-btn-danger" @click="deletePost(item)">删除</span>
           </div>
         </div>
       </div>
-      <!-- <table class="layui-table" border="0">
-        <thead>
-          <tr class="layui-table-header">
-            <th>
-              <div class="layui-table-cell pl0">
-                <span>标题</span>
-              </div>
-            </th>
-            <th>
-              <div class="layui-table-cell">
-                <span>帖子内容</span>
-              </div>
-            </th>
-
-            <th>
-              <div class="layui-table-cell">
-                <span>发表时间</span>
-              </div>
-            </th>
-            <th class="min-cell">
-              <div class="layui-table-cell">
-                <span>操作</span>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="text-center" v-for="(item, index) in list" :key="'mypost' + index">
-            <td class="text-left">
-              <a class="link" :href="`/detail/${item._id}`" target="_blank">
-                {{
-                item.title
-                }}
-              </a>
-            </td>
-            <td class="text-left">{{ item.content.substr(0, 80) }}</td>
-            <td>{{ item.created | moment }}</td>
-            <td>
-              <div
-                class="layui-btn layui-btn-xs"
-                :class="{ 'layui-btn-disabled': item.isEnd === '1' }"
-                @click="editPost(item)"
-              >编辑</div>
-              <div class="layui-btn layui-btn-xs layui-btn-danger" @click="deletePost(item)">删除</div>
-            </td>
-          </tr>
-        </tbody>
-      </table>-->
     </div>
     <pagination
       v-show="total > 1"
@@ -164,14 +116,14 @@ export default {
       this.getPostList()
     },
     editPost(item) {
-      if (item.isEnd === '1') {
-        this.$pop('shake', '帖子已经结贴，无法编辑')
-      } else {
-        this.$router.push({
-          name: 'edit',
-          params: { tid: item._id, page: item },
-        })
-      }
+      // if (item.isEnd === '1') {
+      //   this.$pop('shake', '帖子已经结贴，无法编辑')
+      // } else {
+      this.$router.push({
+        name: 'edit',
+        params: { tid: item._id, page: item },
+      })
+      // }
     },
   },
 }
@@ -240,16 +192,5 @@ export default {
   padding: 16px 0;
   font-size: 14px;
   color: #666666;
-}
-
-.usekind span {
-  padding: 0 10px;
-  font-size: 12px;
-  color: #999999;
-  border-right: 1px solid #e6e6e6;
-
-  &:first-child {
-    padding-left: 0;
-  }
 }
 </style>

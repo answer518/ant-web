@@ -13,7 +13,7 @@
           <!-- <span class="layui-badge" style="background-color: #999;" v-if="page.isEnd === '0'">未结</span>
           <span class="layui-badge" style="background-color: #5FB878;" v-else>已结</span>-->
           <h3 class="catalog">资质·代办</h3>
-          <div class="time">{{page.created}}</div>
+          <div class="time">{{page.created | moment}}</div>
           <div class="tag">
             <div class="tag-item">速度快</div>
             <div class="tag-item">无风险</div>

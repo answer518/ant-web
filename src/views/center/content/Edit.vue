@@ -1,65 +1,80 @@
 <template>
-  <div class="layui-container fly-marginTop" :class="{'d-hide': isHide}">
-    <div class="fly-panel" pad20 style="padding-top: 5px;">
-      <!--<div class="fly-none">没有权限</div>-->
+  <div class="layui-container ant-marginTop" :class="{'d-hide': isHide}">
+    <div class="ant-panel" pad20 style="padding-top: 5px;">
       <div class="layui-form layui-form-pane">
         <div class="layui-tab layui-tab-brief" lay-filter="user">
           <ul class="layui-tab-title">
-            <li class="layui-this">编辑帖子</li>
+            <li class="layui-this">修改需求</li>
           </ul>
           <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
             <div class="layui-tab-item layui-show">
               <form>
                 <validation-observer ref="observer" v-slot="{ validate }">
-                  <div class="layui-row layui-col-space15 layui-form-item">
-                    <div class="layui-col-md3">
-                      <div class="layui-row">
-                        <label class="layui-form-label">所在专栏</label>
-                        <div class="layui-input-block">
-                          <div class="layui-unselect layui-form-select">
-                            <div class="layui-select-title">
-                              <input
-                                type="text"
-                                placeholder="请选择"
-                                readonly
-                                v-model="catalogs[cataIndex].text"
-                                class="layui-input layui-unselect layui-disabled"
-                              />
-                              <i class="layui-edge"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="layui-col-md9">
+                  <div class="layui-form-item">
+                    <validation-provider name="title" rules="required" v-slot="{ errors }">
                       <div class="layui-row">
                         <label for="L_title" class="layui-form-label">标题</label>
                         <div class="layui-input-block">
                           <input type="text" class="layui-input" v-model="title" />
-                          <!-- <input type="hidden" name="id" value="{{d.edit.id}}"> -->
+                        </div>
+                      </div>
+                      <div class="layui-row">
+                        <span style="color: #c00;">{{ errors[0] }}</span>
+                      </div>
+                    </validation-provider>
+                  </div>
+                  <editor @changeContent="add" :initContent="content"></editor>
+                  <div class="layui-row layui-col-space15 layui-form-item">
+                    <div class="layui-col-md3">
+                      <validation-provider name="catalog" rules="is_not:请选择" v-slot="{ errors }">
+                        <div class="layui-row">
+                          <label class="layui-form-label">需求类型</label>
+                          <div class="layui-input-block" @click="changeSelect()">
+                            <div
+                              class="layui-unselect layui-form-select"
+                              :class="{ 'layui-form-selected': isSelect }"
+                            >
+                              <div class="layui-select-title">
+                                <input
+                                  type="text"
+                                  placeholder="请选择"
+                                  readonly
+                                  v-model="catalogs[cataIndex].text"
+                                  class="layui-input layui-unselect"
+                                />
+                                <i class="layui-edge"></i>
+                              </div>
+                              <dl class="layui-anim layui-anim-upbit">
+                                <dd
+                                  v-for="(item, index) in catalogs"
+                                  :key="'catalog' + index"
+                                  @click="chooseCatalog(item, index)"
+                                  :class="{ 'layui-this': index === cataIndex }"
+                                >{{ item.text }}</dd>
+                              </dl>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="layui-row">
+                          <span style="color: #c00;">{{ errors[0] }}</span>
+                        </div>
+                      </validation-provider>
+                    </div>
+                    <div class="layui-col-md3">
+                      <div class="layui-inline">
+                        <label class="layui-form-label">资质类型</label>
+                        <div class="layui-input-block">
+                          <input type="text" class="layui-input" v-model="qualification" />
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <editor @changeContent="add" :initContent="content"></editor>
-                  <div class="layui-form-item">
-                    <div class="layui-inline">
-                      <label class="layui-form-label">悬赏飞吻</label>
-                      <div class="layui-input-inline" style="width: 190px;">
-                        <div class="layui-unselect layui-form-select">
-                          <div class="layui-select-title">
-                            <input
-                              type="text"
-                              placeholder="请选择"
-                              readonly
-                              v-model="favList[favIndex]"
-                              class="layui-input layui-unselect layui-disabled"
-                            />
-                            <i class="layui-edge"></i>
-                          </div>
+                    <div class="layui-col-md3">
+                      <div class="layui-inline">
+                        <label class="layui-form-label">资质价格</label>
+                        <div class="layui-input-block">
+                          <input type="text" class="layui-input" v-model="price" />
                         </div>
                       </div>
-                      <div class="layui-form-mid layui-word-aux">发表后无法更改飞吻</div>
                     </div>
                   </div>
                   <div class="layui-form-item">
@@ -91,7 +106,11 @@
                     </validation-provider>
                   </div>
                   <div class="layui-form-item">
-                    <button type="button" class="layui-btn" @click="validate().then(submit)">立即发布</button>
+                    <button
+                      type="button"
+                      class="layui-btn btn-save"
+                      @click="validate().then(submit)"
+                    >立即发布</button>
                   </div>
                 </validation-observer>
               </form>
@@ -116,42 +135,42 @@ export default {
   },
   data() {
     return {
+      isSelect: false,
       cataIndex: 0,
-      favIndex: 0,
       catalogs: [
         {
           text: '请选择',
           value: '',
         },
         {
-          text: '提问',
-          value: 'ask',
+          text: '转让',
+          value: 1,
         },
         {
-          text: '分享',
-          value: 'share',
+          text: '求购',
+          value: 2,
         },
         {
-          text: '讨论',
-          value: 'discuss',
-        },
-        {
-          text: '建议',
-          value: 'advise',
+          text: '代办',
+          value: 3,
         },
       ],
-      favList: [20, 30, 50, 60, 80],
       content: '',
       title: '',
+      price: '',
+      qualification: '', // 资质
     }
   },
   mounted() {
     if (this.page) {
-      this.content = this.page.content
       this.title = this.page.title
-      this.favIndex = this.favList.indexOf(parseInt(this.page.fav))
+      this.content = this.page.content
+      this.qualification = this.page.qualification
+      this.price = this.page.price
       this.cataIndex = this.catalogs.indexOf(
-        this.catalogs.filter(item => item.value === this.page.catalog)[0]
+        this.catalogs.filter(
+          item => item.value === parseInt(this.page.catalog)
+        )[0]
       )
       // 缓存edit内容
       localStorage.setItem('editData', JSON.stringify(this.page))
@@ -165,8 +184,9 @@ export default {
             const obj = JSON.parse(saveData)
             this.content = obj.content
             this.title = obj.title
+            this.qualification = obj.qualification
+            this.price = obj.price
             this.cataIndex = obj.cataIndex
-            this.favIndex = obj.favIndex
           },
           () => {
             localStorage.setItem('editData', '')
@@ -179,22 +199,17 @@ export default {
     chooseCatalog(item, index) {
       this.cataIndex = index
     },
-    chooseFav(item, index) {
-      this.favIndex = index
-    },
     changeSelect() {
       this.isSelect = !this.isSelect
-    },
-    changeFav() {
-      this.isSelect_fav = !this.isSelect_fav
     },
     add(val) {
       this.content = val
       const saveData = {
         title: this.title,
-        cataIndex: this.cataIndex,
         content: this.content,
-        favIndex: this.favIndex,
+        cataIndex: this.cataIndex,
+        qualification: this.qualification,
+        price: this.price,
       }
       if (this.title.trim() !== '' && this.content.trim() !== '') {
         const editData = localStorage.getItem('editData')
@@ -221,6 +236,9 @@ export default {
         tid: this.tid,
         title: this.title,
         content: this.content,
+        catalog: this.catalogs[this.cataIndex].value,
+        qualification: this.qualification,
+        price: this.price,
         code: this.code,
         sid: this.$store.state.sid,
       }).then(res => {

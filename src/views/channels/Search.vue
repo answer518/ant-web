@@ -1,8 +1,8 @@
 <template>
-  <div class="box">
+  <div class="layui-container">
     <!-- 统一搜索栏 -->
     <common-search></common-search>
-    <div class="layui-container">
+    <div class="layui-row box">
       <div class="layui-col-md9">
         <content-list></content-list>
       </div>

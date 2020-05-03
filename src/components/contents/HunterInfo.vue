@@ -3,13 +3,13 @@
     <div class="headimg">
       <img :src="userInfo.pic" class="layui-nav-img" />
     </div>
-    <div class="username">{{userInfo.nickname}}</div>
+    <div class="username">{{userInfo.name}}</div>
     <div>{{userInfo.regmark}}</div>
 
     <div class="vipinfo">
       <div class="vipserver">
-        <div>尊享会员特权</div>
-        <div>{{userInfo.created.slice(0, 10)}}到期</div>
+        <div>充值积分享受特权</div>
+        <div>剩余积分: {{userInfo.favs}}</div>
       </div>
       <div>
         <div class="searchdetails">

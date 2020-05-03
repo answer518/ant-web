@@ -19,7 +19,7 @@ export default [
     beforeEnter(to, from, next) {
       // 正常的情况 detail
       if (
-        ['detail', 'mypost'].indexOf(from.name) !== -1 &&
+        ['detail', 'center'].indexOf(from.name) !== -1 &&
         to.params.page &&
         to.params.page.isEnd === '0'
       ) {

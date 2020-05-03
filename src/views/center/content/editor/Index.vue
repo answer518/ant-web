@@ -181,10 +181,10 @@ export default {
     })
     this.codeWidth = this.$refs.textEdit.offsetWidth - 60
     this.codeHeight = this.$refs.textEdit.offsetHeight - 80
-    window.addEventListener('resize', () => {
-      this.codeWidth = this.$refs.textEdit.offsetWidth - 60
-      this.codeHeight = this.$refs.textEdit.offsetHeight - 80
-    })
+    // window.addEventListener('resize', () => {
+    //   this.codeWidth = this.$refs.textEdit.offsetWidth - 60
+    //   this.codeHeight = this.$refs.textEdit.offsetHeight - 80
+    // })
   },
   beforeDestroy() {
     document
