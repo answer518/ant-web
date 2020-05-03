@@ -2,7 +2,7 @@
   <div class="job-list-warpper">
     <div v-for="(item, index) in lists" :key="index" class="job-list-box">
       <div class="job-list-content">
-        <a target="_blank" href="#">
+        <router-link :to="{name: 'userHome', params: {uid: item.uid._id}}">
           <div class="boss_details">
             <div class="logo">
               <img :src="item.uid.pic" alt="个人头像" />
@@ -14,7 +14,7 @@
               <p>{{ item.uid.position }}</p>
             </div>
           </div>
-        </a>
+        </router-link>
         <div class="job_details">
           <div class="job_title">
             <router-link :to="{ name: 'detail', params: { tid: item._id } }">

@@ -1,7 +1,49 @@
 <template>
   <div>
-    <div class="overflow">
-      <table class="layui-table" border="0">
+    <div class="needkind">
+      <a href="/zzs/hunterinfo/37d87e1e77a7485fc54a083f26fc0767.html">
+        <span class="layui-inline active">全部</span>
+      </a>
+      <a href="/zzs/hunterinfo/37d87e1e77a7485fc54a083f26fc0767.html?type=2">
+        <span class="layui-inline">兼职</span>
+      </a>
+      <a href="/zzs/hunterinfo/37d87e1e77a7485fc54a083f26fc0767.html?type=1">
+        <span class="layui-inline">资质</span>
+      </a>
+      <a href="/zzs/hunterinfo/37d87e1e77a7485fc54a083f26fc0767.html?type=4">
+        <span class="layui-inline">全职</span>
+      </a>
+    </div>
+    <div class="need-list">
+      <div class="need-item" v-for="(item, index) in list" :key="'mypost' + index">
+        <div class="layui-row">
+          <div class="layui-col-md9">
+            <div class="layui-inline needtitle layui-elip">
+              <a :href="`/detail/${item._id}`" target="_blank">
+                {{
+                item.title
+                }}
+              </a>
+            </div>
+            <div class="layui-inline pricearea">{{item.price}}</div>
+          </div>
+          <div class="layui-col-md3 certkind">
+            资质
+            <span class="layui-badge-dot"></span>
+            转让
+          </div>
+        </div>
+        <div class="layui-row needdesc">
+          <div class="layui-col-md12 layui-elip">{{item.content}}</div>
+        </div>
+        <div class="layui-row usekind">
+          <div class="layui-col-md12">
+            <span>北京市</span>
+            <span>速度快</span>
+          </div>
+        </div>
+      </div>
+      <!-- <table class="layui-table" border="0">
         <thead>
           <tr class="layui-table-header">
             <th>
@@ -28,15 +70,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr
-            class="text-center"
-            v-for="(item, index) in list"
-            :key="'mypost' + index"
-          >
+          <tr class="text-center" v-for="(item, index) in list" :key="'mypost' + index">
             <td class="text-left">
-              <a class="link" :href="`/detail/${item._id}`" target="_blank">{{
+              <a class="link" :href="`/detail/${item._id}`" target="_blank">
+                {{
                 item.title
-              }}</a>
+                }}
+              </a>
             </td>
             <td class="text-left">{{ item.content.substr(0, 80) }}</td>
             <td>{{ item.created | moment }}</td>
@@ -45,25 +85,18 @@
                 class="layui-btn layui-btn-xs"
                 :class="{ 'layui-btn-disabled': item.isEnd === '1' }"
                 @click="editPost(item)"
-              >
-                编辑
-              </div>
-              <div
-                class="layui-btn layui-btn-xs layui-btn-danger"
-                @click="deletePost(item)"
-              >
-                删除
-              </div>
+              >编辑</div>
+              <div class="layui-btn layui-btn-xs layui-btn-danger" @click="deletePost(item)">删除</div>
             </td>
           </tr>
         </tbody>
-      </table>
+      </table>-->
     </div>
     <pagination
       v-show="total > 1"
       :total="total"
       :current="current"
-      :align="'left'"
+      :align="'center'"
       :hasTotal="true"
       :hasSelect="true"
       @changeCurrent="handleChange"
@@ -145,18 +178,78 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.overflow {
-  overflow-y: auto;
-}
-.min-cell {
-  min-width: 80px;
-}
-.layui-table-header {
-  th {
-    text-align: center;
-    &:first-child {
-      text-align: left;
+.needkind {
+  padding-bottom: 20px;
+
+  span {
+    padding: 0 20px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #333333;
+    margin-right: 10px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0px 2px 8px 0px rgba(200, 200, 200, 0.4);
+
+    &.active {
+      background-color: #2cdaaf;
+      color: #fff;
+      box-shadow: 0px 2px 8px 0px rgba(44, 218, 175, 0.4);
     }
+  }
+}
+.need-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px 30px;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 8px;
+}
+
+.needtitle {
+  font-size: 20px;
+  color: #333;
+  max-width: 500px;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+.pricearea {
+  font-size: 20px;
+  color: #ff5000;
+  font-weight: bold;
+}
+
+.certkind {
+  text-align: right;
+  color: #2cdaaf;
+  padding-top: 3px;
+
+  .layui-badge-dot {
+    background-color: #2cdaaf;
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    margin: 2px 4px;
+  }
+}
+
+.needdesc {
+  padding: 16px 0;
+  font-size: 14px;
+  color: #666666;
+}
+
+.usekind span {
+  padding: 0 10px;
+  font-size: 12px;
+  color: #999999;
+  border-right: 1px solid #e6e6e6;
+
+  &:first-child {
+    padding-left: 0;
   }
 }
 </style>

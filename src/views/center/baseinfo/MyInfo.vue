@@ -1,20 +1,11 @@
 <template>
-  <div class="layui-form layui-form-pane layui-tab-item layui-show">
+  <div class="layui-form layui-form-pane">
     <validation-observer ref="observer" v-slot="{ validate }">
       <div class="layui-form-item">
-        <validation-provider
-          name="email"
-          rules="required|email"
-          v-slot="{ errors }"
-        >
+        <validation-provider name="email" rules="required|email" v-slot="{ errors }">
           <label for="L_email" class="layui-form-label">邮箱</label>
           <div class="layui-input-inline">
-            <input
-              type="text"
-              name="email"
-              class="layui-input"
-              v-model="username"
-            />
+            <input type="text" name="email" class="layui-input" v-model="username" />
           </div>
           <!-- <div class="layui-form-mid layui-word-aux">
             如果您在邮箱已激活的情况下，变更了邮箱，需
@@ -55,33 +46,13 @@
         <label for="L_city" class="layui-form-label">性别</label>
         <div class="layui-input-inline gray mt1 ml1">
           <label for="gender1" class="mr1">
-            <input
-              id="gender1"
-              type="radio"
-              name="sex"
-              v-model="gender"
-              value="0"
-              title="男"
-            />
-            <i
-              class="layui-icon layui-icon-circle"
-              :class="{ 'layui-icon-radio': gender === '0' }"
-            ></i>
+            <input id="gender1" type="radio" name="sex" v-model="gender" value="0" title="男" />
+            <i class="layui-icon layui-icon-circle" :class="{ 'layui-icon-radio': gender === '0' }"></i>
             男
           </label>
           <label for="gender2">
-            <input
-              id="gender2"
-              type="radio"
-              name="sex"
-              v-model="gender"
-              value="1"
-              title="女"
-            />
-            <i
-              class="layui-icon layui-icon-circle"
-              :class="{ 'layui-icon-radio': gender === '1' }"
-            ></i>
+            <input id="gender2" type="radio" name="sex" v-model="gender" value="1" title="女" />
+            <i class="layui-icon layui-icon-circle" :class="{ 'layui-icon-radio': gender === '1' }"></i>
             女
           </label>
         </div>
@@ -98,9 +69,7 @@
         </div>
       </div>
       <div class="layui-form-item">
-        <button class="layui-btn btn-save" @click="validate().then(submit)">
-          确认修改
-        </button>
+        <button class="layui-btn btn-save" @click="validate().then(submit)">确认修改</button>
       </div>
     </validation-observer>
   </div>

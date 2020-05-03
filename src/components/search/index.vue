@@ -43,19 +43,33 @@
     <div class="layui-row select-city">
       <div class="layui-col-md1 leftlabel">资质价格</div>
       <div class="layui-col-md11">
-        <div class="layui-col-md5" style="margin-top: 10px;">
-          <div class="layui-form" lay-filter="qcprice">
+        <div class="layui-col-md3" style="margin-top: 10px;">
+          <div class="layui-form-item" lay-filter="qcprice">
             <div class="layui-inline">
-              <input type="text" placeholder="0" value readonly class="layui-input" />
-            </div>
-            <div class="layui-inline" style="width: 40px;text-align:center;">至</div>
-            <div class="layui-inline">
-              <input type="text" placeholder="9999" value readonly class="layui-input" />
+              <div class="layui-input-inline" style="width: 100px;">
+                <input
+                  type="text"
+                  name="price_min"
+                  placeholder="￥"
+                  autocomplete="off"
+                  class="layui-input"
+                />
+              </div>
+              <div class="layui-form-mid">-</div>
+              <div class="layui-input-inline" style="width: 100px;">
+                <input
+                  type="text"
+                  name="price_max"
+                  placeholder="￥"
+                  autocomplete="off"
+                  class="layui-input"
+                />
+              </div>
             </div>
           </div>
         </div>
         <div class="layui-col-md1 leftlabel">搜索内容</div>
-        <div class="layui-col-md6 search-content">
+        <div class="layui-col-md8 search-content">
           <input
             type="text"
             class="layui-input"
@@ -215,11 +229,11 @@ export default {
   padding-bottom: 10px;
 
   input {
-    width: 374px;
+    width: 60%;
     margin-top: 10px;
     color: #333;
-    border-radius: 5px;
-    border-color: #c8c8c8;
+    // border-radius: 5px;
+    // border-color: #c8c8c8;
   }
 }
 

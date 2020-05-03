@@ -17,7 +17,7 @@
       </div>
       <div class="nav-menu-content">
         <div class="layui-form-content">
-          <div class="layui-form-info layui-show">
+          <div class="layui-form-info">
             <router-view></router-view>
           </div>
         </div>

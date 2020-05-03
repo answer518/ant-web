@@ -240,7 +240,7 @@ pre {
 .layui-container {
   width: 1200px;
   padding: 20px 0 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .ant-main {
   width: 1079px;

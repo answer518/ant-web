@@ -37,8 +37,8 @@ const Others = () =>
 //     /* webpackChunkName: 'mycollection' */ '@/views/center/content/MyCollection.vue'
 //   )
 
-// const User = () =>
-//   import(/* webpackChunkName: 'home' */ '@/views/center/user/Index.vue')
+const User = () =>
+  import(/* webpackChunkName: 'home' */ '@/views/channels/User.vue')
 
 export default [
   {
@@ -107,10 +107,10 @@ export default [
       },
     ],
   },
-  // {
-  //   path: '/user/:uid',
-  //   name: 'home',
-  //   props: true,
-  //   component: User,
-  // },
+  {
+    path: '/user/:uid',
+    name: 'userHome',
+    props: true,
+    component: User,
+  },
 ]
