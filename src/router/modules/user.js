@@ -1,9 +1,9 @@
 const Center = () =>
   import(/* webpackChunkName: 'center' */ '@/views/center/index.vue')
-const UserCenter = () =>
-  import(
-    /* webpackChunkName: 'user-center' */ '@/views/center/user/Welcome.vue'
-  )
+// const UserCenter = () =>
+//   import(
+//     /* webpackChunkName: 'user-center' */ '@/views/center/user/Welcome.vue'
+//   )
 const UserBaseInfo = () =>
   import(
     /* webpackChunkName: 'user-baseinfo' */ '@/views/center/baseinfo/index.vue'
@@ -18,15 +18,19 @@ const Passwd = () =>
   import(
     /* webpackChunkName: 'password' */ '@/views/center/baseinfo/Passwd.vue'
   )
+const UserSecurity = () =>
+  import(
+    /* webpackChunkName: 'user-baseinfo' */ '@/views/center/security/index.vue'
+  )
 const Accounts = () =>
   import(
-    /* webpackChunkName: 'accounts' */ '@/views/center/baseinfo/AccountsBind.vue'
+    /* webpackChunkName: 'accounts' */ '@/views/center/security/AccountsBind.vue'
   )
 
 const Msg = () =>
   import(/* webpackChunkName: 'user-msg' */ '@/views/center/user/Message.vue')
 const Others = () =>
-  import(/* webpackChunkName: 'others' */ '@/views/center/user/Others.vue')
+  import(/* webpackChunkName: 'others' */ '@/views/center/Others.vue')
 
 // const Posts = () =>
 //   import(/* webpackChunkName: 'user-post' */ '@/views/center/content/Index.vue')
@@ -43,24 +47,14 @@ const User = () =>
 export default [
   {
     path: '/center',
+    name: 'center',
     component: Center,
     meta: { requiresAuth: true },
     linkActiveClass: 'layui-current',
     children: [
-      {
-        path: '',
-        name: 'center',
-        component: UserCenter,
-      },
       // {
       //   path: 'posts',
       //   component: Posts,
-      //   children: [
-      //     {
-      //       path: '',
-      //       name: 'mypost',
-      //       component: MyPost,
-      //     },
       //     {
       //       path: 'mycollection',
       //       name: 'mycollection',
@@ -72,11 +66,6 @@ export default [
         path: 'msg',
         name: 'msg',
         component: Msg,
-      },
-      {
-        path: 'others',
-        name: 'others',
-        component: Others,
       },
     ],
   },
@@ -100,10 +89,26 @@ export default [
         name: 'passwd',
         component: Passwd,
       },
+    ],
+  },
+  {
+    path: '/security',
+    component: UserSecurity,
+    children: [
+      {
+        path: 'changeidentify',
+        name: 'changeidentify',
+        component: Others,
+      },
       {
         path: 'account',
         name: 'account',
         component: Accounts,
+      },
+      {
+        path: 'others',
+        name: 'others',
+        component: Others,
       },
     ],
   },

@@ -6,10 +6,7 @@
           <router-link :to="{name: 'home'}">首页</router-link>
         </li>
         <li class="layui-nav-item">
-          <router-link :to="{name: 'catalog', params: {catalog: 'company'}}">公司</router-link>
-        </li>
-        <li class="layui-nav-item">
-          <router-link :to="{name: 'catalog', params: {catalog: 'personal'}}">个人</router-link>
+          <router-link :to="{name: 'catalog', params: {catalog: 'company'}}">资质需求</router-link>
         </li>
       </ul>
 
@@ -38,7 +35,7 @@
                   <div>
                     个人中心
                     <br />
-                    <span>职位、需求、简历、VIP</span>
+                    <span>岗位、需求、VIP</span>
                   </div>
                 </router-link>
               </dd>
@@ -52,11 +49,11 @@
                 </router-link>
               </dd>
               <dd>
-                <router-link :to="{name: 'others'}">
+                <router-link :to="{name: 'changeidentify'}">
                   <div>
                     身份安全
                     <br />
-                    <span>认证公司、修改密码</span>
+                    <span>变更身份、修改密码</span>
                   </div>
                 </router-link>
               </dd>

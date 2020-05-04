@@ -3,13 +3,13 @@
     <div class="left-content">
       <div class="left-nav-menu">
         <div class="left-nav-item">
-          <router-link :to="{name: 'my'}">我的资料</router-link>
+          <router-link :to="{name: 'changeidentify'}">变更身份</router-link>
         </div>
         <div class="left-nav-item">
-          <router-link :to="{name: 'pic'}">头像</router-link>
+          <router-link :to="{name: 'account'}">帐号绑定</router-link>
         </div>
         <div class="left-nav-item">
-          <router-link :to="{name: 'passwd'}">设置密码</router-link>
+          <router-link :to="{name: 'others'}">其他</router-link>
         </div>
       </div>
       <div class="nav-menu-content">
@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: 'baseinfo',
+  name: 'security',
 }
 </script>
 
