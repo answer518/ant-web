@@ -7,7 +7,7 @@
           <div
             v-for="(item, index) in cityList"
             :key="`city-list-${item.id}`"
-            :class="{ active: currentCity === index }"
+            :class="{ active: selectCity === index }"
           >
             <a href="javascript:;" @click="chooseCity(index)">
               <span>{{ item.label }}</span>
@@ -19,12 +19,12 @@
     <div class="layui-row select-city">
       <div class="layui-col-md1 leftlabel">资质需求</div>
       <div class="layui-col-md11 qualifycontent">
-        <div class="layui-col-md6 selproject selsubtype">
+        <div class="layui-col-md6 selproject">
           <div
-            v-for="(item, index) in qualifyList"
+            v-for="(item, index) in qualifyTypeList"
             :key="`qualify_list_${index}`"
             class="isall"
-            :class="{ active: currentQualify === index }"
+            :class="{ active: selectQualifyType === index }"
             :data-type="index"
             @click="chooseQualify(index)"
           >{{ item }}</div>
@@ -35,9 +35,18 @@
       <div class="layui-col-md1 leftlabel">资质类型</div>
       <div class="layui-col-md11 qualifycontent">
         <div class="layui-col-md12 selqualify">
-          <div class="addqualify selClassify" @click="show()">添加资质类型(可多选)</div>
+          <div class="addqualify selClassify" @click="show()">添加资质类型</div>
         </div>
-        <div class="layui-col-md12 qualifylist"></div>
+        <div class="layui-col-md12 qualify-list">
+          <div
+            v-for="(item, index) in selectQualifyList"
+            :key="`qualify-list-${index}`"
+            class="qualify-list-item"
+          >
+            <span class="name">{{item}}</span>
+            <i class="layui-icon layui-icon-close" @click="onRemoveType(index)"></i>
+          </div>
+        </div>
       </div>
     </div>
     <div class="layui-row select-city">
@@ -50,6 +59,7 @@
                 <input
                   type="text"
                   name="price_min"
+                  v-model="price_min"
                   placeholder="￥"
                   autocomplete="off"
                   class="layui-input"
@@ -60,6 +70,7 @@
                 <input
                   type="text"
                   name="price_max"
+                  v-model="price_max"
                   placeholder="￥"
                   autocomplete="off"
                   class="layui-input"
@@ -75,21 +86,18 @@
             class="layui-input"
             placeholder="请输入相关内容进行搜索"
             autocomplete="off"
-            value
-            name="key"
+            v-model="keyword"
           />
         </div>
       </div>
     </div>
     <div class="layui-row btngroup">
       <div class="layui-inline">
-        <a class="reset" href="/zzs/colist.html">
-          <div class="layui-anim">清空</div>
-        </a>
-        <button class="search layui-anim" lay-submit lay-filter="submitform">搜索</button>
+        <button class="search layui-anim" @click="search()">搜索</button>
+        <button class="reset layui-anim" @click="clear()">清空</button>
       </div>
     </div>
-    <common-select :isShow="isShow" @closeModal="close()"></common-select>
+    <common-select :isShow="isShow" @onSelectType="onSelectType" @closeModal="close()"></common-select>
   </div>
 </template>
 
@@ -105,20 +113,40 @@ export default {
     return {
       isShow: false,
       cityList: cityList,
-      currentCity: 0,
-      qualifyList: ['全部', '转让', '求购', '代办'],
-      currentQualify: 0,
+      selectCity: 0,
+      qualifyTypeList: ['全部', '转让', '求购', '代办'],
+      selectQualifyType: 0,
+      selectQualifyList: [],
+      keyword: '',
+      price_min: '',
+      price_max: '',
     }
   },
   methods: {
     chooseCity(index) {
-      this.currentCity = index
+      this.selectCity = index
     },
     chooseQualify(index) {
-      this.currentQualify = index
+      this.selectQualifyType = index
       this.$store.commit('setSearchInfo', {
         catalog: index,
       })
+    },
+    search() {},
+    reset() {
+      this.selectCity = 0
+      this.selectQualifyType = 0
+      this.keyword = ''
+      this.price_min = ''
+      this.price_max = ''
+    },
+    onSelectType(val) {
+      if (!this.selectQualifyList.includes([val])) {
+        this.selectQualifyList.push(val)
+      }
+    },
+    onRemoveType(index) {
+      this.selectQualifyList.splice(index, 1)
     },
     show() {
       this.isShow = true
@@ -191,6 +219,28 @@ export default {
   padding-bottom: 10px;
 }
 
+.qualify-list-item {
+  display: inline-block;
+  // height: 36px;
+  // line-height: 36px;
+  border-radius: 18px;
+  background-color: #00b38a;
+  padding: 5px 15px 5px 15px;
+  color: #fff;
+  margin-top: 10px;
+  margin-right: 10px;
+
+  .name {
+    padding-right: 5px;
+  }
+
+  .layui-icon-close {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+  }
+}
+
 .isall {
   cursor: pointer;
 }
@@ -255,36 +305,30 @@ export default {
   > div {
     width: 100%;
     text-align: center;
+  }
 
-    .reset {
-      font-size: 18px;
-      display: inline-block;
-      width: 110px;
-      height: 44px;
-      line-height: 44px;
-      color: #2cdaaf;
-      background-color: #fff;
-      box-shadow: 0 4px 20px 0 rgba(210, 210, 210, 0.4);
-      text-align: center;
-      margin-right: 20px;
-      border-radius: 22px;
-    }
+  button {
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    margin-right: 20px;
+    border-radius: 22px;
+    font-size: 18px;
+    display: inline-block;
+    width: 110px;
+    height: 44px;
+    line-height: 44px;
+    box-shadow: 0 4px 20px 0 rgba(210, 210, 210, 0.4);
+  }
 
-    .search {
-      font-size: 18px;
-      display: inline-block;
-      width: 110px;
-      height: 44px;
-      line-height: 44px;
-      color: #fff;
-      background-color: #2cdaaf;
-      box-shadow: 0 4px 20px 0 rgba(44, 218, 175, 0.4);
-      text-align: center;
-      margin-right: 20px;
-      border-radius: 22px;
-      border: none;
-      cursor: pointer;
-    }
+  .reset {
+    color: #2cdaaf;
+    background-color: #fff;
+  }
+
+  .search {
+    color: #fff;
+    background-color: #2cdaaf;
   }
 }
 </style>

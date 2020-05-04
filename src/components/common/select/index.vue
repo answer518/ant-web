@@ -5,7 +5,7 @@
       <div class="layui-layer-title">
         <h3>
           请选择职类
-          <div class="position-search js-position-search s-position-search">
+          <div class="position-search">
             <div class="position-input">
               <input class="ipt" placeholder="请输入职类关键词" type="text" name />
               <i class="icon-p-search"></i>
@@ -27,19 +27,41 @@
               v-for="(item, index) in list"
               :key="item.value"
               :class="{'active': current === index}"
-              @click="choose(index)"
+              @click="switchNav(index)"
             >{{item.label}}</li>
           </ul>
         </div>
-        <div class="layui-right-content">内容时什么</div>
+        <div class="layui-right-content">
+          <div class="selected" style="display: none;">
+            <div class="selectedInfo btnpostion">确定</div>
+          </div>
+          <div class="type-title">
+            <div class="js-oneInfo">
+              <span class="js-one">{{list[current].label}}</span>
+              <i class="icon-arrow-right"></i>
+            </div>
+          </div>
+          <div class="type-list">
+            <div
+              v-for="(item, index) in list[current].sublist"
+              :key="`sublist-${index}`"
+              class="type-list-item"
+              @click="chooseThis(item)"
+            >
+              <i class="icon-reduce"></i>
+              <span>{{item}}</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import list from './data.json'
 export default {
-  name: 'select-dialog',
+  name: 'common-select',
   props: {
     isShow: {
       default: false,
@@ -49,21 +71,18 @@ export default {
   data() {
     return {
       current: 0,
-      list: [
-        { label: '工程施工', value: '100000001' },
-        { label: '工程勘察', value: '100000002' },
-        { label: '工程设计', value: '100000003' },
-        { label: '监理', value: '100000004' },
-        { label: '设计施工一体化', value: '100000005' },
-        { label: '工程造价咨询', value: '100000006' },
-        { label: '城乡规划编制单位', value: '100000007' },
-        { label: '测绘单位', value: '100000008' },
-      ],
+      list: list,
     }
   },
   methods: {
-    choose(index) {
+    switchNav(index) {
       this.current = index
+    },
+    chooseThis(data) {
+      this.$emit('onSelectType', `${this.list[this.current].label} - ${data}`)
+      setTimeout(() => {
+        this.close()
+      })
     },
     close() {
       this.$emit('closeModal')
@@ -119,5 +138,54 @@ export default {
   width: 680px;
   padding: 18px;
   float: right;
+}
+
+.type-title {
+  position: relative;
+
+  > div {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .icon-arrow-right {
+    display: inline-block;
+    width: 8px;
+    height: 10px;
+    background: url(https://www.douyiyun.com/zzs/static/images/icon-arrow-right.png)
+      no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    margin-left: 4px;
+  }
+}
+
+.type-list {
+  height: 420px;
+  overflow-y: auto;
+
+  &-item {
+    display: inline-block;
+    margin-right: 15px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    color: #9fa3af;
+  }
+
+  .icon-reduce::after {
+    content: '-';
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    line-height: 11px;
+    text-align: center;
+    color: #2cc7b7;
+    border: 1px #2cc7b7 solid;
+    margin-right: 5px;
+    margin-top: -2px;
+    vertical-align: middle;
+  }
 }
 </style>

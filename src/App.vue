@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss">
 @import 'assets/css/global.css';
+@import 'assets/css/common.scss';
 @import 'assets/css/dialog.scss';
 
 // 公用样式
