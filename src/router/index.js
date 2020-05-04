@@ -1,5 +1,4 @@
 import store from '@/store'
-// import jwt from 'jsonwebtoken'
 import moment from 'dayjs'
 import routes from './routers'
 

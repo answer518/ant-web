@@ -18,8 +18,8 @@ export default {
 </script>
 
 <style lang="scss">
-// @import 'assets/css/layui.css';
 @import 'assets/css/global.css';
+@import 'assets/css/dialog.scss';
 
 // 公用样式
 .svg {

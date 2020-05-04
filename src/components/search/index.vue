@@ -35,7 +35,7 @@
       <div class="layui-col-md1 leftlabel">资质类型</div>
       <div class="layui-col-md11 qualifycontent">
         <div class="layui-col-md12 selqualify">
-          <div class="addqualify selClassify">添加资质类型(可多选)</div>
+          <div class="addqualify selClassify" @click="show()">添加资质类型(可多选)</div>
         </div>
         <div class="layui-col-md12 qualifylist"></div>
       </div>
@@ -89,15 +89,21 @@
         <button class="search layui-anim" lay-submit lay-filter="submitform">搜索</button>
       </div>
     </div>
+    <common-select :isShow="isShow" @closeModal="close()"></common-select>
   </div>
 </template>
 
 <script>
+import Select from '@/components/common/select'
 import cityList from './city'
 export default {
   name: 'common-search',
+  components: {
+    'common-select': Select,
+  },
   data() {
     return {
+      isShow: false,
       cityList: cityList,
       currentCity: 0,
       qualifyList: ['全部', '转让', '求购', '代办'],
@@ -113,6 +119,12 @@ export default {
       this.$store.commit('setSearchInfo', {
         catalog: index,
       })
+    },
+    show() {
+      this.isShow = true
+    },
+    close() {
+      this.isShow = false
     },
   },
 }

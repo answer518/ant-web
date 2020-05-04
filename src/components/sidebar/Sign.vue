@@ -201,27 +201,6 @@ export default {
 }
 </script>
 <style lang="scss">
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-.mask {
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 20000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .layui-layer {
   position: fixed;
   width: 300px;

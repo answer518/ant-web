@@ -1,0 +1,88 @@
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.mask {
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 20000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.layui-layer {
+  position: fixed;
+  width: 890px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin: -250px -445px;
+  background: #fff;
+  z-index: 21000;
+  &.active {
+    animation-fill-mode: both;
+    animation-duration: 0.2s;
+    animation-name: bounceIn;
+  }
+  .layui-layer-title {
+    // height: 42px;
+    line-height: 26px;
+    font-size: 14px;
+    background-color: #f8f8f8;
+    h3 {
+      padding: 10px 0 10px 23px;
+    }
+  }
+
+  .position-search {
+    width: 250px;
+    height: 30px;
+    position: relative;
+    float: right;
+    margin-right: 486px;
+    margin-top: -2px;
+
+    .position-input input {
+      display: block;
+      position: relative;
+      width: 198px;
+      min-width: auto;
+      padding: 5px 30px 5px 20px;
+      line-height: 18px;
+      min-height: 18px;
+      font-size: 12px;
+      border: 1px solid #e1e6ea;
+      border-radius: 15px;
+      box-sizing: content-box;
+    }
+
+    .icon-p-search {
+      position: absolute;
+      right: 12px;
+      top: 7px;
+      width: 16px;
+      height: 16px;
+      background: url(https://www.douyiyun.com/zzs/static/images/icon-p-search.png)
+        no-repeat;
+      background-size: 100%;
+      cursor: pointer;
+    }
+  }
+
+  .layui-icon-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  }
+}
