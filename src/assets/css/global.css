@@ -424,7 +424,7 @@ pre {
 .ant-nav-avatar img {
   width: 36px;
   height: 36px;
-  margin-left: 10px;
+  margin-right: 10px;
   border-radius: 100%;
 }
 .ant-nav-avatar .icon-renzheng {
@@ -440,22 +440,6 @@ pre {
   top: 2px;
   margin-right: 10px;
   font-size: 26px;
-}
-
-.ant-nav-msg {
-  position: absolute;
-  top: 50%;
-  left: -25px;
-  height: 20px;
-  line-height: 20px;
-  margin-top: -10px;
-  padding: 0 6px;
-  background-color: #ff7200;
-  color: #fff;
-  border-radius: 2px;
-}
-.ant-nav-msg:hover {
-  color: #fff;
 }
 
 .ant-header .layui-nav {

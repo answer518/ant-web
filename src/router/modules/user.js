@@ -32,6 +32,9 @@ const Msg = () =>
 const Others = () =>
   import(/* webpackChunkName: 'others' */ '@/views/center/Others.vue')
 
+const imchat = () =>
+  import(/* webpackChunkName: 'imchat' */ '@/views/center/imchat.vue')
+
 // const Posts = () =>
 //   import(/* webpackChunkName: 'user-post' */ '@/views/center/content/Index.vue')
 // const MyPost = () =>
@@ -117,5 +120,10 @@ export default [
     name: 'userHome',
     props: true,
     component: User,
+  },
+  {
+    path: '/imchat',
+    name: 'imchat',
+    component: imchat,
   },
 ]

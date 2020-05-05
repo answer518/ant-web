@@ -5,8 +5,8 @@
         <img src="https://www.douyiyun.com/static/images/logo.png" alt="蚂蚁网" />
       </div>
       <div class="search-kind">
-        <span :class="{'active': active === 0}" @click="choose(0)">查资质</span>
-        <span :class="{'active': active === 1}" @click="choose(1)">查人员</span>
+        <span :class="{'active': active === 0}" @click="choose(0)">查公司</span>
+        <span :class="{'active': active === 1}" @click="choose(1)">查个人</span>
         <!-- <span :class="{'active': active === 2}" @click="choose(2)">查到期</span> -->
       </div>
       <div class="search-input">

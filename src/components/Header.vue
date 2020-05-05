@@ -20,6 +20,22 @@
 
         <!-- 登入后的状态 -->
         <template v-else>
+          <!-- 即时聊天 -->
+          <li class="layui-nav-item imchat">
+            <router-link :to="{name: 'imchat'}">
+              <img src="https://www.douyiyun.com/static/images/im.png" class="layui-nav-img" />
+            </router-link>
+            <div class="badge" style="display:none">
+              <transition name="fade">
+                <div class="layui-layer-tips" v-show="hasMsg">
+                  <div class="layui-layer-content">
+                    您有{{num.message}}条未读消息
+                    <i class="layui-layer-TipsG layui-layer-TipsB"></i>
+                  </div>
+                </div>
+              </transition>
+            </div>
+          </li>
           <!-- 调整了Hover的区域 -->
           <li class="layui-nav-item" @mouseenter="show" @mouseleave="hide">
             <a href="javascript:;" class="ant-nav-avatar">
@@ -62,15 +78,6 @@
               </dd>
             </dl>
           </li>
-          <div class="ant-nav-msg" v-show="num.message && num.message !== 0">{{num.message}}</div>
-          <transition name="fade">
-            <div class="layui-layer-tips" v-show="hasMsg">
-              <div class="layui-layer-content">
-                您有{{num.message}}条未读消息
-                <i class="layui-layer-TipsG layui-layer-TipsB"></i>
-              </div>
-            </div>
-          </transition>
         </template>
       </ul>
     </div>
@@ -203,10 +210,16 @@ export default {
       }
     }
   }
+}
 
-  .layui-layout-right .layui-nav-item a {
-    padding: 0 15px;
-  }
+.layui-layout-right .layui-nav-item a {
+  padding: 0 15px;
+}
+
+.imchat img {
+  width: 20px;
+  height: 20px;
+  margin-right: 0;
 }
 
 .layui-layout-left {

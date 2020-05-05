@@ -1,7 +1,7 @@
 const isDev = process.env.NODE_ENV === 'development'
 export default {
   baseUrl: {
-    dev: 'http://localhost:3000',
+    dev: 'http://127.0.0.1:3000',
     pro: 'http://314p333172.oicp.vip',
   },
   publicPath: [/^\/public/, /^\/login/],
