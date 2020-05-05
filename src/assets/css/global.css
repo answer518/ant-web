@@ -325,45 +325,6 @@ pre {
   border-radius: 100%;
 }
 
-/* 徽章 */
-.ant-badge-vip {
-  height: 16px;
-  line-height: 16px;
-  padding: 0 3px;
-  background-color: #ff5722;
-  color: #fff;
-  border-radius: 2px;
-}
-.ant-badge-accept {
-  height: 18px;
-  line-height: 18px;
-  padding: 0 5px !important;
-  background-color: #5fb878;
-  border-radius: 2px;
-}
-
-/* 赞助商 */
-.ant-zanzhu {
-  display: block;
-  position: relative;
-  height: 60px;
-  line-height: 60px;
-  margin-top: 10px;
-  padding: 0 20px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 300;
-  background-color: #009688;
-  color: #fff;
-}
-.ant-zanzhu:first-child {
-  margin-top: 0;
-}
-.ant-zanzhu:hover {
-  opacity: 0.9;
-  color: #fff;
-}
-
 /* 图标 */
 .icon-touxiang {
   display: inline-block;
@@ -385,18 +346,6 @@ pre {
   top: 2px;
 }
 
-/* 头部 */
-.ant-header {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 10000;
-  width: 100%;
-  height: 60px;
-  border-bottom: 1px solid #404553;
-  border-right: 1px solid #404553;
-  border-radius: 0;
-}
 /* .ant-logo{position: absolute; left: 15px; top: 11px;} */
 .ant-nav {
   margin-left: 200px;
@@ -413,14 +362,6 @@ pre {
   top: 2px;
 }
 
-.ant-nav-user {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.ant-nav-user .iconfont {
-  position: relative;
-}
 .ant-nav-avatar img {
   width: 36px;
   height: 36px;
@@ -434,46 +375,6 @@ pre {
 .ant-nav-avatar .ant-badge-vip {
   position: relative;
   margin-left: 10px;
-}
-.ant-nav-user .layui-nav-child a i {
-  position: relative;
-  top: 2px;
-  margin-right: 10px;
-  font-size: 26px;
-}
-
-.ant-header .layui-nav {
-  padding: 0;
-  background: none;
-}
-.ant-header .ant-nav a {
-  padding: 0 25px 0 60px;
-}
-.ant-header .ant-nav-user li a {
-  padding: 0 10px;
-}
-.ant-header .ant-nav-user li .ant-nav-avatar {
-  padding-right: 0;
-}
-.ant-header .ant-nav-user a.iconfont {
-  color: #a9b7b7;
-}
-.ant-header > .layui-nav-item a {
-  color: rgba(255, 255, 255, 0.5);
-}
-.ant-header .layui-this a {
-  color: #fff;
-}
-.ant-header .layui-nav .layui-this:after,
-.ant-header .layui-nav .layui-nav-bar,
-.ant-header .ant-nav-user .layui-nav-more {
-  display: none !important;
-}
-.ant-header .ant-nav-user .layui-nav-child {
-  left: auto;
-  right: 0;
-  width: 120px;
-  min-width: 0;
 }
 
 .layui-nav .layui-this:after {
@@ -495,29 +396,6 @@ pre {
 }
 .ant-footer a:hover {
   color: #777;
-}
-.ant-union {
-  margin-top: 10px;
-  color: #999;
-}
-.ant-union > * {
-  display: inline-block;
-  vertical-align: middle;
-}
-.ant-union a[upyun] img {
-  width: 80px;
-}
-.ant-union span {
-  position: relative;
-  top: 3px;
-}
-.ant-union span a {
-  padding: 0;
-  display: inline;
-  color: #999;
-}
-.ant-union span a:hover {
-  text-decoration: underline;
 }
 
 /* 面板 */
@@ -544,77 +422,6 @@ pre {
   padding: 10px 15px;
 }
 
-/* 专栏 */
-.ant-column {
-  height: 50px;
-  line-height: 50px;
-}
-.ant-column ul li {
-  position: relative;
-  display: inline-block;
-  height: 50px;
-}
-.ant-column ul li a {
-  padding: 0 20px;
-}
-.ant-column ul li.layui-this:after {
-  position: absolute;
-  bottom: 13px;
-  left: 8px;
-  z-index: 0;
-  width: 50px;
-  height: 22px;
-  border: 1px solid #5fb878;
-  border-radius: 2px;
-}
-.ant-column ul li.layui-this a {
-  color: #5fb878;
-}
-.ant-column ul li .ant-mid {
-  margin: 0 20px;
-}
-.ant-column-right {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.ant-column-right .layui-btn {
-  vertical-align: initial;
-}
-.ant-column .layui-badge-dot {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -4px 0 0 20px;
-}
-
-/* 搜索 */
-.ant-search {
-  display: inline-block;
-  vertical-align: top;
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 20px;
-}
-.ant-search .layui-icon {
-  font-size: 20px;
-}
-.ant-search:hover {
-  color: #5fb878;
-}
-.ant-layer-search input {
-  height: 75px;
-  line-height: 75px;
-  width: 500px;
-  padding: 0 15px;
-  font-size: 20px;
-  border: none 0;
-  background: none;
-}
-
 /** 登录框 */
 .logininfo {
   width: 800px;
@@ -625,101 +432,6 @@ pre {
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-}
-
-/* 筛选 */
-.ant-filter a {
-  padding: 0 8px;
-  color: #666;
-}
-.ant-filter a.layui-this {
-  color: #5fb878;
-}
-.ant-filter .ant-mid {
-  margin: 0 8px;
-}
-.ant-filter-right {
-  position: absolute;
-  right: 10px;
-  top: 0;
-}
-
-/* Tab */
-.ant-tab {
-  position: relative;
-  padding-top: 3px;
-}
-.ant-tab .layui-tab {
-  margin: 0;
-}
-.ant-tab .layui-tab-title {
-  border-bottom: 1px dotted #e2e2e2;
-}
-
-.ant-tab-border {
-  position: relative;
-  margin-bottom: 15px;
-}
-.ant-tab-border span,
-.ant-tab-border span a {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  vertical-align: top;
-}
-.ant-tab-border span {
-  border: 1px solid #ddd;
-  border-right: none;
-  font-size: 0;
-}
-.ant-tab-border span a {
-  position: relative;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 20px;
-  border-right: 1px solid #ddd;
-  font-size: 14px;
-  background-color: #fff;
-}
-.ant-tab-border .tab-this {
-  color: #000;
-}
-.ant-tab-border .tab-this:after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: -1px;
-  width: 100%;
-  height: 1px;
-  padding: 0 1px;
-  background-color: #009688;
-}
-
-/* 分页 */
-.laypage-main,
-.laypage-main * {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  vertical-align: top;
-}
-.laypage-main {
-  margin: 20px 0;
-  border: 1px solid #009e94;
-  border-right: none;
-  border-bottom: none;
-  font-size: 0;
-}
-.laypage-main * {
-  padding: 0 20px;
-  line-height: 36px;
-  border-right: 1px solid #009e94;
-  border-bottom: 1px solid #009e94;
-  font-size: 14px;
-}
-.laypage-main .laypage-curr {
-  background-color: #009e94;
-  color: #fff;
 }
 
 /* 简易编辑器 */
@@ -746,132 +458,6 @@ pre {
 }
 .ant-edit span:hover {
   color: #5db276;
-}
-
-/* 列表 */
-.ant-list li {
-  position: relative;
-  height: 45px;
-  line-height: 22px;
-  padding: 15px 15px 15px 75px;
-  border-bottom: 1px dotted #e2e2e2;
-}
-.ant-list li:last-child {
-  border-bottom: none;
-}
-.ant-list li h2,
-.ant-list li h2 a,
-.ant-list-info {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.ant-list li h2 {
-  height: 26px;
-  font-size: 0;
-}
-.ant-list li h2 a {
-  display: inline-block;
-  max-width: 80%;
-  padding-right: 10px;
-  font-size: 16px;
-}
-.ant-list li h2 .layui-badge {
-  top: -2px;
-  height: 16px;
-  line-height: 16px;
-  padding: 0 5px;
-  margin-right: 10px;
-  font-size: 12px;
-  border: 1px solid #5fb878;
-  background: none;
-  color: #5fb878;
-}
-
-.ant-list-info {
-  position: relative;
-  font-size: 13px;
-  color: #999;
-}
-.ant-list-info > * {
-  padding-right: 15px;
-}
-.ant-list-info a[link] {
-  color: #999;
-}
-.ant-list-info a[link]:hover {
-  color: #5fb878;
-}
-.ant-list-info .icon-renzheng {
-  position: relative;
-  top: 1px;
-  margin-right: 3px;
-}
-.ant-list-info .ant-badge-vip {
-  position: relative;
-  margin-left: 2px;
-}
-.ant-list-kiss {
-  color: #ff5722;
-}
-.ant-list-nums {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding-right: 0 !important;
-}
-.ant-list-nums i {
-  position: relative;
-  padding: 0 3px 0 15px;
-}
-
-.ant-list-badge {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  font-size: 0;
-}
-.ant-list-badge .layui-badge {
-  margin-left: 5px;
-  border-radius: 2px;
-  font-size: 12px;
-}
-
-/* 单行列表 */
-.ant-list-one .ant-panel-title {
-  margin-bottom: 5px;
-}
-.ant-list-one dd {
-  margin: 0 15px;
-  line-height: 26px;
-  white-space: nowrap;
-  overflow: hidden;
-  list-style: decimal-leading-zero inside;
-  *list-style-type: decimal inside;
-  color: #009e94;
-}
-.ant-list-one dd a,
-.ant-list-one dd span {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  vertical-align: top;
-  font-style: normal;
-}
-.ant-list-one dd a {
-  max-width: 85%;
-  margin-right: 5px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 14px;
-}
-.ant-list-one dd span {
-  font-size: 12px;
-  color: #ccc;
-}
-.ant-list-one dd:last-child {
-  padding-bottom: 5px;
 }
 
 body .layui-edit-face {
@@ -1661,9 +1247,6 @@ body .ant-user-main {
   color: #999;
   font-weight: 300;
 }
-.ant-list-one .ant-none {
-  min-height: 70px;
-}
 
 @media screen and (max-width: 768px) {
   .ant-main {
@@ -1675,59 +1258,10 @@ body .ant-user-main {
     margin-top: 0;
   }
 
-  /* 头部 */
-  .ant-header .ant-nav-user li .ant-nav-avatar {
-    padding-right: 15px;
-  }
-  .ant-header .ant-nav-user {
-    margin-right: 5px;
-  }
-
-  /* 专栏 */
-  .ant-column {
-    height: auto;
-  }
-  .ant-column ul {
-    padding: 10px;
-    font-size: 0;
-  }
-  .ant-column ul li {
-    float: left;
-    width: 33.33%;
-    height: 36px;
-    line-height: 36px;
-    font-size: 14px;
-    vertical-align: middle;
-    text-align: center;
-    box-sizing: border-box;
-  }
-  .ant-column-right {
-    right: 10px;
-  }
-  .ant-column ul li.layui-this:after {
-    display: none;
-  }
-
   /* 页脚 */
   .ant-footer {
     margin-top: 0;
     border-top: none;
-  }
-
-  /* 分页 */
-  .laypage-main a,
-  .laypage-main span {
-    display: none;
-  }
-  .laypage-main .laypage-prev,
-  .laypage-main .laypage-curr,
-  .laypage-main .laypage-next {
-    display: inline-block;
-  }
-
-  /* 列表 */
-  .ant-list li h2 a {
-    max-width: 72%;
   }
 
   /* Detail 页 */
